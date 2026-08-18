@@ -6,73 +6,1323 @@
 
 <title>Ваш массаж — мастерская тепла и заботы</title>
 
-<meta name="description" content="Ваш массаж — массажная мастерская тепла и заботы. Классический, расслабляющий, антицеллюлитный, лимфодренажный массаж и моделирование фигуры. Запись онлайн.">
-<meta name="keywords" content="массаж, массаж Москва, массаж Курская, массажист Курская, антицеллюлитный массаж, лимфодренажный массаж, массаж лица, моделирование фигуры">
+<meta name="description" content="Ваш массаж — мастерская тепла и заботы в Москве. Классический, расслабляющий, лимфодренажный и моделирующий массаж. Опыт мастера около 6 лет. Запись онлайн.">
+
+<meta name="keywords" content="массаж Москва, массаж Курская, массажист Курская, классический массаж, расслабляющий массаж, лимфодренажный массаж, моделирование фигуры">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f7eee9;
-    color: #182d47;
-    line-height: 1.6;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#172b49;
+    background:#f8eee8;
+    line-height:1.6;
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-.container {
-    width: min(1120px, 92%);
-    margin: 0 auto;
+.container{
+    width:min(1120px,92%);
+    margin:auto;
 }
 
-/* ---------- HEADER ---------- */
+/* КНОПКА */
 
-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: rgba(247,238,233,.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid #d5a75c;
+.btn{
+    display:inline-block;
+    padding:15px 30px;
+    border-radius:40px;
+    background:#c4933b;
+    color:white;
+    font-weight:bold;
+    transition:.3s;
+    border:none;
+    cursor:pointer;
 }
 
-.header-inner {
-    min-height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+.btn:hover{
+    transform:translateY(-2px);
+    background:#ad7d2d;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(248,238,232,.96);
+    border-bottom:1px solid #dfc28e;
 }
 
-.logo-symbol {
-    width: 46px;
-    height: 46px;
-    border: 2px solid #bd8b32;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #bd8b32;
-    font-size: 24px;
+.header-inner{
+    min-height:78px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
 }
+
+.logo{
+    font-family:Georgia,serif;
+    font-size:28px;
+    font-weight:bold;
+    color:#172b49;
+}
+
+.logo span{
+    display:block;
+    font-family:Arial,sans-serif;
+    font-size:10px;
+    letter-spacing:4px;
+    text-align:center;
+    color:#c4933b;
+    margin-top:-3px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#c4933b;
+}
+
+/* HERO */
+
+.hero{
+    padding:80px 0;
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    background:
+        radial-gradient(circle at 80% 20%,#ead6c6 0,transparent 35%),
+        linear-gradient(135deg,#f8eee8,#fffaf7);
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    align-items:center;
+    gap:60px;
+}
+
+.label{
+    color:#c4933b;
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+h1{
+    font-family:Georgia,serif;
+    font-size:clamp(44px,6vw,72px);
+    line-height:1.05;
+    color:#172b49;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#c4933b;
+}
+
+.hero-text{
+    font-size:20px;
+    max-width:600px;
+    margin-bottom:30px;
+    color:#40516a;
+}
+
+.hero-note{
+    margin-top:18px;
+    font-size:14px;
+    color:#657080;
+}
+
+.hero-card{
+    min-height:470px;
+    border-radius:35px;
+    background:
+        linear-gradient(rgba(23,43,73,.1),rgba(23,43,73,.35)),
+        radial-gradient(circle at 50% 35%,#ead7c8,#c7b5ad);
+    display:flex;
+    align-items:flex-end;
+    padding:35px;
+    box-shadow:0 25px 60px rgba(47,37,31,.15);
+    position:relative;
+    overflow:hidden;
+}
+
+.hero-card:before{
+    content:"";
+    position:absolute;
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.6);
+    top:45px;
+    right:40px;
+}
+
+.hero-card-content{
+    position:relative;
+    z-index:2;
+    color:white;
+}
+
+.hero-card-content h2{
+    font-family:Georgia,serif;
+    font-size:34px;
+    margin-bottom:8px;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title .label{
+    margin-bottom:8px;
+}
+
+h2{
+    font-family:Georgia,serif;
+    font-size:42px;
+    line-height:1.15;
+}
+
+.section-subtitle{
+    max-width:650px;
+    margin:15px auto 0;
+    color:#667184;
+}
+
+/* SERVICES */
+
+.services{
+    background:#fffaf7;
+}
+
+.services-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:#fff;
+    border:1px solid #e5d1b0;
+    border-radius:22px;
+    padding:28px;
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(52,42,35,.1);
+}
+
+.service-icon{
+    width:52px;
+    height:52px;
+    border:1px solid #c4933b;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#c4933b;
+    font-size:23px;
+    margin-bottom:18px;
+}
+
+.service h3{
+    font-family:Georgia,serif;
+    font-size:23px;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#667184;
+    font-size:14px;
+}
+
+/* ABOUT */
+
+.about{
+    background:#f8eee8;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-photo{
+    min-height:520px;
+    border-radius:30px;
+    background:
+        linear-gradient(rgba(23,43,73,.05),rgba(23,43,73,.18)),
+        radial-gradient(circle at 50% 35%,#f0dfd2,#c8b9b4);
+}
+
+.about-content h2{
+    margin-bottom:25px;
+}
+
+.about-content p{
+    color:#526075;
+    margin-bottom:18px;
+}
+
+.features{
+    display:grid;
+    gap:15px;
+    margin-top:30px;
+}
+
+.feature{
+    display:flex;
+    gap:15px;
+    align-items:flex-start;
+}
+
+.feature-icon{
+    color:#c4933b;
+    font-size:22px;
+}
+
+/* MESSAGE */
+
+.message{
+    background:#172b49;
+    color:white;
+    text-align:center;
+}
+
+.message h2{
+    color:white;
+    max-width:800px;
+    margin:auto;
+}
+
+.message p{
+    max-width:700px;
+    margin:20px auto 30px;
+    color:#dce3eb;
+}
+
+/* REVIEWS */
+
+.reviews{
+    background:#fffaf7;
+}
+
+.review-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.review{
+    background:#fff;
+    padding:30px;
+    border-radius:22px;
+    border:1px solid #e5d1b0;
+}
+
+.stars{
+    color:#c4933b;
+    letter-spacing:3px;
+    margin-bottom:12px;
+}
+
+.review p{
+    color:#526075;
+    font-size:15px;
+    margin-bottom:15px;
+}
+
+.review-name{
+    font-weight:bold;
+}
+
+/* LOCATION */
+
+.location{
+    background:#f8eee8;
+}
+
+.location-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.location-card{
+    background:#fff;
+    border-radius:25px;
+    padding:35px;
+    border:1px solid #e5d1b0;
+}
+
+.location-card h3{
+    font-family:Georgia,serif;
+    font-size:26px;
+    margin-bottom:15px;
+}
+
+.location-card p{
+    margin-bottom:12px;
+    color:#526075;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    background:
+        radial-gradient(circle at 50% 0,#ead6c6,transparent 55%),
+        #fffaf7;
+}
+
+.cta h2{
+    max-width:750px;
+    margin:auto;
+}
+
+.cta p{
+    color:#667184;
+    margin:20px auto 30px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#172b49;
+    color:white;
+    padding:45px 0;
+}
+
+.footer-inner{
+    display:flex;
+    justify-content:space-between;
+    gap:30px;
+    align-items:center;
+}
+
+.footer-logo{
+    font-family:Georgia,serif;
+    font-size:28px;
+}
+
+.footer-text{
+    color:#cbd3dd;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    header{
+        position:relative;
+    }
+
+    .header-inner{
+        min-height:70px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .logo{
+        font-size:24px;
+    }
+
+    .hero{
+        padding:55px 0;
+    }
+
+    .hero-grid,
+    .about-grid,
+    .location-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-card{
+        min-height:360px;
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    h2{
+        font-size:34px;
+    }
+
+    .services-grid,
+    .review-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-photo{
+        min-height:350px;
+    }
+
+    .footer-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container header-inner">
+
+<a href="#" class="logo">
+Ваш массаж
+<span>МАСТЕРСКАЯ ТЕПЛА И ЗАБОТЫ</span>
+</a>
+
+<nav>
+<a href="#services">Услуги</a>
+<a href="#about">О мастере</a>
+<a href="#reviews">Отзывы</a>
+<a href="#location">Как найти</a>
+</nav>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться
+</a>
+
+</div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="label">Ваш массаж</div>
+
+<h1>
+Мастерская<br>
+<span>тепла и заботы</span>
+</h1>
+
+<p class="hero-text">
+Массаж, который помогает остановиться,
+расслабиться и снова почувствовать своё тело.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться на массаж
+</a>
+
+<p class="hero-note">
+Опыт мастера — около 6 лет · Москва · рядом с метро Курская
+</p>
+
+</div>
+
+<div class="hero-card">
+
+<div class="hero-card-content">
+
+<h2>Ваше тело — ваша опора</h2>
+
+<p>
+Бережная работа с телом,
+внимание к вашим ощущениям
+и немного времени только для себя.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Что я предлагаю</div>
+
+<h2>Услуги</h2>
+
+<p class="section-subtitle">
+Подберём процедуру под ваши ощущения,
+цели и состояние тела.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+<div class="service">
+<div class="service-icon">♡</div>
+<h3>Классический массаж</h3>
+<p>Для расслабления, восстановления и общего тонуса тела.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✦</div>
+<h3>Расслабляющий массаж</h3>
+<p>Мягкая работа с телом для отдыха и снятия накопившегося напряжения.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">◌</div>
+<h3>Лимфодренажный массаж</h3>
+<p>Бережная работа с телом для ощущения лёгкости.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">♢</div>
+<h3>Антицеллюлитный массаж</h3>
+<p>Интенсивная проработка зон, которые хочется сделать более ухоженными.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✧</div>
+<h3>Моделирование фигуры</h3>
+<p>Работа с отдельными зонами тела и их визуальным контуром.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">☾</div>
+<h3>Массаж лица</h3>
+<p>Расслабляющая процедура для лица, шеи и зоны декольте.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">90</div>
+<h3>Общий массаж 90 минут</h3>
+<p>Полноценная проработка тела в комфортном темпе.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">＋</div>
+<h3>Массаж стоп и ног</h3>
+<p>Для отдыха ног и приятного ощущения лёгкости.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">♡</div>
+<h3>Комбо-процедуры</h3>
+<p>Сочетание нескольких процедур для комплексного ухода за телом.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+<div class="about-photo"></div>
+
+<div class="about-content">
+
+<div class="label">О мастере</div>
+
+<h2>
+Здесь можно просто<br>
+выдохнуть
+</h2>
+
+<p>
+Я работаю с телом около 6 лет и постоянно
+дополняю свои знания на различных профессиональных курсах.
+</p>
+
+<p>
+Для меня массаж — это не просто техника.
+Это время, когда можно остановиться,
+отложить дела и посвятить внимание себе.
+</p>
+
+<p>
+Я стараюсь слышать каждую клиентку,
+учитывать её ощущения и работать бережно,
+но результативно.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Около 6 лет опыта</strong><br>
+Постоянное развитие и обучение.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Индивидуальный подход</strong><br>
+Процедура под ваши ощущения и задачи.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Атмосфера заботы</strong><br>
+Место, где можно расслабиться и побыть собой.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section class="message">
+
+<div class="container">
+
+<div class="label">От меня вам</div>
+
+<h2>
+Моим прекрасным клиенткам —
+спасибо за ваше доверие
+</h2>
+
+<p>
+Мне хочется, чтобы после каждой встречи
+вы уходили не только с ощущением заботы о теле,
+но и с мыслью: «Сегодня я сделала что-то хорошее для себя».
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Выбрать время
+</a>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Ваши впечатления</div>
+
+<h2>Отзывы клиенток</h2>
+
+<p class="section-subtitle">
+Здесь мы разместим реальные отзывы
+из карточки «Ваш массаж» на Яндекс Картах.
+</p>
+
+</div>
+
+
+<div class="review-grid">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Ваш отзыв появится здесь.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Здесь будут реальные впечатления ваших клиенток.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Блок отзывов подключим к Яндекс Картам следующим этапом.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location" id="location">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Как нас найти</div>
+
+<h2>До встречи в мастерской</h2>
+
+</div>
+
+
+<div class="location-grid">
+
+<div class="location-card">
+
+<h3>📍 Где мы находимся</h3>
+
+<p>
+Кабинет находится в центре Москвы,
+рядом с метро Курская.
+</p>
+
+<p>
+Ориентир — кофейня SOUL.MO.
+</p>
+
+<p>
+От метро — около 7 минут пешком.
+</p>
+
+</div>
+
+
+<div class="location-card">
+
+<h3>Перед визитом</h3>
+
+<p>
+Пожалуйста, приходите немного заранее,
+чтобы спокойно подготовиться к процедуре.
+</p>
+
+<p>
+В кабинете вас ждёт уютная атмосфера,
+чай и время для себя.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="label">Ваше время для себя</div>
+
+<h2>
+Иногда забота о себе начинается
+с одного простого решения
+</h2>
+
+<p>
+Выберите удобное время — остальное я беру на себя.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться на массаж
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<div class="footer-logo">Ваш массаж</div>
+<div class="footer-text">
+Мастерская тепла и заботы
+</div>
+</div>
+
+<div class="footer-text">
+Москва · метро Курская
+</div>
+
+<div>
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Онлайн-запись
+</a>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
+<p class="hero-text">
+Массаж, который помогает остановиться,
+расслабиться и снова почувствовать своё тело.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться на массаж
+</a>
+
+<p class="hero-note">
+Опыт мастера — около 6 лет · Москва · рядом с метро Курская
+</p>
+
+</div>
+
+<div class="hero-card">
+
+<div class="hero-card-content">
+
+<h2>Ваше тело — ваша опора</h2>
+
+<p>
+Бережная работа с телом,
+внимание к вашим ощущениям
+и немного времени только для себя.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Что я предлагаю</div>
+
+<h2>Услуги</h2>
+
+<p class="section-subtitle">
+Подберём процедуру под ваши ощущения,
+цели и состояние тела.
+</p>
+
+</div>
+
+
+<div class="services-grid">
+
+<div class="service">
+<div class="service-icon">♡</div>
+<h3>Классический массаж</h3>
+<p>Для расслабления, восстановления и общего тонуса тела.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✦</div>
+<h3>Расслабляющий массаж</h3>
+<p>Мягкая работа с телом для отдыха и снятия накопившегося напряжения.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">◌</div>
+<h3>Лимфодренажный массаж</h3>
+<p>Бережная работа с телом для ощущения лёгкости.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">♢</div>
+<h3>Антицеллюлитный массаж</h3>
+<p>Интенсивная проработка зон, которые хочется сделать более ухоженными.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">✧</div>
+<h3>Моделирование фигуры</h3>
+<p>Работа с отдельными зонами тела и их визуальным контуром.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">☾</div>
+<h3>Массаж лица</h3>
+<p>Расслабляющая процедура для лица, шеи и зоны декольте.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">90</div>
+<h3>Общий массаж 90 минут</h3>
+<p>Полноценная проработка тела в комфортном темпе.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">＋</div>
+<h3>Массаж стоп и ног</h3>
+<p>Для отдыха ног и приятного ощущения лёгкости.</p>
+</div>
+
+<div class="service">
+<div class="service-icon">♡</div>
+<h3>Комбо-процедуры</h3>
+<p>Сочетание нескольких процедур для комплексного ухода за телом.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="container about-grid">
+
+<div class="about-photo"></div>
+
+<div class="about-content">
+
+<div class="label">О мастере</div>
+
+<h2>
+Здесь можно просто<br>
+выдохнуть
+</h2>
+
+<p>
+Я работаю с телом около 6 лет и постоянно
+дополняю свои знания на различных профессиональных курсах.
+</p>
+
+<p>
+Для меня массаж — это не просто техника.
+Это время, когда можно остановиться,
+отложить дела и посвятить внимание себе.
+</p>
+
+<p>
+Я стараюсь слышать каждую клиентку,
+учитывать её ощущения и работать бережно,
+но результативно.
+</p>
+
+<div class="features">
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Около 6 лет опыта</strong><br>
+Постоянное развитие и обучение.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Индивидуальный подход</strong><br>
+Процедура под ваши ощущения и задачи.
+</div>
+</div>
+
+<div class="feature">
+<div class="feature-icon">✦</div>
+<div>
+<strong>Атмосфера заботы</strong><br>
+Место, где можно расслабиться и побыть собой.
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- MESSAGE -->
+
+<section class="message">
+
+<div class="container">
+
+<div class="label">От меня вам</div>
+
+<h2>
+Моим прекрасным клиенткам —
+спасибо за ваше доверие
+</h2>
+
+<p>
+Мне хочется, чтобы после каждой встречи
+вы уходили не только с ощущением заботы о теле,
+но и с мыслью: «Сегодня я сделала что-то хорошее для себя».
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Выбрать время
+</a>
+
+</div>
+
+</section>
+
+
+<!-- REVIEWS -->
+
+<section class="reviews" id="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Ваши впечатления</div>
+
+<h2>Отзывы клиенток</h2>
+
+<p class="section-subtitle">
+Здесь мы разместим реальные отзывы
+из карточки «Ваш массаж» на Яндекс Картах.
+</p>
+
+</div>
+
+
+<div class="review-grid">
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Ваш отзыв появится здесь.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Здесь будут реальные впечатления ваших клиенток.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+<div class="review">
+<div class="stars">★★★★★</div>
+<p>
+Блок отзывов подключим к Яндекс Картам следующим этапом.
+</p>
+<div class="review-name">Клиентка</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOCATION -->
+
+<section class="location" id="location">
+
+<div class="container">
+
+<div class="section-title">
+
+<div class="label">Как нас найти</div>
+
+<h2>До встречи в мастерской</h2>
+
+</div>
+
+
+<div class="location-grid">
+
+<div class="location-card">
+
+<h3>📍 Где мы находимся</h3>
+
+<p>
+Кабинет находится в центре Москвы,
+рядом с метро Курская.
+</p>
+
+<p>
+Ориентир — кофейня SOUL.MO.
+</p>
+
+<p>
+От метро — около 7 минут пешком.
+</p>
+
+</div>
+
+
+<div class="location-card">
+
+<h3>Перед визитом</h3>
+
+<p>
+Пожалуйста, приходите немного заранее,
+чтобы спокойно подготовиться к процедуре.
+</p>
+
+<p>
+В кабинете вас ждёт уютная атмосфера,
+чай и время для себя.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="label">Ваше время для себя</div>
+
+<h2>
+Иногда забота о себе начинается
+с одного простого решения
+</h2>
+
+<p>
+Выберите удобное время — остальное я беру на себя.
+</p>
+
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Записаться на массаж
+</a>
+
+</div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+<div class="container footer-inner">
+
+<div>
+<div class="footer-logo">Ваш массаж</div>
+<div class="footer-text">
+Мастерская тепла и заботы
+</div>
+</div>
+
+<div class="footer-text">
+Москва · метро Курская
+</div>
+
+<div>
+<a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank">
+Онлайн-запись
+</a>
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>}
 
 .logo-text {
     font-family: Georgia, serif;
