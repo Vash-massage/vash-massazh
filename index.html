@@ -1,962 +1,394 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ваш массаж — мастерская тепла и заботы</title>
-    <meta name="description" content="Ваш массаж — мастерская тепла и заботы в Москве. Классический, расслабляющий, лимфодренажный и моделирующий массаж. Опыт мастера более 5 лет. Запись онлайн.">
-    <meta name="keywords" content="массаж Москва, массаж Курская, массажист Курская, классический массаж, расслабляющий массаж, лимфодренажный массаж, моделирование фигуры">
-
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            color: #182d47;
-            background: #f8eee9;
-            line-height: 1.6;
-        }
-        a { color: inherit; text-decoration: none; }
-        .container { width: min(1120px, 92%); margin: auto; }
-
-        /* BUTTONS */
-        .button {
-            display: inline-block;
-            background: #182d47;
-            color: white;
-            padding: 13px 25px;
-            border-radius: 30px;
-            font-weight: bold;
-            transition: .25s;
-            border: none;
-            cursor: pointer;
-        }
-        .button:hover { background: #b78632; transform: translateY(-2px); }
-        .button.gold { background: #bd8b32; }
-        .button.light {
-            background: transparent;
-            border: 1px solid #bd8b32;
-            color: #182d47;
-        }
-
-        /* HEADER */
-        header {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(248,238,233,.97);
-            border-bottom: 1px solid #dfc18b;
-        }
-        .header-inner {
-            min-height: 78px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-        }
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .logo-symbol {
-            width: 42px;
-            height: 42px;
-            border: 1px solid #bd8b32;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #bd8b32;
-            font-size: 22px;
-        }
-        .logo-text {
-            font-family: Georgia, serif;
-            font-size: 24px;
-            color: #172b45;
-        }
-        nav { display: flex; gap: 25px; font-size: 14px; }
-        nav a:hover { color: #b68129; }
-        .header-button { white-space: nowrap; }
-
-        /* HERO */
-        .hero {
-            padding: 90px 0 80px;
-            background:
-                radial-gradient(circle at 80% 20%, rgba(207,168,107,.18), transparent 30%),
-                linear-gradient(135deg, #f8eee9, #f3e2da);
-        }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr .9fr;
-            align-items: center;
-            gap: 60px;
-        }
-        .eyebrow {
-            color: #b78632;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 18px;
-        }
-        h1 {
-            font-family: Georgia, serif;
-            font-size: clamp(44px, 6vw, 72px);
-            line-height: 1.05;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-        .hero h1 span { color: #b78632; }
-        .hero-subtitle {
-            font-family: Georgia, serif;
-            font-size: 25px;
-            margin-bottom: 22px;
-        }
-        .hero-text {
-            max-width: 580px;
-            font-size: 18px;
-            color: #455366;
-            margin-bottom: 32px;
-        }
-        .hero-buttons { display: flex; flex-wrap: wrap; gap: 14px; }
-        .hero-card {
-            min-height: 480px;
-            border-radius: 180px 180px 30px 30px;
-            background:
-                linear-gradient(rgba(24,45,71,.08), rgba(24,45,71,.18)),
-                url("https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&q=85")
-                center/cover;
-            box-shadow: 0 20px 50px rgba(40,30,25,.15);
-        }
-
-        /* SECTIONS */
-        section { padding: 85px 0; }
-        .section-title { text-align: center; margin-bottom: 50px; }
-        .section-title .small {
-            color: #bd8b32;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-size: 13px;
-            font-weight: bold;
-        }
-        .section-title h2 {
-            font-family: Georgia, serif;
-            font-size: clamp(34px, 5vw, 48px);
-            font-weight: normal;
-            margin: 8px 0 12px;
-        }
-        .section-title p { max-width: 650px; margin: auto; color: #657080; }
-
-        /* ABOUT */
-        .about { background: #fffaf7; }
-        .about-grid {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 65px;
-            align-items: center;
-        }
-        .about-photo {
-            height: 570px;
-            border-radius: 30px;
-            background:
-                url("https://images.unsplash.com/photo-1552693673-1bf958298935?auto=format&fit=crop&w=900&q=85")
-                center/cover;
-        }
-        .about-text h3 {
-            font-family: Georgia, serif;
-            font-size: 38px;
-            font-weight: normal;
-            margin-bottom: 20px;
-        }
-        .about-text p { margin-bottom: 18px; color: #526071; }
-        .experience {
-            margin: 30px 0;
-            padding: 20px;
-            border-left: 3px solid #bd8b32;
-            background: #f7eee9;
-        }
-        .experience strong { font-size: 26px; color: #182d47; }
-
-        /* SERVICES */
-        .services { background: #f7eee9; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-        .service {
-            background: white;
-            border: 1px solid #dfc18b;
-            border-radius: 20px;
-            padding: 30px 22px;
-            text-align: center;
-            transition: .25s;
-        }
-        .service:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(40,30,25,.08);
-        }
-        .service-icon {
-            width: 58px;
-            height: 58px;
-            margin: 0 auto 18px;
-            border: 1px solid #bd8b32;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #bd8b32;
-            font-size: 25px;
-        }
-        .service h3 { font-family: Georgia, serif; font-size: 22px; margin-bottom: 8px; }
-        .service p { color: #687384; font-size: 14px; }
-
-        /* ADVANTAGES */
-        .advantages { background: #182d47; color: white; }
-        .advantages .section-title p { color: #c7d0da; }
-        .advantages-grid {
-            display: grid;
-            grid-template-columns: repeat(3,1fr);
-            gap: 25px;
-        }
-        .advantage { text-align: center; padding: 25px; }
-        .advantage-icon { color: #d5a75c; font-size: 38px; margin-bottom: 15px; }
-        .advantage h3 { font-family: Georgia, serif; font-size: 23px; margin-bottom: 10px; }
-        .advantage p { color: #c5ced8; }
-
-        /* MESSAGE */
-        .message { background: #fffaf7; }
-        .message-box {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-            padding: 65px 35px;
-            border: 1px solid #d5a75c;
-            border-radius: 30px;
-        }
-        .message-box h2 {
-            font-family: Georgia, serif;
-            font-weight: normal;
-            font-size: 40px;
-            margin-bottom: 25px;
-        }
-        .message-box p { color: #596574; font-size: 18px; margin-bottom: 25px; }
-
-        /* LOCATION */
-        .location { background: #f7eee9; }
-        .location-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 35px;
-        }
-        .location-card {
-            background: white;
-            border-radius: 25px;
-            padding: 35px;
-        }
-        .location-card h3 {
-            font-family: Georgia, serif;
-            font-size: 28px;
-            margin-bottom: 20px;
-        }
-        .route { display: flex; gap: 15px; margin-bottom: 18px; }
-        .route-number {
-            min-width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: #bd8b32;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-        }
-        .map {
-            min-height: 400px;
-            border-radius: 25px;
-            background: #ddd;
-            overflow: hidden;
-            box-shadow: 0 10px 35px rgba(40,30,25,.08);
-        }
-        .map iframe {
-            width: 100%;
-            height: 100%;
-            min-height: 400px;
-            display: block;
-            border: 0;
-        }
-
-        /* REVIEWS */
-        .reviews { background: #fffaf7; }
-        .review-note {
-            max-width: 750px;
-            margin: -20px auto 30px;
-            text-align: center;
-            color: #687384;
-        }
-        .reviews-widget {
-            width: 100%;
-            max-width: 760px;
-            height: 700px;
-            margin: 0 auto;
-            overflow: hidden;
-            position: relative;
-            background: #fff;
-            border-radius: 20px;
-            box-shadow: 0 12px 35px rgba(40,30,25,.08);
-        }
-        .reviews-widget iframe {
-            width: 100%;
-            height: 100%;
-            border: 1px solid #e6e6e6;
-            border-radius: 20px;
-            box-sizing: border-box;
-            display: block;
-        }
-        .reviews-link {
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        /* CTA */
-        .cta {
-            background: linear-gradient(135deg,#f2dfd5,#f8eee9);
-            text-align: center;
-        }
-        .cta h2 {
-            font-family: Georgia, serif;
-            font-size: 48px;
-            font-weight: normal;
-            margin-bottom: 15px;
-        }
-        .cta p { color: #596574; font-size: 18px; margin-bottom: 30px; }
-
-        /* FOOTER */
-        footer { background: #182d47; color: white; padding: 45px 0 25px; }
-        .footer-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        footer .logo-text { color: white; }
-        .footer-info { color: #c4ccd5; }
-        .footer-bottom {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,.15);
-            text-align: center;
-            color: #9eaab7;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 800px) {
-            nav { display: none; }
-            .header-button { padding: 10px 15px; font-size: 13px; }
-            .hero { padding: 55px 0; }
-            .hero-grid, .about-grid, .location-grid { grid-template-columns: 1fr; }
-            .hero-card { min-height: 400px; order: -1; }
-            .services-grid, .advantages-grid { grid-template-columns: 1fr 1fr; }
-            .about-photo { height: 430px; }
-            .map, .map iframe { min-height: 380px; }
-            .reviews-widget { height: 650px; }
-        }
-        @media (max-width: 520px) {
-            section { padding: 60px 0; }
-            .logo-text { font-size: 19px; }
-            .logo-symbol { width: 38px; height: 38px; font-size: 19px; }
-            .services-grid, .advantages-grid { grid-template-columns: 1fr; }
-            .hero-buttons { flex-direction: column; }
-            .button { text-align: center; width: 100%; }
-            .message-box { padding: 40px 20px; }
-            .message-box h2, .cta h2 { font-size: 34px; }
-            .location-card { padding: 25px; }
-            .reviews-widget { height: 620px; border-radius: 15px; }
-            .reviews-widget iframe { border-radius: 15px; }
-        }
-    
-/* ===== НОВАЯ ТИПОГРАФИКА «ВАШ МАССАЖ» ===== */
-:root {
-    --navy: #10284b;
-    --gold: #c58a16;
-    --cream: #fbf8f2;
-}
-
-body {
-    font-family: "Lora", Georgia, serif !important;
-    color: var(--navy);
-}
-
-h1, .hero h1, .logo, .brand-name, .site-title {
-    font-family: "Bodoni Moda", Georgia, serif !important;
-    font-weight: 500 !important;
-    letter-spacing: -0.02em;
-}
-
-h2, h3, h4, .section-title, .section-title h2, .label,
-nav, .nav, .button, .btn, button,
-.service-title, .service-name, .price,
-.badge, .eyebrow, .subtitle, .section-subtitle {
-    font-family: "Montserrat", Arial, sans-serif !important;
-}
-
-p, li, .text, .description, .service-description {
-    font-family: "Lora", Georgia, serif !important;
-}
-
-.master-message {
-    position: relative;
-    margin: 42px auto;
-    max-width: 820px;
-    padding: 38px 42px 34px;
-    background: linear-gradient(145deg, #fffdf9, #fbf7ef);
-    border: 1px solid rgba(197, 138, 22, .55);
-    border-radius: 22px;
-    box-shadow: 0 12px 35px rgba(16, 40, 75, .07);
-    text-align: center;
-}
-
-.master-message::before,
-.master-message::after {
-    content: "✦";
-    position: absolute;
-    color: var(--gold);
-    font-family: "Bodoni Moda", serif;
-    font-size: 18px;
-}
-
-.master-message::before {
-    left: 24px;
-    top: 22px;
-    font-size: 17px;
-}
-.master-message::after {
-    right: 24px;
-    bottom: 22px;
-    font-size: 17px;
-}
-
-.master-message .message-text {
-    margin: 0 auto 18px;
-    font-family: "Lora", Georgia, serif !important;
-    font-size: clamp(18px, 2.2vw, 23px);
-    line-height: 1.75;
-    font-style: italic;
-    color: var(--navy);
-}
-
-.master-message .message-signature {
-    margin: 0;
-    font-family: "Lora", Georgia, serif !important;
-    font-size: 16px;
-    font-style: italic;
-    color: var(--gold);
-}
-
-@media (max-width: 600px) {
-    .master-message {
-        margin: 30px 16px;
-        padding: 30px 24px 27px;
-        border-radius: 18px;
-    }
-
-    .master-message .message-text {
-        font-size: 17px;
-        line-height: 1.65;
-    }
-
-    .master-message .message-signature {
-        font-size: 14px;
-    }
-}
-
-</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ваш Массаж — массажная мастерская</title>
+<meta name="description" content="Ваш Массаж — массажная мастерская в центре Москвы рядом с метро Курская. Массаж и моделирование фигуры.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-
-/* ===== ФИНАЛЬНАЯ НАСТРОЙКА ШАПКИ И БЛОКА ОБРАЩЕНИЯ ===== */
-
-/* Название «Ваш массаж» — единый цвет */
-.logo-text {
-    color: #172b45 !important;
-    font-family: "Bodoni Moda", Georgia, serif !important;
-    font-size: 27px !important;
-    font-weight: 500 !important;
-    letter-spacing: -0.02em;
+:root{
+  --navy:#142B4A;
+  --navy2:#1D385B;
+  --gold:#C89A4A;
+  --gold2:#D9B46B;
+  --cream:#F7F1E8;
+  --cream2:#FCF9F4;
+  --ink:#243044;
+  --muted:#6F7480;
+  --line:rgba(20,43,74,.16);
+  --white:#fff;
+  --radius:30px;
+  --shadow:0 18px 50px rgba(20,43,74,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:Manrope,system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.container{width:min(1180px,calc(100% - 36px));margin:auto}
+.topbar{background:var(--navy);color:#fff;font-size:12px;letter-spacing:.04em}
+.topbar .container{display:flex;justify-content:space-between;gap:15px;padding:9px 0}
+header{position:sticky;top:0;z-index:20;background:rgba(252,249,244,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:82px;display:flex;align-items:center;justify-content:space-between;gap:28px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:55px;height:55px;object-fit:contain}
+.brand-title{font-family:"Cormorant Garamond",serif;font-size:28px;font-weight:700;line-height:.8;color:var(--navy)}
+.brand-title span{display:block;font-family:Manrope,sans-serif;font-size:8px;letter-spacing:.25em;text-transform:uppercase;margin-top:7px;color:var(--gold)}
+.menu{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:600}
+.menu a:hover{color:var(--gold)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 24px;font-weight:700;font-size:14px;border:1px solid transparent;cursor:pointer;transition:.2s}
+.btn-primary{background:var(--navy);color:white;box-shadow:0 10px 25px rgba(20,43,74,.16)}
+.btn-primary:hover{background:var(--navy2);transform:translateY(-1px)}
+.btn-gold{background:var(--gold);color:white}
+.btn-light{background:var(--cream);border-color:var(--line);color:var(--navy)}
+.hero{padding:35px 0 70px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;right:-180px;top:-220px;width:600px;height:600px;border-radius:50%;background:var(--gold);opacity:.08}
+.hero-grid{display:grid;grid-template-columns:1fr 1.08fr;gap:38px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase}
+.eyebrow:before{content:"";width:28px;height:1px;background:var(--gold)}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;color:var(--navy);margin:0}
+h1{font-size:clamp(54px,7vw,86px);line-height:.88;margin:18px 0}
+.hero-copy p{font-size:17px;line-height:1.75;color:#5f6672;max-width:560px}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.hero-note{display:flex;gap:18px;margin-top:30px;font-size:12px;color:#68707b}
+.hero-note div{padding-left:14px;border-left:1px solid var(--gold)}
+.hero-photo{position:relative;min-height:610px}
+.hero-photo .main{position:absolute;inset:0 0 45px 70px;border-radius:38px;object-fit:cover;width:calc(100% - 70px);height:calc(100% - 45px);box-shadow:var(--shadow)}
+.hero-photo .portrait{position:absolute;left:0;bottom:0;width:250px;height:330px;object-fit:cover;border-radius:34px;border:10px solid var(--cream2);box-shadow:var(--shadow)}
+.hero-badge{position:absolute;right:22px;bottom:20px;background:var(--navy);color:#fff;border-radius:50%;width:116px;height:116px;display:grid;place-items:center;text-align:center;font-size:11px;line-height:1.4;border:7px solid var(--cream2)}
+.hero-badge strong{display:block;font-family:"Cormorant Garamond";font-size:23px;color:var(--gold2)}
+.section{padding:85px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:35px}
+.section-head h2{font-size:clamp(42px,5vw,62px);line-height:.95}
+.section-head p{max-width:480px;color:var(--muted);line-height:1.7}
+.wave{background:var(--navy);color:white;position:relative;overflow:hidden}
+.wave:before{content:"";position:absolute;top:-70px;left:-5%;width:110%;height:120px;background:var(--cream2);border-radius:0 0 55% 55%}
+.wave h2{color:#fff}
+.wave .section-head p{color:rgba(255,255,255,.75)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.service{background:rgba(255,255,255,.96);color:var(--ink);border:1px solid rgba(255,255,255,.16);border-radius:24px;padding:18px;display:grid;grid-template-columns:74px 1fr;gap:16px;align-items:center;transition:.2s}
+.service:hover{transform:translateY(-4px);box-shadow:0 15px 30px rgba(0,0,0,.12)}
+.service img{width:74px;height:74px;object-fit:cover;border-radius:18px;background:#fff}
+.service h3{font-family:Manrope;font-size:14px;color:var(--navy);line-height:1.3}
+.service p{margin:5px 0 0;font-size:11px;color:#737b87;line-height:1.45}
+.about{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px;align-items:center}
+.about-photo{display:grid;grid-template-columns:1fr .8fr;gap:16px}
+.about-photo img{width:100%;height:100%;object-fit:cover;border-radius:30px}
+.about-photo .tall{height:560px}
+.about-photo .small{height:320px;margin-top:100px}
+.list{display:grid;gap:14px;margin-top:25px}
+.list-item{display:flex;gap:13px;align-items:flex-start;font-size:14px;line-height:1.6}
+.dot{flex:none;width:25px;height:25px;border-radius:50%;background:var(--gold);color:#fff;display:grid;place-items:center;font-size:12px}
+.promo{background:var(--cream);position:relative}
+.promo-card{background:var(--navy);color:#fff;border-radius:40px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;min-height:470px}
+.promo-copy{padding:65px}
+.promo-copy h2{color:#fff;font-size:62px;line-height:.9}
+.promo-copy p{color:rgba(255,255,255,.75);line-height:1.7}
+.promo-img{width:100%;height:100%;object-fit:cover;min-height:400px}
+.gallery{display:grid;grid-template-columns:1.1fr .9fr .9fr;grid-auto-rows:240px;gap:14px}
+.gallery img{width:100%;height:100%;object-fit:cover;border-radius:25px}
+.gallery .big{grid-row:span 2}
+.location{background:var(--cream)}
+.location-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:18px}
+.info-card{background:#fff;border:1px solid var(--line);border-radius:28px;padding:35px}
+.info-card h3{font-size:38px;margin-bottom:20px}
+.info-row{display:flex;gap:12px;margin:18px 0;line-height:1.5;font-size:14px}
+.icon{width:30px;color:var(--gold);font-weight:800}
+.reviews{background:var(--cream2)}
+.review-frame{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:var(--shadow)}
+.review-frame iframe{width:100%;height:560px;border:0}
+footer{background:var(--navy);color:#fff;padding:55px 0 25px}
+.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:35px}
+footer h3{color:#fff;font-size:36px}
+footer p,footer a{color:rgba(255,255,255,.7);font-size:13px;line-height:1.7}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.15);margin-top:35px;padding-top:20px;font-size:11px;color:rgba(255,255,255,.5);display:flex;justify-content:space-between}
+.mobile-btn{display:none}
+@media(max-width:900px){
+ .menu{display:none}.mobile-btn{display:inline-flex}
+ .hero-grid,.about-grid,.promo-card,.location-grid{grid-template-columns:1fr}
+ .hero-photo{min-height:500px}.hero-photo .main{inset:0 0 30px 45px;width:calc(100% - 45px);height:calc(100% - 30px)}
+ .hero-photo .portrait{width:190px;height:260px}
+ .services-grid{grid-template-columns:1fr 1fr}
+ .about-photo{order:2}.about-grid{gap:30px}
+ .promo-img{min-height:300px}.promo-copy{padding:42px}.promo-copy h2{font-size:52px}
+ .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:560px){
+ .container{width:min(100% - 24px,1180px)}
+ .topbar .container{font-size:10px}.topbar .container span:last-child{display:none}
+ .nav{height:70px}.brand img{width:45px;height:45px}.brand-title{font-size:24px}
+ .brand-title span{font-size:7px}
+ h1{font-size:58px}.hero{padding-top:25px}
+ .hero-photo{min-height:410px}.hero-photo .portrait{width:145px;height:205px;border-width:6px}
+ .hero-badge{width:92px;height:92px;font-size:9px}.hero-badge strong{font-size:18px}
+ .services-grid{grid-template-columns:1fr}
+ .service{grid-template-columns:65px 1fr}.service img{width:65px;height:65px}
+ .section{padding:60px 0}.section-head{display:block}
+ .about-photo{grid-template-columns:1fr}.about-photo .small{display:none}.about-photo .tall{height:430px}
+ .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:170px}.gallery .big{grid-row:span 2}
+ .promo-copy h2{font-size:45px}.promo-copy{padding:32px}
+ .footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}
 }
 
+/* --- Enhanced mobile presentation --- */
+.mobile-booking-bar{display:none}
+@media(max-width:560px){
+  body{padding-bottom:72px;overflow-x:hidden}
+  .topbar{display:none}
+  .container{width:calc(100% - 28px)}
+  header{position:sticky;top:0}
+  .nav{height:64px;gap:8px}
+  .brand{min-width:0;gap:8px}
+  .brand img{width:40px;height:40px}
+  .brand-title{font-size:22px;line-height:.78;white-space:nowrap}
+  .brand-title span{font-size:6px;letter-spacing:.17em;margin-top:6px}
+  .nav>.btn-primary:not(.mobile-btn){display:none}
+  .mobile-btn{display:inline-flex!important;padding:10px 14px;font-size:11px;min-height:40px;box-shadow:none}
 
-/* Название в главном экране — один цвет */
-.hero h1,
-.hero h1 span {
-    color: #172b45 !important;
+  .hero{padding:28px 0 48px}
+  .hero:before{right:-180px;top:-120px;width:380px;height:380px}
+  .hero-grid{gap:24px}
+  .eyebrow{font-size:9px;letter-spacing:.16em;gap:7px}
+  .eyebrow:before{width:20px}
+  h1{font-size:52px;line-height:.86;margin:14px 0 16px}
+  .hero-copy p{font-size:14px;line-height:1.65;margin:0}
+  .actions{display:grid;grid-template-columns:1fr;gap:9px;margin-top:20px}
+  .btn{width:100%;padding:13px 16px;font-size:12px;min-height:46px}
+  .hero-note{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px;font-size:8px;line-height:1.3}
+  .hero-note div{padding-left:8px}
+  .hero-note div:last-child{grid-column:1/-1}
+  .hero-photo{min-height:310px;margin-top:0}
+  .hero-photo .main{inset:0 0 18px 32px;width:calc(100% - 32px);height:calc(100% - 18px);border-radius:26px}
+  .hero-photo .portrait{left:0;bottom:0;width:112px;height:158px;border-width:5px;border-radius:20px}
+  .hero-badge{right:8px;bottom:8px;width:72px;height:72px;border-width:4px;font-size:7px}
+  .hero-badge strong{font-size:14px}
+
+  .section{padding:52px 0}
+  .section-head{margin-bottom:24px}
+  .section-head h2{font-size:43px;margin-top:9px}
+  .section-head p{font-size:12px;line-height:1.6;margin-top:12px}
+  .wave:before{top:-38px;height:70px}
+  .wave{padding-top:64px}
+  .services-grid{grid-template-columns:1fr 1fr;gap:9px}
+  .service{display:block;padding:12px;border-radius:18px;min-height:150px}
+  .service img{display:block;width:54px;height:54px;border-radius:14px;margin-bottom:10px}
+  .service h3{font-size:11px;line-height:1.25}
+  .service p{font-size:9px;line-height:1.35;margin-top:5px}
+
+  .about-grid{gap:24px}
+  .about-photo{order:2;grid-template-columns:1fr}
+  .about-photo .tall{height:320px;border-radius:24px}
+  .about-photo .small{display:none}
+  .about-grid h2{font-size:43px}
+  .about-grid>div:last-child>p{font-size:13px!important;line-height:1.65!important}
+  .list{gap:10px;margin-top:18px}
+  .list-item{font-size:11px;line-height:1.5;gap:9px}
+  .dot{width:21px;height:21px;font-size:10px}
+
+  .promo-card{border-radius:26px;display:flex;flex-direction:column}
+  .promo-copy{padding:30px 22px 24px}
+  .promo-copy h2{font-size:46px;margin-top:10px}
+  .promo-copy p{font-size:12px;line-height:1.6}
+  .promo-copy .btn{width:100%}
+  .promo-img{min-height:250px;height:250px;order:2}
+
+  .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:145px;gap:8px}
+  .gallery img{border-radius:17px}
+  .gallery .big{grid-row:span 2}
+
+  .location-grid{gap:10px}
+  .info-card{padding:24px;border-radius:22px}
+  .info-card h3{font-size:34px;margin-bottom:14px}
+  .info-row{font-size:12px;margin:13px 0}
+  .info-card[style]{min-height:260px!important}
+  .info-card[style] img{min-height:260px!important}
+
+  .reviews .section-head{margin-bottom:18px}
+  .review-frame{border-radius:22px}
+  .review-frame iframe{height:500px}
+
+  footer{padding:40px 0 25px}
+  .footer-grid{grid-template-columns:1fr;gap:20px}
+  footer h3{font-size:34px}
+  footer p,footer a{font-size:12px}
+  .footer-bottom{font-size:9px;line-height:1.5}
+
+  .mobile-booking-bar{display:block;position:fixed;left:0;right:0;bottom:0;z-index:100;padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:rgba(252,249,244,.96);backdrop-filter:blur(14px);border-top:1px solid rgba(20,43,74,.12);box-shadow:0 -8px 25px rgba(20,43,74,.10)}
+  .mobile-booking-bar a{display:flex;align-items:center;justify-content:space-between;background:var(--navy);color:#fff;border-radius:15px;padding:13px 17px;font-size:12px;font-weight:800;letter-spacing:.01em}
+  .mobile-booking-bar b{font-size:20px;line-height:1;color:var(--gold2)}
 }
-
-/* Сам блок обращения — компактнее и визуально легче */
-.message {
-    padding: 48px 0 !important;
-    background: #fffaf7 !important;
-}
-
-.message-box {
-    max-width: 760px !important;
-    padding: 38px 42px 34px !important;
-    border: 1px solid rgba(189,139,50,.65) !important;
-    border-radius: 22px !important;
-    background: linear-gradient(145deg, #fffdf9, #fbf7ef) !important;
-    box-shadow: 0 10px 30px rgba(40,30,25,.055);
-}
-
-.message-box .eyebrow {
-    margin-bottom: 14px !important;
-    font-size: 12px !important;
-    letter-spacing: 2.6px !important;
-}
-
-.message-box h2 {
-    font-family: "Bodoni Moda", Georgia, serif !important;
-    font-size: clamp(30px, 4.2vw, 43px) !important;
-    line-height: 1.2 !important;
-    margin: 0 auto 22px !important;
-    max-width: 650px;
-    color: #172b45 !important;
-}
-
-.message-box p {
-    max-width: 650px;
-    margin: 0 auto 17px !important;
-    color: #596574 !important;
-    font-family: "Lora", Georgia, serif !important;
-    font-size: clamp(16px, 2vw, 19px) !important;
-    line-height: 1.55 !important;
-}
-
-.message-box p strong {
-    display: inline-block;
-    margin-top: 4px;
-    font-family: "Lora", Georgia, serif !important;
-    font-style: italic;
-    font-weight: 600;
-    color: #172b45 !important;
-}
-
-/* Мобильная версия — особенно компактная */
-@media (max-width: 600px) {
-    .logo-text {
-        font-size: 24px !important;
-    }
-
-    .message {
-        padding: 30px 0 !important;
-    }
-
-    .message-box {
-        max-width: none !important;
-        margin: 0 16px !important;
-        padding: 28px 22px 25px !important;
-        border-radius: 18px !important;
-    }
-
-    .master-message {
-        margin: 26px 16px !important;
-        padding: 38px 30px 34px !important;
-        border-radius: 20px !important;
-    }
-
-    .master-message::before {
-        left: 18px;
-        top: 18px;
-        font-size: 16px;
-    }
-
-    .master-message::after {
-        right: 18px;
-        bottom: 18px;
-        font-size: 16px;
-    }
-
-    .master-message .message-text {
-        font-size: 19px !important;
-        line-height: 1.55 !important;
-    }
-
-    .master-message .message-signature {
-        font-size: 16px !important;
-        margin-top: 12px !important;
-    }
-
-
-    .message-box .eyebrow {
-        font-size: 10.5px !important;
-        letter-spacing: 2px !important;
-        margin-bottom: 12px !important;
-    }
-
-    .message-box h2 {
-        font-size: 29px !important;
-        line-height: 1.18 !important;
-        margin-bottom: 17px !important;
-    }
-
-    .message-box p {
-        font-size: 16px !important;
-        line-height: 1.48 !important;
-        margin-bottom: 14px !important;
-    }
-}
-
-</style>
-
-<style>
-/* ===== ФИНАЛЬНАЯ НАСТРОЙКА БЛОКА ПРЕИМУЩЕСТВ И ОБРАЩЕНИЯ ===== */
-
-/* Преимущества: более выразительная композиция */
-.advantages {
-    background: #182d47 !important;
-    padding: 82px 0 88px !important;
-}
-.advantages .section-title {
-    max-width: 780px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.advantages .section-title .small {
-    display: none !important;
-}
-.advantages .section-title h2 {
-    font-family: "Bodoni Moda", Georgia, serif !important;
-    font-size: clamp(38px, 5vw, 58px) !important;
-    font-weight: 500 !important;
-    line-height: 1.08 !important;
-    color: #fff !important;
-    margin-bottom: 16px !important;
-}
-.advantages .section-title p {
-    font-family: "Lora", Georgia, serif !important;
-    font-size: 19px !important;
-    line-height: 1.6 !important;
-    color: #c7d0da !important;
-    max-width: 650px;
-    margin: 0 auto 46px !important;
-}
-.advantages-grid {
-    gap: 22px !important;
-}
-.advantage {
-    position: relative;
-    min-height: 245px;
-    padding: 34px 27px 30px !important;
-    border: 1px solid rgba(213,167,92,.48);
-    border-radius: 24px;
-    background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.015));
-    box-shadow: 0 15px 35px rgba(0,0,0,.10);
-}
-.advantage-icon {
-    width: 58px;
-    height: 58px;
-    margin: 0 auto 21px !important;
-    border: 1px solid rgba(213,167,92,.65);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #d5a75c !important;
-    font-size: 27px !important;
-}
-.advantage h3 {
-    font-family: "Montserrat", Arial, sans-serif !important;
-    font-size: 21px !important;
-    line-height: 1.25 !important;
-    color: #fff !important;
-    margin-bottom: 13px !important;
-}
-.advantage p {
-    font-family: "Lora", Georgia, serif !important;
-    color: #c7d0da !important;
-    font-size: 16px !important;
-    line-height: 1.55 !important;
-    margin: 0 !important;
-}
-
-/* Обращение мастера */
-.message-box h2 {
-    font-family: "Lora", Georgia, serif !important;
-    font-style: italic !important;
-    font-weight: 500 !important;
-    font-size: clamp(38px, 5vw, 54px) !important;
-    line-height: 1.18 !important;
-    color: #10284b !important;
-    margin-bottom: 24px !important;
-}
-.message-box h2::after {
-    content: "";
-    display: block;
-    width: 72px;
-    height: 1px;
-    background: #c58a16;
-    margin: 18px auto 0;
-    opacity: .65;
-}
-
-/* Отзывной блок: без пояснительного текста */
-.review-note:empty {
-    display: none !important;
-}
-.review-note {
-    display: none !important;
-}
-
-/* Футер */
-.footer-bottom {
-    font-size: 15px !important;
-    color: #b7c1cc !important;
-}
-
-/* Мобильная версия */
-@media (max-width: 520px) {
-    .advantages {
-        padding: 64px 0 68px !important;
-    }
-    .advantages .section-title h2 {
-        font-size: 36px !important;
-        line-height: 1.12 !important;
-    }
-    .advantages .section-title p {
-        font-size: 17px !important;
-        margin-bottom: 30px !important;
-    }
-    .advantage {
-        min-height: 0;
-        padding: 29px 22px 26px !important;
-    }
-    .message-box h2 {
-        font-size: 33px !important;
-        line-height: 1.18 !important;
-    }
-    .footer-bottom {
-        font-size: 13px !important;
-    }
+@media(max-width:370px){
+  .brand-title{font-size:19px}
+  .mobile-btn{padding:9px 11px;font-size:10px}
+  h1{font-size:46px}
+  .services-grid{gap:7px}
+  .service{padding:10px;min-height:142px}
+  .service img{width:48px;height:48px}
+  .service h3{font-size:10px}
+  .service p{font-size:8px}
 }
 </style>
-
 </head>
-
 <body>
+<div class="topbar"><div class="container"><span>МАССАЖНАЯ МАСТЕРСКАЯ «ВАШ МАССАЖ»</span><span>ЦЕНТР МОСКВЫ · РЯДОМ С МЕТРО КУРСКАЯ</span></div></div>
+
 <header>
-    <div class="container header-inner">
-        <a href="#" class="logo">
-            <div class="logo-symbol">✦</div>
-            <div class="logo-text">Ваш массаж</div>
-        </a>
-
-        <nav>
-            <a href="#about">О мастере</a>
-            <a href="#services">Услуги</a>
-            <a href="#location">Как найти</a>
-            <a href="#reviews">Отзывы</a>
-        </nav>
-
-        <a class="button header-button" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">
-            Записаться
-        </a>
-    </div>
+ <div class="container nav">
+  <a class="brand" href="#top">
+   <img loading="lazy" src="assets/logo-mark.jpg" alt="Ваш Массаж">
+   <div class="brand-title">Ваш массаж<span>мастерская тепла и заботы</span></div>
+  </a>
+  <nav class="menu">
+   <a href="#about">О мастере</a><a href="#services">Услуги</a><a href="#gallery">Галерея</a><a href="#location">Как найти</a>
+  </nav>
+  <a class="btn btn-primary mobile-btn" href="tel:+79853939108">Записаться</a>
+  <a class="btn btn-primary" href="tel:+79853939108">Записаться</a>
+ </div>
 </header>
 
-<main>
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <div class="eyebrow">Массажная мастерская</div>
-                <h1>Ваш <span>массаж</span></h1>
-                <div class="hero-subtitle">Мастерская тепла и заботы</div>
-                <p class="hero-text">
-                    Место, где можно остановиться, выдохнуть и позаботиться о себе.
-                    Массаж для расслабления, восстановления и красивого самочувствия.
-                </p>
-                <div class="hero-buttons">
-                    <a class="button" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн</a>
-                    <a class="button light" href="#services">Посмотреть услуги</a>
-                </div>
-            </div>
-            <div class="hero-card"></div>
-        </div>
-    </section>
+<main id="top">
+<section class="hero">
+ <div class="container hero-grid">
+  <div class="hero-copy">
+   <div class="eyebrow">МАССАЖНАЯ МАСТЕРСКАЯ</div>
+   <h1>Ваш путь<br>к лёгкости.</h1>
+   <p>Массаж и моделирование фигуры с вниманием к вашему телу. Спокойная атмосфера, индивидуальный подход и процедуры, после которых хочется выдохнуть.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="tel:+79853939108">Записаться на массаж</a>
+    <a class="btn btn-light" href="#services">Посмотреть услуги</a>
+   </div>
+   <div class="hero-note"><div>ЦЕНТР МОСКВЫ</div><div>МЕТРО КУРСКАЯ</div><div>ПО ПРЕДВАРИТЕЛЬНОЙ ЗАПИСИ</div></div>
+  </div>
+  <div class="hero-photo">
+   <img loading="lazy" class="main" src="assets/master-massage.png" alt="Массаж в мастерской Ваш Массаж">
+   <img loading="lazy" class="portrait" src="assets/master-portrait.png" alt="Мастер Ваш Массаж">
+   <div class="hero-badge"><span><strong>Ваш</strong>массаж<br>тепло · забота<br>и внимание</span></div>
+  </div>
+ </div>
+</section>
 
-    <!-- ABOUT -->
-    <section class="about" id="about">
-        <div class="container about-grid">
-            <div class="about-photo"></div>
-            <div class="about-text">
-                <div class="eyebrow">О мастере</div>
-                <h3>Забота о теле — это забота о себе</h3>
-                <p>
-                    Я создаю пространство, где вы можете замедлиться, расслабиться и почувствовать себя в безопасности.
-                </p>
-                <p>
-                    В работе сочетаю знания, полученные на профессиональных курсах, практический опыт и внимательное отношение к каждому клиенту.
-                </p>
-                <div class="experience">
-                    <strong>Более 5 лет опыта</strong><br>
-                    постоянного развития и работы с клиентами
-                </div>
-                <p>
-                    Мне важно не просто провести процедуру, а услышать вас и подобрать именно тот подход, который нужен вашему телу сейчас.
-                </p>
-            </div>
-        </div>
-    </section>
+<section class="section wave" id="services">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">ВЫБЕРИТЕ СВОЮ ПРОЦЕДУРУ</div><h2>Услуги</h2></div>
+   <p>От классического массажа до процедур для моделирования фигуры. Все основные направления собраны здесь, чтобы было проще выбрать подходящее.</p>
+  </div>
+  <div class="services-grid">
+   <article class="service"><img loading="lazy" src="assets/icon-manual-lipoplasty.png"><div><h3>Ручная липопластика</h3><p>Ручная проработка выбранной зоны.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-honey-rolling.png"><div><h3>Медовая выкатка</h3><p>Интенсивная работа с телом.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-anti-cellulite.png"><div><h3>Антицеллюлитный массаж</h3><p>Проработка проблемных зон.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-face-massage.png"><div><h3>Массаж лица</h3><p>Расслабление и уход.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-body-face-2h.png"><div><h3>Комбо: тело + лицо · 2 часа</h3><p>Комплексная процедура.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-first-massage.png"><div><h3>Первый массаж</h3><p>Знакомство с мастером и техникой.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-fit-into-dress.png"><div><h3>Комбо «Влезь в платье»</h3><p>Проблемная зона + термообёртывание.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-master-trial.png"><div><h3>Проба мастера</h3><p>Познакомиться с работой мастера.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-classic-massage.png"><div><h3>Массаж классический</h3><p>Базовая комплексная проработка.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-feet-legs.png"><div><h3>Массаж стоп и ног</h3><p>Для ощущения лёгкости.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-classic-90.png"><div><h3>Общий классический · 90 минут</h3><p>Полноценный сеанс.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-neck-collar-spa.png"><div><h3>Шейно-воротниковый spa</h3><p>Расслабление зоны шеи и плеч.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-fitness-massage.png"><div><h3>Фитнес-массаж</h3><p>Для активного тела.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-lymph-drainage.png"><div><h3>Лимфодренажный массаж</h3><p>Мягкая направленная работа.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-thermo-wrap.png"><div><h3>Термообёртывание</h3><p>Тепловая процедура для тела.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-light-legs.png"><div><h3>Лёгкие ножки</h3><p>Процедура для ног.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-vacuum-body.png"><div><h3>Вакуум на всё тело</h3><p>Аппаратная работа с телом.</p></div></article>
+   <article class="service"><img loading="lazy" src="assets/icon-reset.png"><div><h3>Резет</h3><p>Антистресс-процедура.</p></div></article>
+  </div>
+ </div>
+</section>
 
-    <!-- SERVICES -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <div class="small">Услуги</div>
-                <h2>Выберите заботу о себе</h2>
-                <p>От расслабления и восстановления до работы с телом и моделирования фигуры.</p>
-            </div>
+<section class="section about" id="about">
+ <div class="container about-grid">
+  <div class="about-photo">
+   <img loading="lazy" class="tall" src="assets/master-towels.png" alt="Мастер">
+   <img loading="lazy" class="small" src="assets/interior-detail.jpg" alt="Атмосфера мастерской">
+  </div>
+  <div>
+   <div class="eyebrow">О МАСТЕРСКОЙ</div>
+   <h2>Место, где можно<br>остановиться.</h2>
+   <p style="line-height:1.8;color:var(--muted);font-size:15px">«Ваш Массаж» — небольшая массажная мастерская в центре Москвы. Здесь важны не только техника и результат процедуры, но и ваше ощущение во время визита.</p>
+   <div class="list">
+    <div class="list-item"><span class="dot">✓</span><span>Внимательное отношение к запросу каждого гостя.</span></div>
+    <div class="list-item"><span class="dot">✓</span><span>Спокойная камерная атмосфера вместо ощущения большого салона.</span></div>
+    <div class="list-item"><span class="dot">✓</span><span>Массаж и моделирование фигуры в одном месте.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
 
-            <div class="services-grid">
-                <div class="service"><div class="service-icon">♢</div><h3>Классический массаж</h3><p>Расслабление, восстановление и работа с мышечным напряжением.</p></div>
-                <div class="service"><div class="service-icon">♡</div><h3>Расслабляющий массаж</h3><p>Помогает отпустить напряжение и переключиться на отдых.</p></div>
-                <div class="service"><div class="service-icon">✦</div><h3>Антицеллюлитный массаж</h3><p>Интенсивная работа с проблемными зонами и качеством кожи.</p></div>
-                <div class="service"><div class="service-icon">⌁</div><h3>Лимфодренажный массаж</h3><p>Мягкая работа с телом для ощущения лёгкости.</p></div>
-                <div class="service"><div class="service-icon">◯</div><h3>Массаж лица</h3><p>Расслабление мышц лица и приятное восстановление.</p></div>
-                <div class="service"><div class="service-icon">☼</div><h3>Массаж стоп и ног</h3><p>Особенно приятная процедура после насыщенного дня.</p></div>
-                <div class="service"><div class="service-icon">✧</div><h3>Моделирование фигуры</h3><p>Работа с зонами, которые хочется сделать более выразительными.</p></div>
-                <div class="service"><div class="service-icon">◌</div><h3>Термообёртывание</h3><p>Дополнение к программам ухода за телом.</p></div>
-                <div class="service"><div class="service-icon">∞</div><h3>Комбо-программы</h3><p>Комплексный уход за телом и лицом в одной процедуре.</p></div>
-            </div>
-        </div>
-    </section>
+<section class="section promo">
+ <div class="container">
+  <div class="promo-card">
+   <div class="promo-copy">
+    <div class="eyebrow">ВЫГОДНЫЕ ПРЕДЛОЖЕНИЯ</div>
+    <h2>Скидки<br>и Комбо</h2>
+    <p>Собрали процедуры, которые удобно сочетать между собой. Выбирайте вариант под своё настроение и задачу.</p>
+    <a class="btn btn-gold" href="tel:+79853939108">Узнать об акциях</a>
+   </div>
+   <img loading="lazy" class="promo-img" src="assets/face-massage.png" alt="Массаж лица">
+  </div>
+ </div>
+</section>
 
-    <!-- ADVANTAGES -->
-    <section class="advantages">
-        <div class="container">
-            <div class="section-title">
-                <div class="small">Ваша забота начинается здесь</div>
-                <h2>Здесь можно просто выдохнуть</h2>
-                <p>Без спешки, лишнего напряжения и ощущения конвейера.</p>
-            </div>
-            <div class="advantages-grid">
-                <div class="advantage"><div class="advantage-icon">✦</div><h3>Индивидуальный подход</h3><p>Подбираем процедуру с учётом ваших пожеланий и состояния тела.</p></div>
-                <div class="advantage"><div class="advantage-icon">♡</div><h3>Атмосфера заботы</h3><p>Уютное пространство, где можно расслабиться и побыть наедине с собой.</p></div>
-                <div class="advantage"><div class="advantage-icon">❋</div><h3>Опыт более 5 лет</h3><p>Постоянно развиваю профессиональные навыки и бережно подхожу к каждой процедуре.</p></div>
-            </div>
-        </div>
-    </section>
+<section class="section" id="gallery">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">ЖИВЫЕ ФОТО</div><h2>Наша мастерская</h2></div>
+   <p>Настоящие фотографии кабинета и процедур — без стоковых изображений. Позже галерею можно расширить новыми кадрами.</p>
+  </div>
+  <div class="gallery">
+   <img loading="lazy" class="big" src="assets/interior-room.jpg" alt="Кабинет">
+   <img loading="lazy" src="assets/body-massage.png" alt="Массаж спины">
+   <img loading="lazy" src="assets/cups-abdomen.png" alt="Вакуумные процедуры">
+   <img loading="lazy" src="assets/interior-chair.png" alt="Зона отдыха">
+   <img loading="lazy" src="assets/cups-detail.png" alt="Процедура с вакуумными банками">
+  </div>
+ </div>
+</section>
 
-    <!-- MESSAGE -->
-    <section class="message">
-        <div class="container">
-            <div class="message-box">
-                <div class="eyebrow">Моим прекрасным клиенткам</div>
-                <h2>Вы заслуживаете заботу о себе</h2>
-                <p>Иногда самое важное — остановиться, выдохнуть и позволить кому-то позаботиться о вас.</p>
-                <p>Спасибо, что доверяете мне своё тело, своё время и своё настроение. Я всегда рада встрече с вами.</p>
-                <p><strong>До встречи в «Вашем массаже» 🤍</strong></p>
-            </div>
-        </div>
-    </section>
+<section class="section location" id="location">
+ <div class="container location-grid">
+  <div class="info-card">
+   <div class="eyebrow">КАК НАС НАЙТИ</div>
+   <h3>В центре Москвы</h3>
+   <div class="info-row"><span class="icon">⌖</span><span>Кабинет находится рядом с метро Курская.</span></div>
+   <div class="info-row"><span class="icon">◷</span><span>Приём — по предварительной записи.</span></div>
+   <div class="info-row"><span class="icon">☎</span><span><a href="tel:+79853939108">+7 985 393-91-08</a></span></div>
+   <a class="btn btn-primary" href="https://yandex.ru/maps/org/vash_massazh/243334452284/" target="_blank">Открыть на Яндекс Картах</a>
+  </div>
+  <div class="info-card" style="padding:0;overflow:hidden;min-height:440px">
+   <img loading="lazy" src="assets/building.jpg" alt="Здание рядом с мастерской" style="width:100%;height:100%;min-height:440px;object-fit:cover">
+  </div>
+ </div>
+</section>
 
-    <!-- LOCATION -->
-    <section class="location" id="location">
-        <div class="container">
-            <div class="section-title">
-                <div class="small">Как нас найти</div>
-                <h2>Кабинет в центре Москвы</h2>
-                <p>Рядом с метро Курская.</p>
-            </div>
-
-            <div class="location-grid">
-                <div class="location-card">
-                    <h3>Как пройти</h3>
-                    <div class="route"><div class="route-number">1</div><div>Выйдите из метро «Курская».</div></div>
-                    <div class="route"><div class="route-number">2</div><div>Найдите вход в кофейню SOUL.MO.</div></div>
-                    <div class="route"><div class="route-number">3</div><div>Пройдите мимо кофейни налево.</div></div>
-                    <div class="route"><div class="route-number">4</div><div>Найдите дверь кабинета «Ваш массаж».</div></div>
-                    <a class="button" href="https://yandex.ru/maps/org/vash_massazh/243334452284" target="_blank" rel="noopener">Открыть на Яндекс Картах</a>
-                </div>
-
-                <div class="map">
-                    <iframe
-                        src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=243334452284"
-                        loading="lazy"
-                        title="Ваш массаж на Яндекс Картах"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- REVIEWS -->
-    <div class="master-message">
-    <p class="message-text">
-        «Позвольте себе остановиться, выдохнуть<br>
-        и подарить себе немного тепла и заботы».
-    </p>
-    <p class="message-signature">С теплом, ваш мастер</p>
-</div>
-<section class="reviews" id="reviews">
-        <div class="container">
-            <div class="section-title">
-                <div class="small">Отзывы</div>
-                <h2>Что говорят мои клиентки</h2>
-            </div>
-
-            <p class="review-note">
-                
-            </p>
-
-            <div class="reviews-widget">
-                <iframe
-                    src="https://yandex.ru/maps-reviews-widget/243334452284?comments"
-                    loading="lazy"
-                    title="Отзывы о Вашем массаже на Яндекс Картах">
-                </iframe>
-            </div>
-
-            <div class="reviews-link">
-                <a class="button gold" href="https://yandex.ru/maps/org/vash_massazh/243334452284" target="_blank" rel="noopener">
-                    Читать отзывы на Яндекс Картах
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA -->
-    <section class="cta">
-        <div class="container">
-            <h2>Подарите себе немного заботы</h2>
-            <p>Выберите удобное время и приходите на массаж.</p>
-            <a class="button" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн</a>
-        </div>
-    </section>
+<section class="section reviews" id="reviews">
+ <div class="container">
+  <div class="section-head">
+   <div><div class="eyebrow">ОТЗЫВЫ ГОСТЕЙ</div><h2>Что говорят о нас</h2></div>
+   <p>Отзывы подключены напрямую через виджет Яндекс Карт.</p>
+  </div>
+  <div class="review-frame">
+   <iframe src="https://yandex.ru/maps-reviews-widget/243334452284?comments" loading="lazy" title="Отзывы о Ваш Массаж"></iframe>
+  </div>
+ </div>
+</section>
 </main>
 
 <footer>
-    <div class="container">
-        <div class="footer-grid">
-            <div class="logo">
-                <div class="logo-symbol">✦</div>
-                <div class="logo-text">Ваш массаж</div>
-            </div>
-            <div class="footer-info">
-                <strong>Мастерская тепла и заботы</strong><br>
-                Москва, рядом с метро Курская
-            </div>
-            <div>
-                <a class="button gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться</a>
-            </div>
-        </div>
-        <div class="footer-bottom">2026 Ваш массаж. Мастерская тепла и заботы.</div>
-    </div>
+ <div class="container">
+  <div class="footer-grid">
+   <div><h3>Ваш массаж</h3><p>Массажная мастерская тепла и заботы.<br>Массаж · моделирование фигуры</p></div>
+   <div><p><strong style="color:#fff">Навигация</strong></p><p><a href="#about">О мастере</a><br><a href="#services">Услуги</a><br><a href="#gallery">Галерея</a><br><a href="#location">Как найти</a></p></div>
+   <div><p><strong style="color:#fff">Запись</strong></p><p><a href="tel:+79853939108">+7 985 393-91-08</a><br>Москва · метро Курская</p><a class="btn btn-gold" href="tel:+79853939108">Записаться</a></div>
+  </div>
+  <div class="footer-bottom"><span>© Ваш Массаж</span><span>Массажная мастерская · Москва</span></div>
+ </div>
 </footer>
+<div class="mobile-booking-bar">
+  <a href="tel:+79853939108"><span>Записаться на массаж</span><b>→</b></a>
+</div>
 </body>
 </html>
