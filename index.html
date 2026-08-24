@@ -2,69 +2,261 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ваш массаж — мастерская тепла и заботы</title>
 <meta name="description" content="Ваш массаж — массажная мастерская в центре Москвы рядом с метро Курская. Массаж для тела и лица в атмосфере тепла, спокойствия и заботы.">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap');
-:root{--cream:#f8f3ec;--cream2:#fffaf4;--navy:#112b4a;--gold:#c9953e;--gold-light:#e3ba72;--ink:#18314e;--muted:#65707b;--line:#e4d6c4;--shadow:0 16px 38px rgba(27,40,55,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream2);color:var(--ink);font-family:Montserrat,Arial,sans-serif}a{text-decoration:none;color:inherit}img{max-width:100%;display:block}.wrap{width:min(1200px,92%);margin:auto}
-/* HEADER */
-.header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}.nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;min-width:285px}.brand-mark{width:88px;height:88px;object-fit:contain}.brand-copy{display:flex;flex-direction:column;line-height:.84}.brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}.brand-sub{margin-top:13px;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}.menu{display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600;white-space:nowrap}.menu a{transition:.2s}.menu a:hover{color:var(--gold)}.menu a.touch-link{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:var(--navy)}.book{background:var(--navy);color:#fff;padding:15px 25px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}.book span{color:var(--gold-light);margin-right:7px}.mobile-menu{display:none}
-/* HERO */
-.hero{position:relative;overflow:hidden;padding:62px 0 34px;background:radial-gradient(circle at 17% 18%,rgba(224,187,127,.13),transparent 23%),var(--cream2)}.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}.hero-copy{padding:20px 0}.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:72px;line-height:.92;letter-spacing:-.025em;margin:0 0 28px;color:var(--navy)}.hero h1 .spark{font-style:normal;color:var(--gold);font-size:.55em;vertical-align:middle;margin-left:8px}.hero-rule{width:230px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,149,62,.1));margin:0 0 22px}.hero p{max-width:490px;margin:0;color:#53606b;font-size:15px;line-height:1.7}.actions{display:flex;gap:17px;margin-top:28px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--gold);border-radius:999px;padding:15px 27px;font-weight:700;font-size:13px;transition:.2s}.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}.btn.primary .gold-star{color:var(--gold-light)}.btn.secondary{background:transparent;color:var(--navy)}.btn:hover{transform:translateY(-2px)}
-.hero-art{
-  position:relative;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
 
-.hero-photo{
-  width:min(100%,590px);
-  height:auto;
-  object-fit:contain;
-  display:block;
+:root{
+  --cream:#f8f3ec; --cream2:#fffaf4; --navy:#112b4a;
+  --gold:#c9953e; --gold-light:#e3ba72; --ink:#18314e;
+  --muted:#65707b; --line:#e4d6c4;
+  --shadow:0 16px 38px rgba(27,40,55,.09);
 }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream2);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.wrap{width:min(1200px,92%);margin:auto}
+
+/* HEADER */
+.header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:30;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;min-width:285px}
+.brand-mark{width:88px;height:88px;object-fit:contain}
+.brand-copy{display:flex;flex-direction:column;line-height:.84}
+.brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}
+.brand-sub{margin-top:13px;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.menu{display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600;white-space:nowrap}
+.menu a{transition:.2s}.menu a:hover{color:var(--gold)}
+.menu a.touch-link{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:var(--navy)}
+.book{background:var(--navy);color:#fff;padding:15px 25px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.book span{color:var(--gold-light);margin-right:7px}
+.mobile-menu{display:none}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:62px 0 34px;background:radial-gradient(circle at 17% 18%,rgba(224,187,127,.13),transparent 23%),var(--cream2)}
+.hero-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:46px;align-items:center}
+.hero-copy{padding:20px 0}
+.hero h1{font-family:'Cormorant Garamond',Georgia,serif;font-style:italic;font-weight:600;font-size:72px;line-height:.92;letter-spacing:-.025em;margin:0 0 28px;color:var(--navy)}
+.hero h1 .spark{font-style:normal;color:var(--gold);font-size:.55em;vertical-align:middle;margin-left:8px}
+.hero-rule{width:230px;height:1px;background:linear-gradient(90deg,var(--gold),rgba(201,149,62,.1));margin:0 0 22px}
+.hero p{max-width:490px;margin:0;color:#53606b;font-size:15px;line-height:1.7}
+.actions{display:flex;gap:17px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:1px solid var(--gold);border-radius:999px;padding:15px 27px;font-weight:700;font-size:13px;transition:.2s}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:#fff}
+.btn.primary .gold-star{color:var(--gold-light)}
+.btn.secondary{background:transparent;color:var(--navy)}
+.btn:hover{transform:translateY(-2px)}
+.hero-art{position:relative;display:flex;align-items:center;justify-content:center}
+.hero-photo{width:min(100%,590px);height:auto;object-fit:contain;display:block}
+
 /* BENEFITS */
-.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);padding:25px 0 6px;margin-top:8px}.fact{padding:0 24px;border-right:1px solid var(--line);display:flex;gap:15px;align-items:center;min-height:78px}.fact:first-child{padding-left:10px}.fact:last-child{border:0}.fact-icon{width:50px;height:50px;object-fit:contain;flex:0 0 50px}.fact b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:.95;font-weight:600;color:#233550}.fact small{display:block;margin-top:8px;font-size:10px;line-height:1.45;color:var(--muted)}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line);padding:25px 0 6px;margin-top:8px}
+.fact{padding:0 24px;border-right:1px solid var(--line);display:flex;gap:15px;align-items:center;min-height:78px}
+.fact:first-child{padding-left:10px}.fact:last-child{border:0}
+.fact-icon{width:50px;height:50px;object-fit:contain;flex:0 0 50px}
+.fact b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:.95;font-weight:600;color:#233550}
+.fact small{display:block;margin-top:8px;font-size:10px;line-height:1.45;color:var(--muted)}
+
 /* SECTIONS */
-.section{padding:70px 0}.section-title{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:600;margin:0 0 35px;color:var(--navy)}.section-title:before,.section-title:after{content:'❧';color:var(--gold);font-size:26px;margin:0 17px;vertical-align:middle}.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:#fffaf4;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eadfd2;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(27,40,55,.12)}.service-link{display:flex;flex-direction:column;cursor:pointer}.card img{width:100%;height:180px;object-fit:cover}.services .service-link:nth-child(2) img{object-position:center 68%}.card-body{padding:20px 19px 21px;display:flex;flex-direction:column;flex:1}.card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:27px;line-height:.98;margin:0 0 11px;color:#243751}.card p{font-size:12px;line-height:1.6;color:#66717a;margin:0}.round-arrow{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:auto 0 0 auto;color:var(--gold);font-size:20px;flex:0 0 38px}
-.promo{background:var(--navy);color:white;border-radius:28px;min-height:150px;display:flex;align-items:center;justify-content:space-between;padding:24px 92px 24px 360px;position:relative;overflow:visible;cursor:pointer;transition:transform .2s,box-shadow .2s}.promo:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(17,43,74,.18)}.promo-logo{position:absolute;z-index:3;left:34px;bottom:-64px;width:250px;height:250px;object-fit:contain;object-position:center bottom;filter:none;pointer-events:none}.promo-content{position:relative;z-index:2}.promo h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;margin:0}.promo p{margin:6px 0 0;color:#e8e3dc}.promo .promo-btn{position:relative;z-index:4;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--gold-light);border-radius:999px;padding:12px 25px;color:#fff;font-size:12px;font-weight:600;white-space:nowrap}.promo-branch{position:absolute;z-index:1;right:-28px;top:50%;transform:translateY(-50%);width:205px;height:auto;object-fit:contain;opacity:.98;pointer-events:none}
-.reviews-location{display:grid;grid-template-columns:1fr 1fr;gap:22px}.panel{background:#fffaf4;border:1px solid #ead9c3;border-radius:24px;padding:28px;box-shadow:var(--shadow)}.panel h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;margin:0 0 20px}.reviews{min-height:220px;border:1px solid #eadfd2;border-radius:16px;background:linear-gradient(135deg,#fffdfa,#f8f3ec);padding:22px 26px;display:flex;flex-direction:column;justify-content:center}.review-top{display:flex;align-items:flex-end;gap:16px}.review-score{font-size:62px;line-height:.8;font-weight:600;color:#172f4d;letter-spacing:-.04em}.review-meta{padding-bottom:3px}.review-stars{color:#d69b2f;font-size:22px;letter-spacing:2px;line-height:1}.review-count{font-size:12px;color:#6d7680;margin-top:7px}.review-actions{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}.review-actions .btn{padding:12px 20px}.review-note{font-size:11px;color:#7b8288}.address{display:grid;grid-template-columns:1fr 210px;gap:18px;align-items:center}.mapbox{height:180px;border-radius:18px;overflow:hidden;background:#e7ded2}.mapbox img{width:100%;height:100%;object-fit:cover}.cta{background:var(--navy) url('assets/branches-stars.png') center/cover no-repeat;color:white;border-radius:34px;min-height:410px;padding:62px 8%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:34px;overflow:hidden;position:relative;box-shadow:0 18px 38px rgba(17,43,74,.15)}.cta h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;line-height:1.02;font-weight:500;margin:0;max-width:900px;text-shadow:0 2px 12px rgba(0,0,0,.14)}.cta .btn{background:var(--gold);border-color:var(--gold);color:white;min-width:270px;padding:17px 28px}.footer{padding:30px 0 20px;background:var(--cream2);text-align:center}.footer-nav{display:flex;justify-content:center;gap:25px;font-size:12px;margin-bottom:20px;flex-wrap:wrap}.contact-phone{display:inline-block;margin:2px 0 15px;font-size:18px;font-weight:600;color:var(--navy)}.social{display:flex;gap:13px;justify-content:center;align-items:center;margin-bottom:15px}.social a{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;background:#fffaf4;transition:.2s}.social a:hover{transform:translateY(-2px);border-color:var(--gold)}.social img{width:25px;height:25px;object-fit:contain}.copy{font-size:11px;color:#68727b}
-@media(max-width:1060px){.brand{min-width:240px}.brand-mark{width:74px;height:74px}.brand-name{font-size:39px}.menu{gap:18px}.nav{min-height:96px}.hero h1{font-size:63px}.hero-art{min-height:500px}.facts .fact{padding:0 14px}.fact-icon{width:43px;height:43px;flex-basis:43px}}
-@media(max-width:900px){.nav{min-height:82px}.brand{min-width:auto}.brand-mark{width:64px;height:64px}.brand-name{font-size:35px}.brand-sub{display:none}.menu{display:none}.mobile-menu{display:block;border:0;background:transparent;font-size:25px;color:var(--navy);cursor:pointer}.hero{padding-top:35px}.hero-grid{grid-template-columns:1fr;gap:12px}.hero-copy{text-align:center}.hero h1{font-size:58px}.hero-rule{margin-left:auto;margin-right:auto}.hero p{margin:auto}.actions{justify-content:center}.hero-art{min-height:450px}.facts{grid-template-columns:repeat(2,1fr)}.fact{padding:17px 12px;border-bottom:1px solid var(--line)}.fact:nth-child(2){border-right:0}.fact:nth-child(3),.fact:nth-child(4){border-bottom:0}.services{grid-template-columns:repeat(2,1fr)}.reviews-location{grid-template-columns:1fr}.cta{border-radius:30px;padding:40px 25px;flex-direction:column;text-align:center}}
-@media(max-width:560px){.wrap{width:92%}.nav{min-height:74px}.brand-mark{width:56px;height:56px}.brand-name{font-size:32px}.book{padding:12px 15px;font-size:11px}.hero{padding:30px 0 30px}.hero h1{font-size:49px;margin-bottom:21px}.hero p{font-size:14px}.actions{flex-direction:column;gap:10px}.btn{width:100%}.hero-art{min-height:auto;margin-top:2px}.facts{margin-top:8px}.fact{min-height:84px;padding:14px 6px;gap:9px}.fact:first-child{padding-left:6px}.fact-icon{width:39px;height:39px;flex-basis:39px}.fact b{font-size:17px}.fact small{font-size:8.5px}.section{padding:48px 0}.section-title{font-size:39px;margin-bottom:25px}.section-title:before,.section-title:after{margin:0 7px;font-size:18px}.services{gap:10px}.card{border-radius:16px}.card img{height:120px}.card-body{padding:13px}.card h3{font-size:23px}.card p{font-size:10px;min-height:32px}.promo{min-height:170px;flex-direction:column;text-align:center;justify-content:center;border-radius:24px;padding:28px 105px 28px 128px}.promo h2{font-size:38px}.promo .promo-btn{width:auto}.promo-logo{width:150px;height:150px;left:-2px;bottom:-48px}.promo-branch{width:115px;right:-14px}.panel{padding:20px}.address{grid-template-columns:1fr}.mapbox{height:150px}.cta{min-height:350px;padding:48px 24px}.cta h2{font-size:39px}.footer-nav{font-size:10px}.menu.show{display:flex;position:absolute;top:74px;left:0;right:0;background:#fffaf4;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}.menu.show .touch-link{font-size:24px}}
+.section{padding:70px 0}
+.section-title{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:600;margin:0 0 35px;color:var(--navy)}
+.section-title:before,.section-title:after{content:'❧';color:var(--gold);font-size:26px;margin:0 17px;vertical-align:middle}
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fffaf4;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);border:1px solid #eadfd2;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 20px 42px rgba(27,40,55,.12)}
+.service-link{display:flex;flex-direction:column;cursor:pointer}
+.card img{width:100%;height:180px;object-fit:cover}
+.services .service-link:nth-child(2) img{object-position:center 68%}
+.card-body{padding:20px 19px 21px;display:flex;flex-direction:column;flex:1}
+.card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:27px;line-height:.98;margin:0 0 11px;color:#243751}
+.card p{font-size:12px;line-height:1.6;color:#66717a;margin:0}
+.round-arrow{width:38px;height:38px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:auto 0 0 auto;color:var(--gold);font-size:20px;flex:0 0 38px}
+
+/* PROMO */
+.promo{background:var(--navy);color:white;border-radius:28px;min-height:150px;display:flex;align-items:center;justify-content:space-between;padding:24px 92px 24px 360px;position:relative;overflow:visible;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.promo:hover{transform:translateY(-2px);box-shadow:0 18px 38px rgba(17,43,74,.18)}
+.promo-logo{position:absolute;z-index:3;left:34px;bottom:-64px;width:250px;height:250px;object-fit:contain;object-position:center bottom;pointer-events:none}
+.promo-content{position:relative;z-index:2}
+.promo h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:46px;font-weight:500;margin:0}
+.promo p{margin:6px 0 0;color:#e8e3dc}
+.promo .promo-btn{position:relative;z-index:4;display:inline-flex;align-items:center;gap:9px;border:1px solid var(--gold-light);border-radius:999px;padding:12px 25px;color:#fff;font-size:12px;font-weight:600;white-space:nowrap}
+.promo-branch{position:absolute;z-index:1;right:-28px;top:50%;transform:translateY(-50%);width:205px;height:auto;object-fit:contain;opacity:.98;pointer-events:none}
+
+/* REVIEWS + LOCATION */
+.reviews-location{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.panel{background:#fffaf4;border:1px solid #ead9c3;border-radius:24px;padding:28px;box-shadow:var(--shadow)}
+.panel h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:34px;margin:0 0 20px}
+.reviews{min-height:220px;border:1px solid #eadfd2;border-radius:16px;background:linear-gradient(135deg,#fffdfa,#f8f3ec);padding:22px 26px;display:flex;flex-direction:column;justify-content:center}
+.review-top{display:flex;align-items:flex-end;gap:16px}
+.review-score{font-size:62px;line-height:.8;font-weight:600;color:#172f4d;letter-spacing:-.04em}
+.review-meta{padding-bottom:3px}.review-stars{color:#d69b2f;font-size:22px;letter-spacing:2px;line-height:1}
+.review-count{font-size:12px;color:#6d7680;margin-top:7px}
+.review-actions{display:flex;align-items:center;gap:12px;margin-top:22px;flex-wrap:wrap}
+.review-actions .btn{padding:12px 20px}.review-note{font-size:11px;color:#7b8288}
+.address{display:grid;grid-template-columns:1fr 210px;gap:18px;align-items:center}
+.mapbox{height:180px;border-radius:18px;overflow:hidden;background:#e7ded2}
+.mapbox img{width:100%;height:100%;object-fit:cover}
+
+/* FINAL CTA */
+.cta{background:var(--navy) url('assets/branches-stars.png') center/cover no-repeat;color:white;border-radius:34px;min-height:410px;padding:62px 8%;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:34px;overflow:hidden;position:relative;box-shadow:0 18px 38px rgba(17,43,74,.15)}
+.cta h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:52px;line-height:1.02;font-weight:500;margin:0;max-width:900px;text-shadow:0 2px 12px rgba(0,0,0,.14)}
+.cta .btn{background:var(--gold);border-color:var(--gold);color:white;min-width:270px;padding:17px 28px}
+
+/* FOOTER */
+.footer{padding:30px 0 20px;background:var(--cream2);text-align:center}
+.footer-nav{display:flex;justify-content:center;gap:25px;font-size:12px;margin-bottom:20px;flex-wrap:wrap}
+.contact-phone{display:inline-block;margin:2px 0 15px;font-size:18px;font-weight:600;color:var(--navy)}
+.social{display:flex;gap:13px;justify-content:center;align-items:center;margin-bottom:15px}
+.social a{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:flex;align-items:center;justify-content:center;background:#fffaf4;transition:.2s}
+.social a:hover{transform:translateY(-2px);border-color:var(--gold)}
+.social img{width:25px;height:25px;object-fit:contain}
+.copy{font-size:11px;color:#68727b}
+
+/* TABLET */
+@media(max-width:1060px){
+  .brand{min-width:240px}.brand-mark{width:74px;height:74px}.brand-name{font-size:39px}
+  .menu{gap:18px}.nav{min-height:96px}.hero h1{font-size:63px}
+  .facts .fact{padding:0 14px}.fact-icon{width:43px;height:43px;flex-basis:43px}
+}
+@media(max-width:900px){
+  .nav{min-height:82px}.brand{min-width:auto}.brand-mark{width:64px;height:64px}.brand-name{font-size:35px}.brand-sub{display:none}
+  .menu{display:none}.mobile-menu{display:block;border:0;background:transparent;font-size:25px;color:var(--navy);cursor:pointer}
+  .hero{padding-top:35px}.hero-grid{grid-template-columns:1fr;gap:12px}.hero-copy{text-align:center}.hero h1{font-size:58px}
+  .hero-rule{margin-left:auto;margin-right:auto}.hero p{margin:auto}.actions{justify-content:center}
+  .facts{grid-template-columns:repeat(2,1fr)}.fact{padding:17px 12px;border-bottom:1px solid var(--line)}
+  .fact:nth-child(2){border-right:0}.fact:nth-child(3),.fact:nth-child(4){border-bottom:0}
+  .services{grid-template-columns:repeat(2,1fr)}.reviews-location{grid-template-columns:1fr}
+  .cta{border-radius:30px;padding:40px 25px}
+}
+@media(max-width:560px){
+  .wrap{width:92%}.nav{min-height:74px}.brand-mark{width:56px;height:56px}.brand-name{font-size:32px}
+  .book{padding:12px 15px;font-size:11px}.hero{padding:30px 0}.hero h1{font-size:49px;margin-bottom:21px}.hero p{font-size:14px}
+  .actions{flex-direction:column;gap:10px}.btn{width:100%}
+  .fact{min-height:84px;padding:14px 6px;gap:9px}.fact:first-child{padding-left:6px}.fact-icon{width:39px;height:39px;flex-basis:39px}
+  .fact b{font-size:17px}.fact small{font-size:8.5px}
+  .section{padding:48px 0}.section-title{font-size:39px;margin-bottom:25px}.section-title:before,.section-title:after{margin:0 7px;font-size:18px}
+  .services{gap:10px}.card{border-radius:16px}.card img{height:120px}.card-body{padding:13px}.card h3{font-size:23px}.card p{font-size:10px;min-height:32px}
+  .promo{min-height:170px;flex-direction:column;text-align:center;justify-content:center;border-radius:24px;padding:28px 105px 28px 128px}
+  .promo h2{font-size:38px}.promo-logo{width:150px;height:150px;left:-2px;bottom:-48px}.promo-branch{width:115px;right:-14px}
+  .panel{padding:20px}.address{grid-template-columns:1fr}.mapbox{height:150px}
+  .cta{min-height:350px;padding:48px 24px}.cta h2{font-size:39px}
+  .footer-nav{font-size:10px}
+  .menu.show{display:flex;position:absolute;top:74px;left:0;right:0;background:#fffaf4;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+  .menu.show .touch-link{font-size:24px}
+}
 </style>
 </head>
 <body>
-<header class="header"><div class="wrap nav">
-<a class="brand" href="#top" aria-label="Ваш массаж — на главную"><img class="brand-mark" src="assets/logo-mark-transparent.png" alt=""><span class="brand-copy"><span class="brand-name">Ваш<br>массаж</span><span class="brand-sub">Массажная мастерская</span></span></a>
-<nav class="menu"><a href="#about">О нас</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a><a class="touch-link" href="na-oshchup.html">На ощупь</a><a href="#address">Адрес</a><a href="#contacts">Контакты</a></nav>
-<a class="book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a><button class="mobile-menu" aria-label="Открыть меню">☰</button>
-</div></header>
+<header class="header">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Ваш массаж — на главную">
+      <img class="brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="brand-copy"><span class="brand-name">Ваш<br>массаж</span><span class="brand-sub">Массажная мастерская</span></span>
+    </a>
+    <nav class="menu">
+      <a href="#about">О нас</a><a href="#services">Услуги</a><a href="#reviews">Отзывы</a>
+      <a class="touch-link" href="na-oshchup.html">На ощупь</a><a href="#address">Адрес</a><a href="#contacts">Контакты</a>
+    </nav>
+    <a class="book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="mobile-menu" aria-label="Открыть меню">☰</button>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero" id="about"><div class="wrap"><div class="hero-grid">
-<div class="hero-copy"><h1>Вы заслуживаете<br>заботы о себе <span class="spark">✦</span></h1><div class="hero-rule"></div><p>Профессиональный массаж для тела и лица в атмосфере тепла, спокойствия и заботы.</p><div class="actions"><a class="btn primary" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться <span class="gold-star">✦</span></a><a class="btn secondary" href="#services">Услуги и цены</a></div></div>
-<div class="hero-art">
-  <img class="hero-photo" src="assets/hero-lily-silk.png" alt="Атмосфера заботы в мастерской Ваш массаж">
-</div>
-</div>
-<div class="facts">
-<div class="fact"><img class="fact-icon" src="assets/benefit-growth.png" alt=""><div><b>Опыт более<br>5 лет</b><small>Постоянное обучение<br>и развитие</small></div></div>
-<div class="fact"><img class="fact-icon" src="assets/benefit-care.png" alt=""><div><b>Индивидуальный<br>подход</b><small>Программа под ваши<br>цели и состояние</small></div></div>
-<div class="fact"><img class="fact-icon" src="assets/benefit-atmosphere.png" alt=""><div><b>Атмосфера<br>заботы</b><small>Тепло, чистота и полное<br>расслабление</small></div></div>
-<div class="fact"><img class="fact-icon" src="assets/benefit-location.png" alt=""><div><b>В центре Москвы</b><small>Рядом с метро<br>Курская</small></div></div>
-</div></div></section>
-<section class="section" id="services"><div class="wrap"><h2 class="section-title">Наши услуги</h2><div class="services">
-<a class="card service-link" href="services-body.html" aria-label="Перейти к услугам массажа тела"><img src="assets/body-massage.png" alt="Массаж тела"><div class="card-body"><h3>Массаж тела</h3><p>Классический, расслабляющий, лимфодренажный и другие виды.</p><div class="round-arrow" aria-hidden="true">→</div></div></a>
-<a class="card service-link" href="services-figure.html" aria-label="Перейти к услугам моделирования фигуры"><img src="assets/figure-correction.png" alt="Моделирование фигуры"><div class="card-body"><h3>Моделирование фигуры</h3><p>Работа с проблемными зонами и контурами.</p><div class="round-arrow" aria-hidden="true">→</div></div></a>
-<a class="card service-link" href="services-face.html" aria-label="Перейти к услугам ухода за лицом"><img src="assets/face-massage.png" alt="Уход за лицом"><div class="card-body"><h3>Уход за лицом</h3><p>Массаж лица для молодости и сияния.</p><div class="round-arrow" aria-hidden="true">→</div></div></a>
-</div></div></section>
-<section class="section" style="padding-top:0"><div class="wrap"><a class="promo" href="services-combo.html" aria-label="Перейти к скидкам и комбо"><img class="promo-logo" src="assets/logo-mark-transparent.png" alt=""><div class="promo-content"><h2>Скидки и Комбо</h2><p>Выгода для вас ✦</p></div><span class="promo-btn">Посмотреть акции <span style="color:var(--gold-light)">✦</span></span><img class="promo-branch" src="assets/promo-branch.png" alt=""></a></div></section>
-<section class="section" id="reviews" style="padding-top:15px"><div class="wrap"><div class="reviews-location"><div class="panel"><h2>Отзывы</h2><div class="reviews"><div class="review-top"><div class="review-score">4,9</div><div class="review-meta"><div class="review-stars">★★★★★</div><div class="review-count">23 отзыва · Яндекс Карты</div></div></div><div class="review-actions"><a class="btn primary" href="https://yandex.ru/maps/org/vash_massazh/243334452284/" target="_blank" rel="noopener">Читать отзывы <span class="gold-star">✦</span></a><span class="review-note">Отзывы и оценки — на Яндекс Картах</span></div></div></div><div class="panel" id="address"><h2>Где нас найти</h2><div class="address"><div><p><b>Москва, рядом с метро Курская</b></p><p style="font-size:13px;line-height:1.6;color:#68727b">Легко добраться, удобно найти</p><a class="btn primary" href="https://yandex.ru/maps/org/vash_massazh/243334452284/" target="_blank" rel="noopener">Построить маршрут <span class="gold-star">✦</span></a></div><div class="mapbox"><img src="assets/building.png" alt="Ваш массаж — рядом с метро Курская"></div></div></div></div></div></section>
-<section class="section" style="padding-top:15px"><div class="wrap"><div class="cta"><h2>Время для себя —<br>лучшее решение, чтобы остановиться</h2><a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться на массаж <span>✦</span></a></div></div></section>
+<section class="hero" id="about"><div class="wrap">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <h1>Вы заслуживаете<br>заботы о себе <span class="spark">✦</span></h1>
+      <div class="hero-rule"></div>
+      <p>Профессиональный массаж для тела и лица в атмосфере тепла, спокойствия и заботы.</p>
+      <div class="actions">
+        <a class="btn primary" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться <span class="gold-star">✦</span></a>
+        <a class="btn secondary" href="#services">Услуги и цены</a>
+      </div>
+    </div>
+    <div class="hero-art"><img class="hero-photo" src="assets/hero-lily-silk.png" alt="Атмосфера заботы в мастерской Ваш массаж"></div>
+  </div>
+
+  <div class="facts">
+    <div class="fact"><img class="fact-icon" src="assets/benefit-growth.png" alt=""><div><b>Опыт более<br>5 лет</b><small>Постоянное обучение<br>и развитие</small></div></div>
+    <div class="fact"><img class="fact-icon" src="assets/benefit-care.png" alt=""><div><b>Индивидуальный<br>подход</b><small>Программа под ваши<br>цели и состояние</small></div></div>
+    <div class="fact"><img class="fact-icon" src="assets/benefit-atmosphere.png" alt=""><div><b>Атмосфера<br>заботы</b><small>Тепло, чистота и полное<br>расслабление</small></div></div>
+    <div class="fact"><img class="fact-icon" src="assets/benefit-location.png" alt=""><div><b>В центре Москвы</b><small>Рядом с метро<br>Курская</small></div></div>
+  </div>
+</div></section>
+
+<section class="section" id="services"><div class="wrap">
+  <h2 class="section-title">Наши услуги</h2>
+  <div class="services">
+    <a class="card service-link" href="services-body.html"><img src="assets/body-massage.png" alt="Массаж тела"><div class="card-body"><h3>Массаж тела</h3><p>Классический, расслабляющий, лимфодренажный и другие виды.</p><div class="round-arrow">→</div></div></a>
+    <a class="card service-link" href="services-figure.html"><img src="assets/figure-correction.png" alt="Моделирование фигуры"><div class="card-body"><h3>Моделирование фигуры</h3><p>Работа с проблемными зонами и контурами.</p><div class="round-arrow">→</div></div></a>
+    <a class="card service-link" href="services-face.html"><img src="assets/face-massage.png" alt="Уход за лицом"><div class="card-body"><h3>Уход за лицом</h3><p>Массаж лица для молодости и сияния.</p><div class="round-arrow">→</div></div></a>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:0"><div class="wrap">
+  <a class="promo" href="services-combo.html" aria-label="Перейти к скидкам и комбо">
+    <img class="promo-logo" src="assets/logo-mark-transparent.png" alt="">
+    <div class="promo-content"><h2>Скидки и Комбо</h2><p>Выгода для вас ✦</p></div>
+    <span class="promo-btn">Посмотреть акции <span style="color:var(--gold-light)">✦</span></span>
+    <img class="promo-branch" src="assets/promo-branch.png" alt="">
+  </a>
+</div></section>
+
+<section class="section" id="reviews" style="padding-top:15px"><div class="wrap">
+  <div class="reviews-location">
+    <div class="panel">
+      <h2>Отзывы</h2>
+      <div class="reviews">
+        <div class="review-top"><div class="review-score">4,9</div><div class="review-meta"><div class="review-stars">★★★★★</div><div class="review-count">23 отзыва · Яндекс Карты</div></div></div>
+        <div class="review-actions">
+          <a class="btn primary" href="https://yandex.ru/maps/org/vash_massazh/243334452284/" target="_blank" rel="noopener">Читать отзывы <span class="gold-star">✦</span></a>
+          <span class="review-note">Отзывы и оценки — на Яндекс Картах</span>
+        </div>
+      </div>
+    </div>
+    <div class="panel" id="address">
+      <h2>Где нас найти</h2>
+      <div class="address">
+        <div><p><b>Москва, рядом с метро Курская</b></p><p style="font-size:13px;line-height:1.6;color:#68727b">Легко добраться, удобно найти</p>
+          <a class="btn primary" href="https://yandex.ru/maps/org/vash_massazh/243334452284/" target="_blank" rel="noopener">Построить маршрут <span class="gold-star">✦</span></a>
+        </div>
+        <div class="mapbox"><img src="assets/building.png" alt="Ваш массаж — рядом с метро Курская"></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="section" style="padding-top:15px"><div class="wrap">
+  <div class="cta">
+    <h2>Время для себя —<br>лучшее решение, чтобы остановиться</h2>
+    <a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться на массаж <span>✦</span></a>
+  </div>
+</div></section>
 </main>
-<footer class="footer" id="contacts"><div class="wrap"><div class="footer-nav"><a href="#about">О нас</a><span>|</span><a href="#services">Услуги</a><span>|</span><a href="#reviews">Отзывы</a><span>|</span><a href="na-oshchup.html">На ощупь</a><span>|</span><a href="#address">Адрес</a><span>|</span><a href="#contacts">Контакты</a></div><a class="contact-phone" href="tel:+79853939108">+7 (985) 393-91-08</a><div class="social"><a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a><a href="#" aria-label="MAX"><img src="assets/max.webp" alt="MAX"></a></div><div class="copy">© 2026 Ваш массаж. Мастерская тепла и заботы.</div></div></footer>
-<script>document.querySelector('.mobile-menu').addEventListener('click',()=>document.querySelector('.menu').classList.toggle('show'));</script>
-</body></html>
+
+<footer class="footer" id="contacts"><div class="wrap">
+  <div class="footer-nav">
+    <a href="#about">О нас</a><span>|</span><a href="#services">Услуги</a><span>|</span><a href="#reviews">Отзывы</a><span>|</span>
+    <a href="na-oshchup.html">На ощупь</a><span>|</span><a href="#address">Адрес</a><span>|</span><a href="#contacts">Контакты</a>
+  </div>
+  <a class="contact-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
+  <div class="social">
+    <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+    <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
+  </div>
+  <div class="copy">© 2026 Ваш массаж. Мастерская тепла и заботы.</div>
+</div></footer>
+
+<script>
+const mobileButton=document.querySelector('.mobile-menu');
+const menu=document.querySelector('.menu');
+mobileButton.addEventListener('click',()=>menu.classList.toggle('show'));
+document.querySelectorAll('.menu a').forEach(link=>link.addEventListener('click',()=>menu.classList.remove('show')));
+</script>
+</body>
+</html>
