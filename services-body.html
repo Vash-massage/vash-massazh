@@ -2,7 +2,7 @@
 <html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <style>
 /* Уникальный фон только для страницы «Массаж тела» */
@@ -23,14 +23,45 @@
   }
 }
 </style>
+
+<style>
+/* Шапка страницы повторяет геометрию и визуальный язык главной страницы. */
+.site-header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:#112b4a}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:#112b4a}
+.site-brand-sub{margin-top:13px;font-family:Montserrat,Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:#112b4a}
+.site-book{background:#112b4a;color:#fff;padding:15px 25px;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:#112b4a;cursor:pointer;padding:4px}
+@media(max-width:1060px){.site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}.site-menu{gap:18px}.site-nav{min-height:96px}}
+@media(max-width:900px){.site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}.site-brand-name{font-size:35px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}.site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:#fffaf4;padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid #e4d6c4;box-shadow:0 16px 38px rgba(27,40,55,.09)}.site-menu.show .site-touch{font-size:24px}}
+@media(max-width:560px){.site-wrap{width:92%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}}
+</style>
+
 <title>Массаж тела в Москве рядом с метро Курская — Ваш массаж</title>
 <meta name="description" content="Массаж тела в центре Москвы рядом с метро Курская для тех, кто хочет снять накопившееся напряжение, почувствовать лёгкость и уделить время себе. Формат процедуры подбирается под ваши пожелания.">
 </head><body>
-<header class="header"><div class="container nav">
-<a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark.jpg" alt="Логотип Ваш массаж"><span class="brand-text"><strong>Ваш массаж</strong><small>массажная мастерская</small></span></a>
-<nav class="nav-links"><a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a><a href="index.html#route">Адрес</a><a href="index.html#contacts">Контакты</a></nav>
-<a class="btn small" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">✦ Записаться</a>
-</div></header>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy"><span class="site-brand-name">Ваш<br>массаж</span><span class="site-brand-sub">Массажная мастерская</span></span>
+    </a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a><a href="index.html#address">Адрес</a><a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
 <main>
 <section class="page-hero body-massage-hero"><div class="container"><a class="back" href="index.html">← На главную</a><h1>Массаж тела</h1><p class="hero-text">Когда усталость и напряжение накапливаются, телу бывает нужно просто внимание и время для себя. Здесь можно остановиться, выдохнуть и выбрать формат массажа, который соответствует вашему состоянию и пожеланиям.</p><a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></section>
 <section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Процедуры</span><h2>Выберите подходящий формат</h2></div><div class="service-list"><article class="service-card"><img src="assets/icon-classic-massage.png" alt="Массаж классический"><div><h3>Массаж классический</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Базовая работа с телом в спокойном темпе. Подходит для расслабления и регулярного ухода за собой.</p></div></article><article class="service-card"><img src="assets/icon-feet-legs.png" alt="Массаж ног и стоп"><div><h3>Массаж ног и стоп</h3><div class="service-meta"><span>25 мин</span><span>2000 ₽</span></div><p>Формат для ног и стоп, когда хочется уделить особое внимание этой зоне и ощущению лёгкости.</p></div></article><article class="service-card"><img src="assets/icon-classic-90.png" alt="Общий классический массаж"><div><h3>Общий классический массаж</h3><div class="service-meta"><span>85 мин</span><span>3900 ₽</span></div><p>Продолжительный формат для полноценного сеанса и спокойного ухода за всем телом.</p></div></article><article class="service-card"><img src="assets/icon-neck-collar-spa.png" alt="Шейно-воротниковый SPA"><div><h3>Шейно-воротниковый SPA</h3><div class="service-meta"><span>25 мин</span><span>2000 ₽</span></div><p>Расслабляющая работа с зоной шеи и плеч. Особенно приятный вариант после долгого рабочего дня.</p></div></article><article class="service-card"><img src="assets/icon-fitness-massage.png" alt="Фитнес-массаж"><div><h3>Фитнес-массаж</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Формат для тех, кто регулярно занимается физической активностью и хочет уделять внимание телу после нагрузок.</p></div></article><article class="service-card"><img src="assets/icon-lymph-drainage.png" alt="Лимфодренажный массаж"><div><h3>Лимфодренажный массаж</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Мягкая работа по телу для ощущения лёгкости и комфорта. Интенсивность подбирается индивидуально.</p></div></article><article class="service-card"><img src="assets/icon-light-legs.png" alt="Лёгкие ножки"><div><h3>Лёгкие ножки</h3><div class="service-meta"><span>25 мин</span><span>2500 ₽</span></div><p>Аппаратный формат для ног, когда хочется уделить этой зоне особое внимание и почувствовать лёгкость и комфорт.</p></div></article><article class="service-card"><img src="assets/icon-vacuum-body.png" alt="Вакуум на всё тело"><div><h3>Вакуум на всё тело</h3><div class="service-meta"><span>55 мин</span><span>3500 ₽</span></div><p>Процедура с вакуумной техникой и банками для комплексной работы с телом.</p></div></article></div></div></section>
@@ -44,4 +75,8 @@
 <section class="section"><div class="container promo"><div><span class="section-kicker">Онлайн-запись</span><h2>Выберите удобное время</h2><p>Запись открывается в DIKIDI.</p></div><a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a></div></section>
 </main>
 <footer class="footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
-<a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></footer></body></html>
+<a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></footer><script>
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){siteMobileButton.addEventListener('click',()=>{siteMenu.classList.toggle('show');siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'))});siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{siteMenu.classList.remove('show');siteMobileButton.setAttribute('aria-expanded','false')}));}
+</script></body></html>
