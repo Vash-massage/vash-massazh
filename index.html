@@ -136,14 +136,24 @@ img{max-width:100%;display:block}
   .wrap{width:92%}.nav{min-height:74px}.brand-mark{width:56px;height:56px}.brand-name{font-size:32px}
   .book{padding:12px 15px;font-size:11px}.hero{padding:30px 0}.hero h1{font-size:49px;margin-bottom:21px}.hero p{font-size:14px}
   .actions{flex-direction:column;gap:10px}.btn{width:100%}
-  .fact{min-height:84px;padding:14px 6px;gap:9px}.fact:first-child{padding-left:6px}.fact-icon{width:39px;height:39px;flex-basis:39px}
+  /* На мобильном — одинаковая геометрия для всех четырёх преимуществ,
+     чтобы «Атмосфера заботы» начиналась на одной вертикали с «Опытом более 5 лет». */
+  .fact{min-height:84px;padding:14px 6px;gap:9px;align-items:flex-start}
+  .fact:first-child,.fact:nth-child(3){padding-left:6px}
+  .fact-icon{width:39px;height:39px;flex:0 0 39px}
   .fact b{font-size:17px}.fact small{font-size:8.5px}
   .section{padding:48px 0}.section-title{font-size:39px;margin-bottom:25px}.section-title:before,.section-title:after{margin:0 7px;font-size:18px}
   .services{gap:10px}.card{border-radius:16px}.card img{height:120px}.card-body{padding:13px}.card h3{font-size:23px}.card p{font-size:10px;min-height:32px}
-  .promo{min-height:170px;flex-direction:column;text-align:center;justify-content:center;border-radius:24px;padding:28px 105px 28px 128px}
-  .promo h2{font-size:38px}.promo-logo{width:150px;height:150px;left:-2px;bottom:-48px}.promo-branch{width:115px;right:-14px}
+  /* Баннер «Скидки и Комбо»: освобождаем кнопку и уводим декор к краям. */
+  .promo{min-height:185px;flex-direction:column;text-align:center;justify-content:center;gap:10px;border-radius:24px;padding:26px 78px 30px 78px}
+  .promo h2{font-size:36px;line-height:1.02}.promo p{margin-top:4px}
+  .promo-logo{width:128px;height:128px;left:-18px;bottom:-62px;z-index:2}
+  .promo .promo-btn{z-index:5;padding:12px 21px;margin-top:4px}
+  .promo-branch{width:102px;right:-25px;top:auto;bottom:-6px;transform:none;z-index:1}
+  .promo-content{z-index:3}
   .panel{padding:20px}.address{grid-template-columns:1fr}.mapbox{height:150px}
-  .cta{min-height:350px;padding:48px 24px}.cta h2{font-size:39px}
+  /* На телефоне убираем верхнюю звезду с линиями: фон CTA становится чистым и спокойным. */
+  .cta{min-height:350px;padding:48px 24px;background-image:none}.cta h2{font-size:39px}
   .footer-nav{font-size:10px}
   .menu.show{display:flex;position:absolute;top:74px;left:0;right:0;background:#fffaf4;padding:20px;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
   .menu.show .touch-link{font-size:24px}
