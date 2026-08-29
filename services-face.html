@@ -1,79 +1,244 @@
 <!doctype html>
-<html lang="ru"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="style.css">
+
 <title>Массаж лица в Москве рядом с метро Курская — Ваш массаж</title>
 <meta name="description" content="Массаж лица в мастерской «Ваш массаж» в центре Москвы рядом с метро Курская. Спокойная процедура для расслабления и ухода.">
 
 <style>
-.aftercare{padding:54px 56px 28px}
-.aftercare h2{margin:0 0 42px}
-.aftercare-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
-.aftercare-item{text-align:center;padding:0 34px;position:relative}
-.aftercare-item:not(:last-child):after{content:"";position:absolute;top:56px;right:0;width:38%;border-top:1px solid rgba(180,137,65,.35);transform:translateX(50%)}
-.aftercare-icon{width:112px;height:112px;margin:0 auto 26px;border:1px solid rgba(180,137,65,.32);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:38px;opacity:.8}
-.aftercare-num{display:inline-flex;width:56px;height:56px;border:1px solid rgba(180,137,65,.4);border-radius:50%;align-items:center;justify-content:center;color:#9b783f;font-weight:700;margin-bottom:18px}
-.aftercare-item h3{margin:0 0 12px;line-height:1.05}
-.aftercare-item p{margin:0 auto;max-width:270px;line-height:1.65}
-.aftercare-note{margin-top:42px;padding:24px 28px;border-top:1px solid rgba(180,137,65,.22);font-size:15px;color:#a27a38;display:flex;gap:18px;align-items:center}
-@media(max-width:760px){
-  .aftercare{padding:34px 22px 20px}
-  .aftercare-grid{grid-template-columns:1fr;gap:38px}
-  .aftercare-item{padding:0 10px}
-  .aftercare-item:not(:last-child):after{display:none}
-  .aftercare-icon{width:96px;height:96px}
+/* Уникальный фон страницы «Массаж лица» */
+.page-hero.face-hero{
+  background-image:
+    linear-gradient(90deg, rgba(248,244,237,.98) 0%, rgba(248,244,237,.92) 38%, rgba(248,244,237,.18) 72%, rgba(248,244,237,.02) 100%),
+    url("assets/face-hero.png");
+  background-size:cover;
+  background-position:center right;
+  background-repeat:no-repeat;
 }
+@media (max-width:768px){
+  .page-hero.face-hero{
+    background-image:
+      linear-gradient(90deg, rgba(248,244,237,.98) 0%, rgba(248,244,237,.94) 48%, rgba(248,244,237,.30) 100%),
+      url("assets/face-hero.png");
+    background-position:68% center;
+  }
+}
+
+/* Шапка — как на странице «Моделирование фигуры» */
+.site-header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:#112b4a}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:#112b4a}
+.site-brand-sub{margin-top:13px;font-family:Montserrat,Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:#112b4a}
+.site-book{background:#112b4a;color:#fff;padding:15px 25px;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:#112b4a;cursor:pointer;padding:4px}
+@media(max-width:1060px){.site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}.site-menu{gap:18px}.site-nav{min-height:96px}}
+@media(max-width:900px){.site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}.site-brand-name{font-size:35px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}.site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:#fffaf4;padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid #e4d6c4;box-shadow:0 16px 38px rgba(27,40,55,.09)}.site-menu.show .site-touch{font-size:24px}}
+@media(max-width:560px){.site-wrap{width:92%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}}
+
+/* Блок «После массажа» — как на странице «Моделирование фигуры» */
+.after-massage{padding:76px 0;background:radial-gradient(circle at 12% 12%,rgba(226,191,137,.13),transparent 24%),#f8f4ed}
+.after-card{position:relative;overflow:hidden;background:rgba(255,255,255,.42);border:1px solid rgba(201,149,62,.22);border-radius:30px;padding:58px 46px 36px;box-shadow:0 22px 55px rgba(64,48,30,.08)}
+.after-card h2{margin:0 0 46px;font-family:'Cormorant Garamond',Georgia,serif;font-size:64px;line-height:.95;font-weight:600;color:#18314e;letter-spacing:-.02em}
+.after-branch{position:absolute;right:28px;top:28px;width:290px;max-width:27%;opacity:.9;pointer-events:none}
+.after-grid{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin:0 -6px 44px}
+.after-item{position:relative;text-align:center;padding:0 28px}
+.after-item:not(:last-child):after{content:'';position:absolute;top:98px;left:calc(50% + 100px);width:calc(100% - 200px);height:1px;background:linear-gradient(90deg,rgba(201,149,62,.65),rgba(201,149,62,.12))}
+.after-icon{width:178px;height:178px;object-fit:contain;display:block;margin:0 auto 14px}
+.after-num{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(201,149,62,.45);background:rgba(255,255,255,.58);font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:700;color:#a47735;box-shadow:0 6px 15px rgba(100,75,35,.08)}
+.after-item h3{margin:0 0 13px;font-family:'Cormorant Garamond',Georgia,serif;font-size:31px;line-height:1.02;font-weight:600;color:#223650}
+.after-item p{margin:0 auto;max-width:255px;font-family:Manrope,Arial,sans-serif;font-size:15px;line-height:1.72;color:#626a72}
+.after-note{display:flex;align-items:center;gap:22px;padding:20px 30px;border-radius:20px;background:rgba(255,255,255,.22);border-top:1px solid rgba(201,149,62,.10);color:#626a72;font-family:Manrope,Arial,sans-serif;font-size:15px}
+.after-note .heart{font-size:42px;line-height:1;color:#c9953e;font-family:Arial,sans-serif;font-weight:300}
+@media(max-width:820px){.after-grid{grid-template-columns:1fr}.after-item:not(:last-child):after{display:none}}
+@media(max-width:620px){.after-massage{padding:52px 0}.after-card{padding:38px 20px 24px;border-radius:24px}.after-card h2{font-size:48px;margin-bottom:34px}.after-grid{gap:38px;margin-bottom:32px}.after-item{padding:0 10px}.after-item h3{font-size:29px}.after-note{padding:17px 18px;gap:14px}.after-note .heart{font-size:34px}.after-branch{right:-12px;top:8px;width:180px;opacity:.28}}
+
+.contact-footer{background:#112b4a;color:#f8f4ed}
+.contact-footer a{color:#e3ba72;text-decoration:none}
+.contact-footer .contact-links{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:12px 18px;align-items:center;font-family:Montserrat,Arial,sans-serif;font-size:13px}
+.contact-footer .footer-phone{font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.contact-footer .footer-social{display:flex;gap:10px;align-items:center}
+.contact-footer .footer-social a{width:46px;height:46px;border:1px solid rgba(227,186,114,.45);border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);transition:.2s}
+.contact-footer .footer-social a:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
+.contact-footer .footer-social img{width:28px;height:28px;object-fit:contain;display:block}
+@media(max-width:700px){.contact-footer .footer-grid{gap:22px}.contact-footer .contact-links{justify-content:flex-start}.contact-footer .footer-phone{font-size:17px}}
 </style>
+</head>
 
-</head><body>
-<header class="header"><div class="container nav">
-<a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark.jpg" alt="Логотип Ваш массаж"><span class="brand-text"><strong>Ваш массаж</strong><small>массажная мастерская</small></span></a>
-<nav class="nav-links"><a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a><a href="index.html#route">Адрес</a><a href="index.html#contacts">Контакты</a></nav>
-<a class="btn small" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">✦ Записаться</a>
-</div></header>
+<body>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Ваш<br>массаж</span>
+        <span class="site-brand-sub">Массажная мастерская</span>
+      </span>
+    </a>
+
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a>
+      <a href="index.html#services">Услуги</a>
+      <a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a>
+      <a href="index.html#address">Адрес</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
 <main>
-<section class="page-hero"><div class="container"><a class="back" href="index.html">← На главную</a><span class="kicker">Ваш массаж · Москва · м. Курская</span><h1>Массаж лица</h1><p class="hero-text">Спокойная процедура для расслабления, ухода за кожей и приятного ощущения свежести.</p><a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></section>
-<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Процедуры</span><h2>Выберите подходящий формат</h2></div><div class="service-list"><article class="service-card"><img src="assets/icon-face-massage.png" alt="Массаж лица"><div><h3>Массаж лица</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Микс техник для расслабления и ухода за лицом. Формат можно выбрать как отдельную процедуру или дополнить массажем тела.</p></div></article></div></div></section>
+  <section class="page-hero face-hero">
+    <div class="container">
+      <a class="back" href="index.html">← На главную</a>
+      <h1>Массаж лица</h1>
+      <p class="hero-text">Спокойная процедура для расслабления, ухода за кожей и приятного ощущения свежести.</p>
+      <a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a>
+    </div>
+  </section>
 
-<section class="section aftercare-section">
-  <div class="container">
-    <div class="panel aftercare">
-      <h2>После массажа...</h2>
-      <div class="aftercare-grid">
-        <article class="aftercare-item">
-          <div class="aftercare-icon">🛋</div>
-          <span class="aftercare-num">01</span>
-          <h3>Дайте себе время<br>отдохнуть</h3>
-          <p>Не планируйте на вечер слишком много — позвольте себе восстановить силы и немного замедлиться.</p>
-        </article>
-        <article class="aftercare-item">
-          <div class="aftercare-icon">💧</div>
-          <span class="aftercare-num">02</span>
-          <h3>Выпейте воды</h3>
-          <p>После сеанса выпейте стакан воды и в течение дня не забывайте поддерживать привычный питьевой режим.</p>
-        </article>
-        <article class="aftercare-item">
-          <div class="aftercare-icon">☁</div>
-          <span class="aftercare-num">03</span>
-          <h3>Ложитесь<br>пораньше</h3>
-          <p>Спокойный и полноценный сон поможет завершить день в том же расслабленном ритме.</p>
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Процедуры</span>
+        <h2>Выберите подходящий формат</h2>
+      </div>
+
+      <div class="service-list">
+        <article class="service-card">
+          <img src="assets/icon-face-massage.png" alt="Массаж лица">
+          <div>
+            <h3>Массаж лица</h3>
+            <div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div>
+            <p>Микс техник для расслабления и ухода за лицом. Формат можно выбрать как отдельную процедуру или дополнить массажем тела.</p>
+          </div>
         </article>
       </div>
-      <div class="aftercare-note">♡ <span>Ваше тело скажет вам спасибо.</span></div>
+    </div>
+  </section>
+
+  <section class="after-massage">
+    <div class="container">
+      <div class="after-card">
+        <img class="after-branch" src="assets/branch-after-massage.png" alt="" aria-hidden="true">
+        <h2>После массажа…</h2>
+
+        <div class="after-grid">
+          <article class="after-item">
+            <img class="after-icon" src="assets/01_otdyh.png" alt="Иллюстрация отдыха">
+            <div class="after-num">01</div>
+            <h3>Дайте себе время<br>отдохнуть</h3>
+            <p>Не планируйте на вечер слишком много — позвольте себе восстановить силы и немного замедлиться.</p>
+          </article>
+
+          <article class="after-item">
+            <img class="after-icon" src="assets/02_voda.png" alt="Иллюстрация стакана воды">
+            <div class="after-num">02</div>
+            <h3>Выпейте воды</h3>
+            <p>После сеанса выпейте стакан воды и в течение дня не забывайте поддерживать привычный питьевой режим.</p>
+          </article>
+
+          <article class="after-item">
+            <img class="after-icon" src="assets/04_son.png" alt="Иллюстрация сна">
+            <div class="after-num">03</div>
+            <h3>Ложитесь<br>пораньше</h3>
+            <p>Спокойный и полноценный сон поможет завершить день в том же расслабленном ритме.</p>
+          </article>
+        </div>
+
+        <div class="after-note"><span class="heart">♡</span><span>Ваше тело скажет вам спасибо.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="panel seo-text">
+        <span class="section-kicker">О направлении</span>
+        <h2>Массаж лица в центре Москвы</h2>
+        <p>Массаж лица в мастерской «Ваш массаж» — удобный вариант для тех, кто живёт или работает рядом с метро Курская. Мастерская расположена в центре Москвы, недалеко от Басманного и Красносельского районов.</p>
+        <p>Описание услуг составлено простым языком: без медицинских диагнозов и обещаний лечения. Если вы сомневаетесь в выборе формата, детали можно уточнить перед записью.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-kicker">Частые вопросы</span>
+        <h2>Перед визитом</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Как выбрать подходящую процедуру?</summary>
+          <p>Если вы сомневаетесь, можно начать с описания процедуры и выбрать формат, который ближе по задаче. Для записи используйте онлайн-форму DIKIDI.</p>
+        </details>
+        <details>
+          <summary>Можно ли записаться онлайн?</summary>
+          <p>Да. Кнопка «Записаться онлайн» открывает страницу записи в DIKIDI.</p>
+        </details>
+        <details>
+          <summary>Где находится мастерская?</summary>
+          <p>Москва, рядом с метро Курская. Мастерская удобна для жителей и тех, кто работает в Басманном и Красносельском районах.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container promo">
+      <div><h2>Выберите удобное время</h2></div>
+      <a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a>
+    </div>
+  </section>
+</main>
+
+<footer class="footer contact-footer">
+  <div class="container footer-grid">
+    <div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+    <div class="contact-links">
+      <strong>Остались вопросы?</strong>
+      <a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
+      <div class="footer-social">
+        <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+        <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
+      </div>
     </div>
   </div>
-</section>
+</footer>
 
-<section class="section"><div class="container"><div class="panel seo-text"><span class="section-kicker">О направлении</span><h2>Массаж лица в центре Москвы</h2><p>Массаж лица в мастерской «Ваш массаж» — удобный вариант для тех, кто живёт или работает рядом с метро Курская. Мастерская расположена в центре Москвы, недалеко от Басманного и Красносельского районов.</p><p>Описание услуг составлено простым языком: без медицинских диагнозов и обещаний лечения. Если вы сомневаетесь в выборе формата, детали можно уточнить перед записью.</p></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Частые вопросы</span><h2>Перед визитом</h2></div>
-<div class="faq">
-<details><summary>Как выбрать подходящую процедуру?</summary><p>Если вы сомневаетесь, можно начать с описания процедуры и выбрать формат, который ближе по задаче. Для записи используйте онлайн-форму DIKIDI.</p></details>
-<details><summary>Можно ли записаться онлайн?</summary><p>Да. Кнопка «Записаться онлайн» открывает страницу записи в DIKIDI.</p></details>
-<details><summary>Где находится мастерская?</summary><p>Москва, рядом с метро Курская. Мастерская удобна для жителей и тех, кто работает в Басманном и Красносельском районах.</p></details>
-</div></div></section>
-<section class="section"><div class="container promo"><div><span class="section-kicker">Онлайн-запись</span><h2>Выберите удобное время</h2><p>Запись открывается в DIKIDI.</p></div><a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a></div></section>
-</main>
-<footer class="footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
-<a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></footer></body></html>
+<script>
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){
+  siteMobileButton.addEventListener('click',()=>{
+    siteMenu.classList.toggle('show');
+    siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'));
+  });
+  siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    siteMenu.classList.remove('show');
+    siteMobileButton.setAttribute('aria-expanded','false');
+  }));
+}
+</script>
+</body>
+</html>
