@@ -2,94 +2,137 @@
 <html lang="ru"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-<title>Моделирование фигуры в Москве рядом с метро Курская — Ваш массаж</title>
-<meta name="description" content="Процедуры для ухода за телом и моделирования силуэта в мастерской «Ваш массаж» в Москве рядом с метро Курская.">
-
 <style>
-.figure-hero {
-  position: relative;
-  overflow: hidden;
-  min-height: 450px;
-  display: flex;
-  align-items: stretch;
+/* Уникальный фон только для страницы «Моделирование фигуры» */
+.page-hero.figure-hero{
   background-image:
-    linear-gradient(90deg,
-      rgba(247,243,236,1) 0%,
-      rgba(247,243,236,.98) 35%,
-      rgba(247,243,236,.83) 52%,
-      rgba(247,243,236,.28) 69%,
-      rgba(247,243,236,0) 100%),
+    linear-gradient(90deg, rgba(248,244,237,.98) 0%, rgba(248,244,237,.92) 38%, rgba(248,244,237,.18) 72%, rgba(248,244,237,.02) 100%),
     url("assets/figure-hero.png");
   background-size: cover;
-  background-position: right center;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
-.figure-hero-content {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding-top: 72px;
-  padding-bottom: 52px;
-}
-.figure-hero .back {
-  display: inline-block;
-  margin-bottom: 34px;
-}
-.figure-hero h1 {
-  max-width: 720px;
-  margin-bottom: 18px;
-}
-.figure-hero .hero-text {
-  max-width: 710px;
-  margin-bottom: 26px;
-}
-@media (max-width: 820px) {
-  .figure-hero {
-    min-height: auto;
+@media (max-width: 768px){
+  .page-hero.figure-hero{
     background-image:
-      linear-gradient(180deg,
-        rgba(247,243,236,.98) 0%,
-        rgba(247,243,236,.92) 55%,
-        rgba(247,243,236,.58) 100%),
+      linear-gradient(90deg, rgba(248,244,237,.98) 0%, rgba(248,244,237,.94) 48%, rgba(248,244,237,.30) 100%),
       url("assets/figure-hero.png");
     background-position: 68% center;
-  }
-  .figure-hero-content {
-    padding-top: 42px;
-    padding-bottom: 260px;
-  }
-  .figure-hero h1,
-  .figure-hero .hero-text {
-    max-width: 100%;
   }
 }
 </style>
 
+<style>
+/* Шапка страницы повторяет геометрию и визуальный язык главной страницы. */
+.site-header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:#112b4a}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:#112b4a}
+.site-brand-sub{margin-top:13px;font-family:Montserrat,Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:#112b4a}
+.site-book{background:#112b4a;color:#fff;padding:15px 25px;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:#112b4a;cursor:pointer;padding:4px}
+@media(max-width:1060px){.site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}.site-menu{gap:18px}.site-nav{min-height:96px}}
+@media(max-width:900px){.site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}.site-brand-name{font-size:35px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}.site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:#fffaf4;padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid #e4d6c4;box-shadow:0 16px 38px rgba(27,40,55,.09)}.site-menu.show .site-touch{font-size:24px}}
+@media(max-width:560px){.site-wrap{width:92%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}}
+</style>
+
+<title>Моделирование фигуры в Москве рядом с метро Курская — Ваш массаж</title>
+<meta name="description" content="Процедуры для ухода за телом и моделирования силуэта в мастерской «Ваш массаж» в Москве рядом с метро Курская.">
+
+<style>
+/* Рекомендации после массажа */
+.after-massage{padding:76px 0;background:radial-gradient(circle at 12% 12%,rgba(226,191,137,.13),transparent 24%),#f8f4ed}
+.after-card{position:relative;overflow:hidden;background:rgba(255,255,255,.42);border:1px solid rgba(201,149,62,.22);border-radius:30px;padding:58px 46px 36px;box-shadow:0 22px 55px rgba(64,48,30,.08)}
+.after-card h2{margin:0 0 46px;font-family:'Cormorant Garamond',Georgia,serif;font-size:64px;line-height:.95;font-weight:600;color:#18314e;letter-spacing:-.02em}
+.after-branch{position:absolute;right:28px;top:28px;width:290px;max-width:27%;opacity:.9;pointer-events:none}
+.after-grid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:0 -6px 44px}
+.after-item{position:relative;text-align:center;padding:0 28px}
+.after-item:not(:last-child):after{content:'';position:absolute;top:98px;left:calc(50% + 100px);width:calc(100% - 200px);height:1px;background:linear-gradient(90deg,rgba(201,149,62,.65),rgba(201,149,62,.12))}
+.after-icon{width:178px;height:178px;object-fit:contain;display:block;margin:0 auto 14px}
+.after-num{width:48px;height:48px;margin:0 auto 14px;border-radius:50%;display:grid;place-items:center;border:1px solid rgba(201,149,62,.45);background:rgba(255,255,255,.58);font-family:Montserrat,Arial,sans-serif;font-size:16px;font-weight:700;color:#a47735;box-shadow:0 6px 15px rgba(100,75,35,.08)}
+.after-item h3{margin:0 0 13px;font-family:'Cormorant Garamond',Georgia,serif;font-size:31px;line-height:1.02;font-weight:600;color:#223650}
+.after-item p{margin:0 auto;max-width:255px;font-family:Manrope,Arial,sans-serif;font-size:15px;line-height:1.72;color:#626a72}
+.after-note{display:flex;align-items:center;gap:22px;padding:20px 30px;border-radius:20px;background:rgba(255,255,255,.22);border-top:1px solid rgba(201,149,62,.10);color:#626a72;font-family:Manrope,Arial,sans-serif;font-size:15px}
+.after-note .heart{font-size:42px;line-height:1;color:#c9953e;font-family:Arial,sans-serif;font-weight:300}
+@media(max-width:1050px){.after-card h2{font-size:56px}.after-grid{grid-template-columns:repeat(2,1fr);row-gap:42px}.after-item:nth-child(2):after{display:none}.after-item:not(:last-child):after{display:none}.after-icon{width:160px;height:160px}.after-branch{width:220px;opacity:.55}}
+@media(max-width:620px){.after-massage{padding:52px 0}.after-card{padding:38px 20px 24px;border-radius:24px}.after-card h2{font-size:48px;margin-bottom:34px}.after-grid{grid-template-columns:1fr;gap:38px;margin-bottom:32px}.after-item{padding:0 10px}.after-item h3{font-size:29px}.after-note{padding:17px 18px;gap:14px}.after-note .heart{font-size:34px}.after-branch{right:-12px;top:8px;width:180px;opacity:.28}}
+</style>
+<style>
+.faq details{margin-bottom:14px}
+.faq details.contraindications{border:1px solid rgba(201,149,62,.55);background:rgba(255,250,244,.72);box-shadow:0 10px 28px rgba(110,82,38,.06)}
+.faq details.contraindications summary{color:#8b6227}
+.contact-footer{background:#112b4a;color:#f8f4ed}
+.contact-footer a{color:#e3ba72;text-decoration:none}
+.contact-footer .contact-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:Montserrat,Arial,sans-serif;font-size:13px}
+
+.contact-footer .contact-links{justify-content:flex-end;gap:12px 18px}
+.contact-footer .footer-phone{font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.contact-footer .footer-social{display:flex;gap:10px;align-items:center}
+.contact-footer .footer-social a{width:46px;height:46px;border:1px solid rgba(227,186,114,.45);border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);transition:.2s}
+.contact-footer .footer-social a:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
+.contact-footer .footer-social img{width:28px;height:28px;object-fit:contain;display:block}
+@media(max-width:700px){.contact-footer .footer-grid{gap:22px}.contact-footer .contact-links{justify-content:flex-start}.contact-footer .footer-phone{font-size:17px}}
+</style>
 </head><body>
-<header class="header"><div class="container nav">
-<a class="brand" href="index.html"><img class="brand-mark" src="assets/logo-mark.jpg" alt="Логотип Ваш массаж"><span class="brand-text"><strong>Ваш массаж</strong><small>массажная мастерская</small></span></a>
-<nav class="nav-links"><a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a><a href="index.html#route">Адрес</a><a href="index.html#contacts">Контакты</a></nav>
-<a class="btn small" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">✦ Записаться</a>
-</div></header>
-<main>
-<section class="page-hero figure-hero">
-  <div class="container figure-hero-content">
-    <a class="back" href="index.html">← На главную</a>
-    <h1>Моделирование фигуры</h1>
-    <p class="hero-text">Процедуры для тех, кто хочет уделить внимание отдельным зонам тела, уходу за кожей и внешнему виду силуэта.</p>
-    <a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy"><span class="site-brand-name">Ваш<br>массаж</span><span class="site-brand-sub">Массажная мастерская</span></span>
+    </a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a><a href="index.html#address">Адрес</a><a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
   </div>
-</section>
-<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Процедуры</span><h2>Выберите подходящий формат</h2></div><div class="service-list"><article class="service-card"><img src="assets/icon-anti-cellulite.png" alt="Антицеллюлитный массаж"><div><h3>Антицеллюлитный массаж</h3><div class="service-meta"><span>55 мин</span><span>4000 ₽</span></div><p>Интенсивная работа с выбранными зонами в рамках программы ухода за телом.</p></div></article><article class="service-card"><img src="assets/icon-manual-lipoplasty.png" alt="Ручная липопластика"><div><h3>Ручная липопластика</h3><div class="service-meta"><span>—</span><span>7000 ₽</span></div><p>Ручная проработка выбранной зоны с акцентом на визуальный контур и объём области.</p></div></article><article class="service-card"><img src="assets/icon-honey-rolling.png" alt="Медовая выкатка"><div><h3>Медовая выкатка</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Интенсивная процедура с использованием мёда для ухода за телом и более гладкого ощущения кожи.</p></div></article><article class="service-card"><img src="assets/icon-fit-into-dress.png" alt="Комбо «Влезь в платье»"><div><h3>Комбо «Влезь в платье»</h3><div class="service-meta"><span>90 мин</span><span>5500 ₽</span></div><p>Проработка выбранной зоны в сочетании с термо-обёртыванием.</p></div></article><article class="service-card"><img src="assets/icon-thermo-wrap.png" alt="Термо-обёртывание"><div><h3>Термо-обёртывание</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Комфортная процедура ухода за телом с использованием морской соли и трав.</p></div></article><article class="service-card"><img src="assets/icon-light-legs.png" alt="Лёгкие ножки"><div><h3>Лёгкие ножки</h3><div class="service-meta"><span>25 мин</span><span>2500 ₽</span></div><p>Аппаратный формат для ног, когда хочется уделить внимание ощущению лёгкости и комфорту.</p></div></article><article class="service-card"><img src="assets/icon-vacuum-body.png" alt="Вакуум на всё тело"><div><h3>Вакуум на всё тело</h3><div class="service-meta"><span>55 мин</span><span>3500 ₽</span></div><p>Процедура с вакуумной техникой и банками для комплексной работы с телом.</p></div></article></div></div></section>
-<section class="section"><div class="container"><div class="panel seo-text"><span class="section-kicker">О направлении</span><h2>Моделирование фигуры в центре Москвы</h2><p>В мастерской «Ваш массаж» можно выбрать процедуры для ухода за телом и моделирования силуэта в центре Москвы рядом с метро Курская. Удобно для жителей Басманного и Красносельского районов и для тех, кто работает поблизости.</p><p>Описание услуг составлено простым языком: без медицинских диагнозов и обещаний лечения. Если вы сомневаетесь в выборе формата, детали можно уточнить перед записью.</p></div></div></section>
-<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Частые вопросы</span><h2>Перед визитом</h2></div>
-<div class="faq">
-<details><summary>Как выбрать подходящую процедуру?</summary><p>Если вы сомневаетесь, можно начать с описания процедуры и выбрать формат, который ближе по задаче. Для записи используйте онлайн-форму DIKIDI.</p></details>
-<details><summary>Можно ли записаться онлайн?</summary><p>Да. Кнопка «Записаться онлайн» открывает страницу записи в DIKIDI.</p></details>
-<details><summary>Где находится мастерская?</summary><p>Москва, рядом с метро Курская. Мастерская удобна для жителей и тех, кто работает в Басманном и Красносельском районах.</p></details>
+</header>
+<main>
+<section class="page-hero figure-hero"><div class="container"><a class="back" href="index.html">← На главную</a><h1>Моделирование фигуры</h1><p class="hero-text">Процедуры для тех, кто хочет уделить внимание отдельным зонам тела, уходу за кожей и внешнему виду силуэта.</p><a class="btn" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Процедуры</span><h2>Выберите подходящий формат</h2></div><div class="service-list">
+<article class="service-card"><img src="assets/icon-anti-cellulite.png" alt="Антицеллюлитный массаж"><div><h3>Антицеллюлитный массаж</h3><div class="service-meta"><span>55 мин</span><span>4000 ₽</span></div><p>Интенсивная работа с выбранными зонами в рамках программы ухода за телом.</p></div></article>
+<article class="service-card"><img src="assets/icon-manual-lipoplasty.png" alt="Ручная липопластика"><div><h3>Ручная липопластика</h3><div class="service-meta"><span>—</span><span>7000 ₽</span></div><p>Ручная проработка выбранной зоны с акцентом на визуальный контур и объём области.</p></div></article>
+<article class="service-card"><img src="assets/icon-honey-rolling.png" alt="Медовая выкатка"><div><h3>Медовая выкатка</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Интенсивная процедура с использованием мёда для ухода за телом и более гладкого ощущения кожи.</p></div></article>
+<article class="service-card"><img src="assets/icon-fit-into-dress.png" alt="Комбо «Влезь в платье»"><div><h3>Комбо «Влезь в платье»</h3><div class="service-meta"><span>90 мин</span><span>5500 ₽</span></div><p>Проработка выбранной зоны в сочетании с термо-обёртыванием.</p></div></article>
+<article class="service-card"><img src="assets/icon-thermo-wrap.png" alt="Термо-обёртывание"><div><h3>Термо-обёртывание</h3><div class="service-meta"><span>55 мин</span><span>3000 ₽</span></div><p>Комфортная процедура ухода за телом с использованием морской соли и трав.</p></div></article>
+<article class="service-card"><img src="assets/icon-light-legs.png" alt="Лёгкие ножки"><div><h3>Лёгкие ножки</h3><div class="service-meta"><span>25 мин</span><span>2500 ₽</span></div><p>Аппаратный формат для ног, когда хочется уделить внимание ощущению лёгкости и комфорту.</p></div></article>
+<article class="service-card"><img src="assets/icon-vacuum-body.png" alt="Вакуум на всё тело"><div><h3>Вакуум на всё тело</h3><div class="service-meta"><span>55 мин</span><span>3500 ₽</span></div><p>Процедура с вакуумной техникой и банками для комплексной работы с телом.</p></div></article>
 </div></div></section>
-<section class="section"><div class="container promo"><div><span class="section-kicker">Онлайн-запись</span><h2>Выберите удобное время</h2><p>Запись открывается в DIKIDI.</p></div><a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a></div></section>
+<section class="after-massage"><div class="container"><div class="after-card">
+<img class="after-branch" src="assets/branch-after-massage.png" alt="" aria-hidden="true">
+<h2>После массажа…</h2>
+<div class="after-grid">
+<article class="after-item"><img class="after-icon" src="assets/01_otdyh.png" alt="Иллюстрация отдыха"><div class="after-num">01</div><h3>Дайте себе время<br>отдохнуть</h3><p>Не планируйте на вечер слишком много — позвольте себе восстановить силы и немного замедлиться.</p></article>
+<article class="after-item"><img class="after-icon" src="assets/02_voda.png" alt="Иллюстрация стакана воды"><div class="after-num">02</div><h3>Выпейте воды</h3><p>После сеанса выпейте стакан воды и в течение дня не забывайте поддерживать привычный питьевой режим.</p></article>
+<article class="after-item"><img class="after-icon" src="assets/03_myshtsy.png" alt="Иллюстрация лёгкой активности"><div class="after-num">03</div><h3>Не перегружайте<br>мышцы</h3><p>Если массаж был интенсивным, отложите серьёзную физическую нагрузку. Неспешная прогулка или лёгкая разминка могут стать приятным продолжением дня.</p></article>
+<article class="after-item"><img class="after-icon" src="assets/04_son.png" alt="Иллюстрация сна"><div class="after-num">04</div><h3>Ложитесь<br>пораньше</h3><p>Спокойный и полноценный сон поможет завершить день в том же расслабленном ритме.</p></article>
+</div>
+<div class="after-note"><span class="heart">♡</span><span>Ваше тело скажет вам спасибо.</span></div>
+</div></div></section>
+<section class="section"><div class="container"><div class="section-head"><span class="section-kicker">Частые вопросы</span><h2>Перед визитом</h2></div><div class="faq">
+<details><summary>Я впервые и не знаю, какой массаж выбрать. Что делать?</summary><p>Это нормально — не обязательно заранее разбираться во всех видах массажа. Перед сеансом можно рассказать мастеру, как вы себя чувствуете и чего хочется от посещения: расслабиться, уделить внимание определённым зонам или просто немного замедлиться. Вместе будет проще выбрать подходящий формат.</p></details>
+<details><summary>Что происходит на первом сеансе?</summary><p>Всё начинается со знакомства и небольшой беседы. Вы сможете рассказать о своих пожеланиях и ощущениях, задать вопросы и обсудить формат сеанса. Затем можно спокойно устроиться и оставить повседневные дела за дверью — дальше начинается время для себя.</p></details>
+<details><summary>Будет ли массаж болезненным?</summary><p>Ощущения во время массажа могут быть разными — всё зависит от выбранного формата и индивидуальной чувствительности. Главное, чтобы вам было комфортно: если что-то кажется слишком интенсивным, об этом всегда можно сказать мастеру.</p></details>
+<details><summary>Можно ли попросить сделать массаж мягче или интенсивнее?</summary><p>Конечно. Ваши ощущения важнее заранее выбранного сценария. Во время сеанса можно попросить изменить интенсивность, уделить больше внимания определённой зоне или, наоборот, обойти её. Не нужно терпеть дискомфорт молча — мастер всегда может скорректировать формат работы.</p></details>
+<details><summary>Нужно ли готовиться к массажу?</summary><p>Специальной подготовки не требуется. Достаточно прийти немного заранее, чтобы не спешить и спокойно настроиться на отдых. Если есть особенности самочувствия, о которых важно сообщить мастеру, лучше обсудить их перед началом сеанса.</p></details>
+<details><summary>Можно ли прийти на массаж после рабочего дня?</summary><p>Конечно. Не нужно специально освобождать целый день для массажа — можно заглянуть после работы и посвятить немного времени себе. После сеанса можно спокойно отправиться домой или продолжить вечер в более медленном ритме.</p></details>
+<details class="contraindications"><summary>Какие основные есть противопоказания к массажу?</summary><p>Массаж подходит не во всех ситуациях, поэтому перед сеансом важно учитывать своё самочувствие. При повышенной температуре, инфекционных заболеваниях, открытых повреждениях кожи или свежих травмах посещение лучше отложить.</p><p>Если вы сомневаетесь, подходит ли вам массаж сейчас, лучше заранее обсудить это с врачом и обязательно рассказать мастеру о важных особенностях своего состояния. Иногда достаточно перенести визит или подобрать другой формат.</p></details>
+</div></div></section>
+<section class="section"><div class="container promo"><div><h2>Выберите удобное время</h2></div><a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a></div></section>
 </main>
-<footer class="footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
-<a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться онлайн ✦</a></div></footer></body></html>
+<footer class="footer contact-footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+<div class="contact-links"><strong>Остались вопросы?</strong><a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a><div class="footer-social"><a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a><a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a></div></div></div></footer><script>
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){siteMobileButton.addEventListener('click',()=>{siteMenu.classList.toggle('show');siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'))});siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{siteMenu.classList.remove('show');siteMobileButton.setAttribute('aria-expanded','false')}));}
+</script></body></html>
