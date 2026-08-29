@@ -73,6 +73,14 @@
 .contact-footer{background:#112b4a;color:#f8f4ed}
 .contact-footer a{color:#e3ba72;text-decoration:none}
 .contact-footer .contact-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:Montserrat,Arial,sans-serif;font-size:13px}
+
+.contact-footer .contact-links{justify-content:flex-end;gap:12px 18px}
+.contact-footer .footer-phone{font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.contact-footer .footer-social{display:flex;gap:10px;align-items:center}
+.contact-footer .footer-social a{width:46px;height:46px;border:1px solid rgba(227,186,114,.45);border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);transition:.2s}
+.contact-footer .footer-social a:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
+.contact-footer .footer-social img{width:28px;height:28px;object-fit:contain;display:block}
+@media(max-width:700px){.contact-footer .footer-grid{gap:22px}.contact-footer .contact-links{justify-content:flex-start}.contact-footer .footer-phone{font-size:17px}}
 </style>
 </head><body>
 <header class="site-header">
@@ -115,7 +123,7 @@
 <section class="section"><div class="container promo"><div><h2>Выберите удобное время</h2></div><a class="btn gold" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener">Записаться ✦</a></div></section>
 </main>
 <footer class="footer contact-footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
-<div class="contact-links"><strong>Остались вопросы?</strong><span>Контакты мастерской</span></div></div></footer><script>
+<div class="contact-links"><strong>Остались вопросы?</strong><a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a><div class="footer-social"><a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a><a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a></div></div></div></footer><script>
 const siteMobileButton=document.querySelector('.site-mobile-menu');
 const siteMenu=document.querySelector('.site-menu');
 if(siteMobileButton&&siteMenu){siteMobileButton.addEventListener('click',()=>{siteMenu.classList.toggle('show');siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'))});siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{siteMenu.classList.remove('show');siteMobileButton.setAttribute('aria-expanded','false')}));}
