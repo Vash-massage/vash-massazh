@@ -154,14 +154,25 @@ img{max-width:100%;display:block}
 }
 @media(max-width:800px){
   .touch-hero-grid{grid-template-columns:1fr;min-height:auto}
-  .hero-copy{padding:55px 0 10px;text-align:center}.eyebrow{margin-bottom:18px}
+  .hero-copy{padding:55px 0 18px;text-align:center}.eyebrow{margin-bottom:18px}
   .hero-copy h1{font-size:64px}.hero-rule{margin:24px auto 20px}.hero-intro{margin:auto}
-  .hero-art{height:360px}.hero-art img{width:760px;right:50%;transform:translate(50%,-50%)}
+  /* На мобильных показываем зарисовку целиком, без увеличения и обрезки */
+  .hero-art{height:auto;overflow:visible}
+  .hero-art img{
+    position:relative;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    right:auto;
+    top:auto;
+    transform:none;
+    object-fit:contain;
+  }
 }
 @media(max-width:560px){
   .wrap{width:90%}
   .hero-copy{padding-top:46px}.hero-copy h1{font-size:55px}.hero-intro{font-size:22px}
-  .hero-art{height:290px}.journal{padding:40px 0 58px}
+  .hero-art{height:auto}.journal{padding:40px 0 58px}
   .filters{gap:4px}.filter{padding:8px 10px;font-size:10px}
   .articles{grid-template-columns:1fr;gap:14px}.article-card{min-height:390px}.article-image{height:175px}
 }
