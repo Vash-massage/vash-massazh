@@ -1,0 +1,1256 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Что такое интероцепция и как мы чувствуем себя изнутри? — На ощупь</title>
+  <meta name="description" content="Что такое интероцепция и как мы чувствуем себя изнутри? О внутреннем мире ощущений, который сопровождает нас постоянно — даже когда мы его не замечаем.">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+    :root{
+      --cream:#f8f3ec;
+      --cream-light:#fffaf4;
+      --navy:#112b4a;
+      --ink:#263850;
+      --gold:#b67b2e;
+      --gold-light:#e3ba72;
+      --muted:#68727b;
+      --line:#e4d6c4;
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      background:var(--cream-light);
+      color:var(--ink);
+      font-family:Montserrat,Arial,sans-serif;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .wrap{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    /* =========================
+       ШАПКА — ОБЩИЙ ШАБЛОН САЙТА
+    ========================== */
+
+    .site-header{
+      background:rgba(255,250,244,.94);
+      position:sticky;
+      top:0;
+      z-index:50;
+      border-bottom:1px solid rgba(228,214,196,.8);
+      backdrop-filter:blur(14px);
+    }
+
+    .site-wrap{
+      width:min(1200px,92%);
+      margin:auto;
+    }
+
+    .site-nav{
+      min-height:112px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:24px;
+    }
+
+    .site-brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:285px;
+      color:#112b4a;
+    }
+
+    .site-brand-mark{
+      width:88px;
+      height:88px;
+      object-fit:contain;
+    }
+
+    .site-brand-copy{
+      display:flex;
+      flex-direction:column;
+      line-height:.84;
+    }
+
+    .site-brand-name{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:45px;
+      font-weight:600;
+      letter-spacing:-.025em;
+      color:#112b4a;
+    }
+
+    .site-brand-sub{
+      margin-top:13px;
+      font-size:10px;
+      letter-spacing:.22em;
+      color:#6d6258;
+      text-transform:uppercase;
+      font-weight:600;
+    }
+
+    .site-menu{
+      display:flex;
+      align-items:center;
+      gap:29px;
+      font-size:13px;
+      font-weight:600;
+      white-space:nowrap;
+      color:#18314e;
+    }
+
+    .site-menu a{
+      transition:.2s;
+    }
+
+    .site-menu a:hover{
+      color:#c9953e;
+    }
+
+    .site-menu .site-touch{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:20px;
+      font-style:italic;
+      font-weight:600;
+      color:#112b4a;
+    }
+
+    .site-book{
+      background:#112b4a;
+      color:#fff;
+      padding:15px 25px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+      box-shadow:0 8px 20px rgba(17,43,74,.14);
+    }
+
+    .site-book span{
+      color:#e3ba72;
+      margin-right:7px;
+    }
+
+    .site-mobile-menu{
+      display:none;
+      border:0;
+      background:transparent;
+      font-size:32px;
+      line-height:1;
+      color:#112b4a;
+      cursor:pointer;
+      padding:4px;
+    }
+
+
+    /* =========================
+       СТРАНИЦА СТАТЬИ
+    ========================== */
+
+    .article-page{
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(227,186,114,.13), transparent 22%),
+        radial-gradient(circle at 88% 38%, rgba(227,186,114,.09), transparent 25%),
+        var(--cream-light);
+    }
+
+    /* Первый экран */
+
+    .article-hero{
+      position:relative;
+      min-height:620px;
+      overflow:hidden;
+      border-bottom:1px solid rgba(228,214,196,.65);
+    }
+
+    .article-hero::after{
+      content:"";
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:-1px;
+      height:190px;
+      background:
+        linear-gradient(to top, rgba(255,250,244,.96), rgba(255,250,244,0));
+      pointer-events:none;
+      z-index:2;
+    }
+
+    .article-hero-grid{
+      min-height:620px;
+      display:grid;
+      grid-template-columns:.96fr 1.04fr;
+      align-items:center;
+      gap:20px;
+      position:relative;
+      z-index:3;
+    }
+
+    .article-hero-copy{
+      padding:80px 0 90px;
+      position:relative;
+      z-index:5;
+    }
+
+    .article-eyebrow{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+      color:#a56e2b;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .article-eyebrow span{
+      color:#c9953e;
+      font-size:12px;
+    }
+
+    .article-hero h1{
+      margin:0;
+      max-width:670px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:64px;
+      line-height:.96;
+      font-weight:600;
+      letter-spacing:-.025em;
+      color:#263850;
+    }
+
+    .article-subtitle{
+      margin:24px 0 18px;
+      max-width:610px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:25px;
+      line-height:1.25;
+      font-style:italic;
+      color:#a56e2b;
+    }
+
+    .reading-time{
+      margin:0;
+      font-size:12px;
+      font-weight:500;
+      color:#68727b;
+    }
+
+    .article-hero-art{
+      height:620px;
+      position:relative;
+      z-index:1;
+    }
+
+    .article-hero-art img{
+      position:absolute;
+      width:100%;
+      max-width:none;
+      height:96%;
+      object-fit:contain;
+      object-position:center bottom;
+      right:-2%;
+      bottom:-4%;
+      mix-blend-mode:multiply;
+    }
+
+    .hero-waves{
+      position:absolute;
+      width:100%;
+      height:320px;
+      left:50%;
+      bottom:-120px;
+      transform:translateX(-50%);
+      object-fit:cover;
+      object-position:center;
+      opacity:.55;
+      mix-blend-mode:multiply;
+      pointer-events:none;
+      z-index:1;
+    }
+
+
+    /* Контент */
+
+    .article-content{
+      padding:42px 0 110px;
+      position:relative;
+    }
+
+    .article-intro{
+      position:relative;
+      width:min(1080px,92%);
+      margin:0 auto 78px;
+    }
+
+    .article-intro-copy{
+      width:48%;
+      min-width:0;
+    }
+
+    .article-text{
+      font-size:15px;
+      line-height:1.82;
+      color:#3d4650;
+    }
+
+    .article-text p{
+      margin:0 0 18px;
+    }
+
+    .article-text p:last-child{
+      margin-bottom:0;
+    }
+
+    .article-text p:first-child::first-letter{
+      float:left;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:72px;
+      line-height:.72;
+      font-weight:600;
+      color:#263850;
+      margin:10px 9px 0 0;
+    }
+
+    .intro-art{
+      position:absolute;
+      width:47%;
+      max-width:500px;
+      right:3%;
+      top:-80px;
+      bottom:-60px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      pointer-events:none;
+    }
+
+    .intro-art img{
+      width:100%;
+      max-height:520px;
+      object-fit:contain;
+      mix-blend-mode:multiply;
+    }
+
+
+    /* Две колонки */
+
+    .article-columns{
+      width:min(1080px,92%);
+      margin:0 auto;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:90px;
+      position:relative;
+    }
+
+    .article-section{
+      position:relative;
+    }
+
+    .article-section h2{
+      margin:0 0 24px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:40px;
+      line-height:.98;
+      font-weight:600;
+      color:#263850;
+    }
+
+    .article-section .quote-line{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      color:#a56e2b;
+      font-size:20px;
+      font-style:italic;
+      line-height:1.4;
+      margin:22px 0;
+    }
+
+
+    /* Переход с рукой */
+
+    .hand-transition{
+      width:min(1120px,94%);
+      margin:80px auto 25px;
+      position:relative;
+      min-height:300px;
+      display:flex;
+      align-items:flex-end;
+      justify-content:center;
+    }
+
+    .hand-transition::before{
+      content:"";
+      position:absolute;
+      width:100%;
+      height:1px;
+      top:48%;
+      background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(201,149,62,.28),
+        transparent
+      );
+    }
+
+    .hand-transition img{
+      width:min(760px,76%);
+      position:relative;
+      z-index:2;
+      mix-blend-mode:multiply;
+    }
+
+
+    /* Нижний большой блок */
+
+    .body-map-section{
+      width:min(1120px,92%);
+      margin:45px auto 100px;
+      display:grid;
+      grid-template-columns:.78fr 1.22fr;
+      gap:70px;
+      align-items:center;
+      position:relative;
+    }
+
+    .body-map-art{
+      position:relative;
+      min-height:600px;
+    }
+
+    .body-map-art img{
+      position:absolute;
+      width:118%;
+      max-width:none;
+      left:-14%;
+      top:50%;
+      transform:translateY(-50%);
+      max-height:680px;
+      object-fit:contain;
+      mix-blend-mode:multiply;
+    }
+
+    .body-map-copy{
+      position:relative;
+      z-index:2;
+    }
+
+    .body-map-copy h2{
+      margin:0 0 24px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:42px;
+      line-height:1;
+      font-weight:600;
+      color:#263850;
+    }
+
+
+    /* Финал */
+
+    .article-ending{
+      width:min(1080px,92%);
+      margin:0 auto;
+      padding-top:55px;
+      position:relative;
+      border-top:1px solid rgba(228,214,196,.8);
+    }
+
+    .ending-grid{
+      display:grid;
+      grid-template-columns:1fr 1.35fr;
+      gap:70px;
+      align-items:start;
+    }
+
+    .article-ending h2{
+      margin:0 0 25px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:46px;
+      line-height:1;
+      font-weight:600;
+      color:#263850;
+    }
+
+    .ending-final-line{
+      margin-top:30px;
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:24px;
+      line-height:1.35;
+      font-style:italic;
+      color:#a56e2b;
+    }
+
+    .science-note{
+      margin-top:55px;
+      padding:26px 0 0;
+      border-top:1px solid var(--line);
+      color:#6b7075;
+      font-size:11px;
+      line-height:1.7;
+    }
+
+    .science-note strong{
+      display:block;
+      margin-bottom:8px;
+      color:#52606c;
+      font-size:12px;
+    }
+
+
+    /* Декоративные волны внизу */
+
+    .bottom-waves{
+      width:100%;
+      height:240px;
+      margin-top:35px;
+      object-fit:cover;
+      object-position:center;
+      opacity:.55;
+      mix-blend-mode:multiply;
+      pointer-events:none;
+    }
+
+
+    /* =========================
+       ФУТЕР
+    ========================== */
+
+    .contact-footer{
+      background:#112b4a;
+      color:#f8f4ed;
+    }
+
+    .footer-grid{
+      width:min(1200px,92%);
+      margin:auto;
+      min-height:145px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+
+    .contact-footer small{
+      color:#aeb8c4;
+      line-height:1.7;
+    }
+
+    .contact-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:18px;
+      align-items:center;
+      font-size:13px;
+      justify-content:flex-end;
+    }
+
+    .footer-phone{
+      font-size:18px;
+      font-weight:700;
+      color:#f8f4ed;
+      white-space:nowrap;
+    }
+
+    .footer-social{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .footer-social a{
+      width:46px;
+      height:46px;
+      border:1px solid rgba(227,186,114,.45);
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:rgba(255,255,255,.04);
+    }
+
+    .footer-social img{
+      width:28px;
+      height:28px;
+      object-fit:contain;
+    }
+
+
+    /* =========================
+       АДАПТИВНОСТЬ
+    ========================== */
+
+    @media(max-width:1060px){
+
+      .site-brand{
+        min-width:240px;
+      }
+
+      .site-brand-mark{
+        width:74px;
+        height:74px;
+      }
+
+      .site-brand-name{
+        font-size:39px;
+      }
+
+      .site-menu{
+        gap:18px;
+      }
+
+      .site-nav{
+        min-height:96px;
+      }
+
+      .article-hero h1{
+        font-size:56px;
+      }
+
+      .article-columns{
+        gap:55px;
+      }
+    }
+
+
+    @media(max-width:900px){
+
+      .site-nav{
+        min-height:82px;
+      }
+
+      .site-brand{
+        min-width:auto;
+      }
+
+      .site-brand-mark{
+        width:64px;
+        height:64px;
+      }
+
+      .site-brand-name{
+        font-size:35px;
+      }
+
+      .site-brand-sub{
+        display:none;
+      }
+
+      .site-menu{
+        display:none;
+      }
+
+      .site-mobile-menu{
+        display:block;
+      }
+
+      .site-menu.show{
+        display:flex;
+        position:absolute;
+        top:82px;
+        left:0;
+        right:0;
+        background:#fffaf4;
+        padding:20px 4%;
+        flex-direction:column;
+        gap:18px;
+        border-bottom:1px solid #e4d6c4;
+        box-shadow:0 16px 38px rgba(27,40,55,.09);
+      }
+
+      .article-hero-grid{
+        grid-template-columns:1fr;
+      }
+
+      .article-hero{
+        min-height:auto;
+      }
+
+      .article-hero-grid{
+        min-height:auto;
+      }
+
+      .article-hero-copy{
+        padding:70px 0 20px;
+        text-align:center;
+      }
+
+      .article-eyebrow{
+        justify-content:center;
+      }
+
+      .article-hero h1{
+        margin:auto;
+        font-size:58px;
+      }
+
+      .article-subtitle{
+        margin-left:auto;
+        margin-right:auto;
+      }
+
+      .article-hero-art{
+        height:auto;
+        min-height:430px;
+      }
+
+      .article-hero-art img{
+        width:100%;
+        height:100%;
+        right:0;
+        bottom:-2%;
+      }
+
+      .article-intro{
+        margin-bottom:65px;
+      }
+
+      .article-intro-copy{
+        width:55%;
+      }
+
+      .intro-art{
+        width:48%;
+        right:-2%;
+      }
+
+      .body-map-section{
+        gap:35px;
+      }
+
+      .body-map-art{
+        min-height:520px;
+      }
+    }
+
+
+    @media(max-width:700px){
+
+      .article-content{
+        padding-top:28px;
+      }
+
+      .article-intro{
+        width:90%;
+        margin-bottom:55px;
+      }
+
+      .article-intro-copy{
+        width:100%;
+      }
+
+      .intro-art{
+        position:relative;
+        width:90%;
+        right:auto;
+        top:auto;
+        bottom:auto;
+        margin:25px auto 0;
+        max-width:390px;
+      }
+
+      .article-columns{
+        width:90%;
+        grid-template-columns:1fr;
+        gap:60px;
+      }
+
+      .article-section h2{
+        font-size:37px;
+      }
+
+      .hand-transition{
+        margin:45px auto 15px;
+        min-height:180px;
+      }
+
+      .hand-transition img{
+        width:100%;
+      }
+
+      .body-map-section{
+        width:90%;
+        grid-template-columns:1fr;
+        gap:10px;
+        margin-top:35px;
+      }
+
+      .body-map-art{
+        min-height:auto;
+        height:auto;
+        display:flex;
+        justify-content:center;
+      }
+
+      .body-map-art img{
+        position:relative;
+        width:78%;
+        max-width:430px;
+        left:auto;
+        top:auto;
+        transform:none;
+      }
+
+      .body-map-copy h2{
+        font-size:39px;
+      }
+
+      .ending-grid{
+        grid-template-columns:1fr;
+        gap:25px;
+      }
+
+      .footer-grid{
+        min-height:auto;
+        padding:35px 0;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .contact-links{
+        justify-content:flex-start;
+      }
+    }
+
+
+    @media(max-width:560px){
+
+      .wrap,
+      .site-wrap{
+        width:90%;
+      }
+
+      .site-nav{
+        min-height:74px;
+      }
+
+      .site-brand-mark{
+        width:56px;
+        height:56px;
+      }
+
+      .site-brand-name{
+        font-size:32px;
+      }
+
+      .site-book{
+        padding:12px 15px;
+        font-size:11px;
+      }
+
+      .site-menu.show{
+        top:74px;
+      }
+
+      .article-hero-copy{
+        padding-top:48px;
+      }
+
+      .article-hero h1{
+        font-size:47px;
+        line-height:1;
+      }
+
+      .article-subtitle{
+        font-size:22px;
+      }
+
+      .article-hero-art{
+        min-height:360px;
+      }
+
+      .article-text{
+        font-size:14px;
+        line-height:1.78;
+      }
+
+      .article-section h2,
+      .body-map-copy h2{
+        font-size:35px;
+      }
+
+      .article-ending h2{
+        font-size:40px;
+      }
+
+      .body-map-art img{
+        width:88%;
+      }
+
+      .bottom-waves{
+        height:150px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+<header class="site-header">
+  <div class="site-wrap site-nav">
+
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark"
+           src="assets/logo-mark-transparent.png"
+           alt="">
+
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Ваш<br>массаж</span>
+        <span class="site-brand-sub">Массажная мастерская</span>
+      </span>
+    </a>
+
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a>
+      <a href="index.html#services">Услуги</a>
+      <a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a>
+      <a href="index.html#address">Адрес</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+
+    <a class="site-book"
+       href="https://dikidi.ru/2021892?p=1.pi-po"
+       target="_blank"
+       rel="noopener">
+      <span>✦</span>Записаться
+    </a>
+
+    <button class="site-mobile-menu"
+            aria-label="Открыть меню"
+            aria-expanded="false">
+      ☰
+    </button>
+
+  </div>
+</header>
+
+
+<main class="article-page">
+
+  <!-- ПЕРВЫЙ ЭКРАН -->
+
+  <section class="article-hero">
+
+    <img class="hero-waves"
+         src="assets/interoception-waves.png"
+         alt=""
+         aria-hidden="true">
+
+    <div class="wrap article-hero-grid">
+
+      <div class="article-hero-copy">
+
+        <div class="article-eyebrow">
+          <span>На ощупь</span>
+          <span>•</span>
+          <span>Чувствовать</span>
+        </div>
+
+        <h1>Что такое интероцепция и как мы чувствуем себя изнутри?</h1>
+
+        <p class="article-subtitle">
+          О внутреннем мире ощущений, который сопровождает нас постоянно — даже когда мы его не замечаем.
+        </p>
+
+        <p class="reading-time">Время чтения: ~5 минут</p>
+
+      </div>
+
+      <div class="article-hero-art">
+        <img src="assets/interoception-body-front.png"
+             alt="Иллюстрация женщины, ощущающей внутренние сигналы тела">
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- СТАТЬЯ -->
+
+  <section class="article-content">
+
+    <!-- ВСТУПЛЕНИЕ -->
+
+    <div class="article-intro">
+
+      <div class="article-intro-copy article-text">
+
+        <p>Прямо сейчас внутри вас бьётся сердце. Движется воздух. Организм поддерживает температуру, расходует энергию, продолжает свою работу.</p>
+
+        <p>Большую часть этого вы, скорее всего, не замечаете.</p>
+
+        <p>Вы не следите за каждым ударом сердца и не прислушиваетесь постоянно к желудку. Но стоит на мгновение обратить внимание внутрь — и что-то вдруг становится заметным.</p>
+
+        <p>Сердце.<br>
+        Дыхание.<br>
+        Лёгкое напряжение в плечах.</p>
+
+        <p>Или, возможно, голод, который всё это время был где-то рядом, но стал очевидным только сейчас.</p>
+
+        <p>Мы привыкли говорить о чувствах, которые связывают нас с окружающим миром: зрении, слухе, запахах, прикосновениях. Но существует и другой, менее заметный мир — мир ощущений, которые приходят изнутри.</p>
+
+        <p>Учёные называют процессы восприятия и обработки внутренних сигналов организма интероцепцией. Это не отдельное «шестое чувство» и не мистическое умение особенно хорошо слышать своё тело. Скорее, это сложный процесс: нервная система получает информацию о внутреннем состоянии организма, обрабатывает и интерпретирует её.</p>
+
+      </div>
+
+      <div class="intro-art">
+        <img src="assets/interoception-body-front.png"
+             alt=""
+             aria-hidden="true">
+      </div>
+
+    </div>
+
+
+    <!-- ДВА ПЕРВЫХ РАЗДЕЛА -->
+
+    <div class="article-columns">
+
+      <section class="article-section article-text">
+
+        <h2>Мы не замечаем всё,<br>что происходит внутри</h2>
+
+        <p>Внутри нас постоянно происходит гораздо больше, чем мы способны осознавать. Мы можем разговаривать, читать или идти по улице — и не думать о дыхании. До тех пор, пока вдруг не заметим очередной вдох.</p>
+
+        <p>И тогда возникает любопытный вопрос: дыхание изменилось — или изменилось наше внимание?</p>
+
+        <p>На этот вопрос не всегда есть один ответ.</p>
+
+        <p>Иногда внутреннее ощущение действительно меняется. А иногда мы просто направляем внимание туда, куда раньше почти не смотрели. Исследователи отдельно рассматривают внимание к внутренним сигналам как важную часть интероцептивного опыта.</p>
+
+        <p>Возможно, поэтому некоторые ощущения появляются в сознании почти неожиданно.</p>
+
+        <p>Вы можете вспомнить, что давно не ели — и вдруг почувствовать голод. Сесть после долгого дня и понять, что всё это время были уставшими.</p>
+
+        <p>Это не обязательно означает, что ощущение появилось именно в ту секунду, когда вы его заметили.</p>
+
+        <p>Иногда оно просто выходит на первый план.</p>
+
+        <p>Мы часто говорим: «Нужно слушать своё тело». Но эта фраза немного упрощает происходящее. Будто внутри нас есть один голос, который всегда говорит ясно, а нам остаётся только научиться его слышать.</p>
+
+        <p>В действительности внутренний мир гораздо сложнее. Мы постоянно живём среди множества ощущений — и лишь некоторые из них в определённый момент становятся для нас заметными.</p>
+
+      </section>
+
+
+      <section class="article-section article-text">
+
+        <h2>Почувствовать —<br>ещё не значит понять</h2>
+
+        <p>Представьте, что сердце вдруг начинает биться быстрее.</p>
+
+        <p>Сначала появляется ощущение.<br>
+        А потом — вопросы.</p>
+
+        <p class="quote-line">«Я волнуюсь?»<br>«Я испугалась?»<br>«Я устала?»</p>
+
+        <p>Ощутить внутренний сигнал и понять, что он означает, — не совсем одно и то же.</p>
+
+        <p>Современные представления об интероцепции рассматривают не только сами сигналы организма, но и то, как мы направляем на них внимание и интерпретируем их. На субъективный опыт могут влиять контекст, предыдущий опыт и другие процессы, связанные с оценкой происходящего.</p>
+
+        <p>Это не значит, что каждое ощущение — загадка. И не означает, что мы постоянно ошибаемся в собственном теле.</p>
+
+        <p>Но между ощущением и его объяснением иногда есть расстояние.</p>
+
+        <p>Сначала мы можем почувствовать: «Со мной что-то происходит».</p>
+
+        <p>А уже потом попытаться подобрать слова.</p>
+
+        <p>Возможно, тело не всегда даёт нам готовые ответы.</p>
+
+        <p>Иногда сначала появляется ощущение.<br>
+        А смысл мы ищем уже сами.</p>
+
+      </section>
+
+    </div>
+
+
+    <!-- РУКА -->
+
+    <div class="hand-transition">
+      <img src="assets/interoception-hand.png"
+           alt="Иллюстрация руки и внутреннего ощущения">
+    </div>
+
+
+    <!-- ТРЕТИЙ РАЗДЕЛ -->
+
+    <section class="body-map-section">
+
+      <div class="body-map-art">
+        <img src="assets/interoception-body-back.png"
+             alt="Иллюстрация женщины со схемой внутренних ощущений">
+      </div>
+
+      <div class="body-map-copy article-text">
+
+        <h2>Мы слышим разные<br>части себя по-разному</h2>
+
+        <p>Можно быстро заметить голод и только к вечеру понять, что весь день были уставшими. Можно чувствовать малейшие изменения дыхания и почти никогда не обращать внимания на сердцебиение.</p>
+
+        <p>Поэтому вопрос «хорошо ли человек чувствует своё тело?» не всегда имеет простой ответ.</p>
+
+        <p>Исследователи продолжают обсуждать, как именно определять и измерять разные стороны интероцепции. Современная наука всё меньше рассматривает её как одну простую способность, которую можно измерить одним показателем.</p>
+
+        <p>Возможно, у каждого из нас есть собственная карта внутренних ощущений.</p>
+
+        <p>Где-то линии прорисованы отчётливо.<br>
+        А где-то остаются белые пятна.</p>
+
+        <p>И это не обязательно означает, что мы плохо умеем чувствовать себя. Возможно, одни сигналы мы замечаем легче, а другие просто реже оказываются в поле нашего внимания.</p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ФИНАЛ -->
+
+    <section class="article-ending">
+
+      <div class="ending-grid">
+
+        <div>
+          <h2>Вернуться к себе</h2>
+        </div>
+
+        <div class="article-text">
+
+          <p>Пока вы читали эту статью, возможно, вы снова заметили своё дыхание.</p>
+
+          <p>Или почувствовали, как тело соприкасается со стулом.</p>
+
+          <p>Или вдруг вспомнили, что давно хотели есть.</p>
+
+          <p>Всё это происходило и до того, как вы обратили на него внимание.</p>
+
+          <p>Внутри нас постоянно что-то меняется, движется, отвечает на окружающий мир. Мы замечаем лишь часть этих процессов — и ещё пытаемся понять, что они для нас означают.</p>
+
+          <p>Мы живём внутри собственного тела всю жизнь.</p>
+
+          <p class="ending-final-line">
+            Но иногда замечаем его так, словно знакомимся впервые.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="science-note">
+        <strong>Научная основа</strong>
+        В основе текста — современные научные обзоры и исследования интероцепции.
+        Перед публикацией рекомендуется оформить полный список первичных и обзорных
+        источников в едином редакционном стиле и добавить ссылки к соответствующим
+        научным утверждениям.
+      </div>
+
+    </section>
+
+
+    <img class="bottom-waves"
+         src="assets/interoception-waves.png"
+         alt=""
+         aria-hidden="true">
+
+  </section>
+
+</main>
+
+
+<footer class="footer contact-footer">
+
+  <div class="footer-grid">
+
+    <div>
+      <strong>Ваш массаж</strong><br>
+      <small>Массажная мастерская · Москва, м. Курская</small>
+    </div>
+
+    <div class="contact-links">
+      <strong>Остались вопросы?</strong>
+
+      <a class="footer-phone" href="tel:+79853939108">
+        +7 (985) 393-91-08
+      </a>
+
+      <div class="footer-social">
+
+        <a href="https://t.me/vash_massage1"
+           target="_blank"
+           rel="noopener"
+           aria-label="Telegram">
+          <img src="assets/telegram.png" alt="Telegram">
+        </a>
+
+        <a href="#" aria-label="MAX">
+          <img src="assets/max.png" alt="MAX">
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const siteMobileButton = document.querySelector('.site-mobile-menu');
+  const siteMenu = document.querySelector('.site-menu');
+
+  if (siteMobileButton && siteMenu) {
+
+    siteMobileButton.addEventListener('click', () => {
+      siteMenu.classList.toggle('show');
+
+      siteMobileButton.setAttribute(
+        'aria-expanded',
+        siteMenu.classList.contains('show')
+      );
+    });
+
+    siteMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        siteMenu.classList.remove('show');
+        siteMobileButton.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+  }
+
+</script>
+
+</body>
+</html>
