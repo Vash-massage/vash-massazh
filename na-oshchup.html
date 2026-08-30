@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>На ощупь — Ваш массаж</title>
 <meta name="description" content="На ощупь — журнал о теле, прикосновениях, отдыхе, внимании к себе и окружающему миру.">
+<link rel="stylesheet" href="style.css">
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap');
 
@@ -26,31 +27,24 @@ a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .wrap{width:min(1200px,92%);margin:auto}
 
-/* Общая шапка — по аналогии с остальными страницами сайта */
-.header{
-  background:rgba(255,250,244,.94);
-  position:sticky;top:0;z-index:30;
-  border-bottom:1px solid rgba(228,214,196,.8);
-  backdrop-filter:blur(14px);
-}
-.nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:11px;min-width:285px}
-.brand-mark{
-  width:64px;height:64px;border-radius:50%;
-  border:1px solid var(--line);
-  display:grid;place-items:center;
-  color:var(--gold);font-family:"Cormorant Garamond",Georgia,serif;
-  font-size:31px;background:#fffdf9;
-}
-.brand-copy{display:flex;flex-direction:column;line-height:.84}
-.brand-name{font-family:"Cormorant Garamond",Georgia,serif;font-size:35px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}
-.brand-sub{margin-top:10px;font-size:8px;letter-spacing:.2em;color:#6d6258;text-transform:uppercase;font-weight:600}
-.menu{display:flex;align-items:center;gap:26px;font-size:12px;font-weight:600;white-space:nowrap}
-.menu a{transition:.2s}.menu a:hover{color:var(--gold)}
-.menu .touch-link{font-family:"Cormorant Garamond",Georgia,serif;font-size:19px;font-style:italic;font-weight:600;color:var(--gold)}
-.book{background:var(--navy);color:#fff;padding:14px 23px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
-.book span{color:var(--gold-light);margin-right:7px}
-.mobile-menu{display:none;border:0;background:transparent;font-size:25px;color:var(--navy)}
+/* Шапка страницы — общий шаблон сайта */
+.site-header{background:rgba(255,250,244,.94);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:#112b4a}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:#112b4a}
+.site-brand-sub{margin-top:13px;font-family:Montserrat,Arial,sans-serif;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:#112b4a}
+.site-book{background:#112b4a;color:#fff;padding:15px 25px;border-radius:999px;font-family:Montserrat,Arial,sans-serif;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:#112b4a;cursor:pointer;padding:4px}
+@media(max-width:1060px){.site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}.site-menu{gap:18px}.site-nav{min-height:96px}}
+@media(max-width:900px){.site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}.site-brand-name{font-size:35px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}.site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:#fffaf4;padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid #e4d6c4;box-shadow:0 16px 38px rgba(27,40,55,.09)}.site-menu.show .site-touch{font-size:24px}}
+@media(max-width:560px){.site-wrap{width:92%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}}
 
 /* Первый экран */
 .touch-hero{
@@ -141,27 +135,16 @@ img{max-width:100%;display:block}
 .article-arrow{font-size:22px;color:var(--navy);line-height:1;transition:transform .2s}
 .article-card:hover .article-arrow{transform:translateX(4px)}
 
-/* Нижняя часть */
-.journal-note{
-  max-width:760px;margin:42px auto 0;text-align:center;
-  color:#7a817f;font-size:12px;line-height:1.7;
-}
-.site-footer{background:#173250;color:#fff;margin-top:0}
-.footer-inner{
-  min-height:122px;display:grid;
-  grid-template-columns:1fr auto 1fr;
-  align-items:center;gap:30px;
-}
-.footer-brand b{display:block;font-size:13px;margin-bottom:7px}
-.footer-brand span{font-size:10px;color:#c8d0d8}
-.footer-contact{text-align:center;font-size:11px;color:#d9dfe4}
-.footer-contact strong{font-size:15px;color:#fff;margin-left:12px}
-.footer-social{display:flex;justify-content:flex-end;gap:10px}
-.social-btn{
-  width:42px;height:42px;border:1px solid rgba(227,186,114,.35);
-  border-radius:12px;display:grid;place-items:center;color:#fff;
-  font-weight:700;background:rgba(255,255,255,.03);font-size:16px;
-}
+/* Нижняя часть — общий шаблон сайта */
+.contact-footer{background:#112b4a;color:#f8f4ed}
+.contact-footer a{color:#e3ba72;text-decoration:none}
+.contact-footer .contact-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-family:Montserrat,Arial,sans-serif;font-size:13px;justify-content:flex-end}
+.contact-footer .footer-phone{font-family:Manrope,Arial,sans-serif;font-size:18px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.contact-footer .footer-social{display:flex;gap:10px;align-items:center}
+.contact-footer .footer-social a{width:46px;height:46px;border:1px solid rgba(227,186,114,.45);border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04);transition:.2s}
+.contact-footer .footer-social a:hover{background:rgba(255,255,255,.09);transform:translateY(-1px)}
+.contact-footer .footer-social img{width:28px;height:28px;object-fit:contain;display:block}
+@media(max-width:700px){.contact-footer .footer-grid{gap:22px}.contact-footer .contact-links{justify-content:flex-start}.contact-footer .footer-phone{font-size:17px}}
 
 /* Адаптивность */
 @media(max-width:980px){
@@ -170,48 +153,34 @@ img{max-width:100%;display:block}
   .hero-copy h1{font-size:66px}.articles{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:800px){
-  .nav{min-height:78px}.brand{min-width:auto}.brand-mark{width:56px;height:56px}.brand-name{font-size:31px}.brand-sub{display:none}
-  .menu{display:none}.mobile-menu{display:block}
   .touch-hero-grid{grid-template-columns:1fr;min-height:auto}
   .hero-copy{padding:55px 0 10px;text-align:center}.eyebrow{margin-bottom:18px}
   .hero-copy h1{font-size:64px}.hero-rule{margin:24px auto 20px}.hero-intro{margin:auto}
   .hero-art{height:360px}.hero-art img{width:760px;right:50%;transform:translate(50%,-50%)}
-  .footer-inner{grid-template-columns:1fr;text-align:center;padding:25px 0;gap:17px}
-  .footer-social{justify-content:center}
 }
 @media(max-width:560px){
-  .wrap{width:90%}.book{padding:12px 15px;font-size:10px}.brand-mark{width:48px;height:48px;font-size:25px}.brand-name{font-size:28px}
+  .wrap{width:90%}
   .hero-copy{padding-top:46px}.hero-copy h1{font-size:55px}.hero-intro{font-size:22px}
   .hero-art{height:290px}.journal{padding:40px 0 58px}
   .filters{gap:4px}.filter{padding:8px 10px;font-size:10px}
   .articles{grid-template-columns:1fr;gap:14px}.article-card{min-height:390px}.article-image{height:175px}
-  .footer-contact strong{display:block;margin:7px 0 0}
 }
 </style>
 </head>
 
 <body>
-<header class="header">
-  <div class="wrap nav">
-    <a class="brand" href="index.html" aria-label="Ваш массаж — на главную">
-      <span class="brand-mark">✦</span>
-      <span class="brand-copy">
-        <span class="brand-name">Ваш<br>массаж</span>
-        <span class="brand-sub">Массажная мастерская</span>
-      </span>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy"><span class="site-brand-name">Ваш<br>массаж</span><span class="site-brand-sub">Массажная мастерская</span></span>
     </a>
-
-    <nav class="menu" id="site-menu">
-      <a href="index.html#about">О нас</a>
-      <a href="index.html#services">Услуги</a>
-      <a href="index.html#reviews">Отзывы</a>
-      <a class="touch-link" href="na-oshchup.html">На ощупь</a>
-      <a href="index.html#address">Адрес</a>
-      <a href="index.html#contacts">Контакты</a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a><a href="index.html#address">Адрес</a><a href="index.html#contacts">Контакты</a>
     </nav>
-
-    <a class="book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
-    <button class="mobile-menu" id="mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
   </div>
 </header>
 
@@ -302,21 +271,8 @@ img{max-width:100%;display:block}
   </section>
 </main>
 
-<footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <b>Ваш массаж</b>
-      <span>Массажная мастерская · Москва, м. Курская</span>
-    </div>
-    <div class="footer-contact">
-      Остались вопросы? <strong>+7 (985) 393-91-08</strong>
-    </div>
-    <div class="footer-social">
-      <a class="social-btn" href="#" aria-label="Telegram">➤</a>
-      <a class="social-btn" href="#" aria-label="Instagram">◎</a>
-    </div>
-  </div>
-</footer>
+<footer class="footer contact-footer"><div class="container footer-grid"><div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+<div class="contact-links"><strong>Остались вопросы?</strong><a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a><div class="footer-social"><a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a><a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a></div></div></div></footer>
 
 <script>
 const filters = document.querySelectorAll('.filter');
@@ -335,12 +291,9 @@ filters.forEach(button => {
   });
 });
 
-const mobileButton = document.getElementById('mobile-menu');
-const menu = document.getElementById('site-menu');
-mobileButton.addEventListener('click', () => {
-  const open = menu.classList.toggle('show');
-  mobileButton.setAttribute('aria-expanded', open);
-});
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){siteMobileButton.addEventListener('click',()=>{siteMenu.classList.toggle('show');siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'))});siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{siteMenu.classList.remove('show');siteMobileButton.setAttribute('aria-expanded','false')}));}
 </script>
 </body>
 </html>
