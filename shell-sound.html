@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Звук из ракушки: почему мы слышим в ней море? — На ощупь</title>
+<meta name="description" content="О звуках, которых на самом деле нет внутри ракушки, и о том, почему мы всё равно узнаём их.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root{
+  --cream:#fffaf4;--navy:#112b4a;--ink:#263850;--gold:#b77a29;
+  --gold-soft:#d8b176;--line:#e4d6c4;--muted:#68727b
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.wrap{width:min(1200px,92%);margin:auto}
+
+/* Общая шапка сайта */
+.site-header{background:rgba(255,250,244,.96);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:var(--navy)}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}
+.site-brand-sub{margin-top:13px;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600}
+.site-book{background:var(--navy);color:#fff;padding:15px 25px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:var(--navy);cursor:pointer;padding:4px}
+
+/* Страница статьи */
+.article-page{
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 11% 13%,rgba(224,187,127,.10),transparent 22%),
+    radial-gradient(circle at 89% 42%,rgba(224,187,127,.07),transparent 24%),
+    var(--cream)
+}
+.article-hero{padding:54px 0 54px;border-bottom:1px solid rgba(228,214,196,.8)}
+.breadcrumbs{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9d6c29;margin-bottom:34px}
+.breadcrumbs span{opacity:.55;margin:0 9px}
+.article-hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(390px,.98fr);gap:30px;align-items:center}
+.article-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:clamp(56px,5.2vw,82px);line-height:.92;font-weight:600;letter-spacing:-.035em;margin:0;color:var(--ink);max-width:760px}
+.article-lead{font-family:'Cormorant Garamond',Georgia,serif;font-size:27px;line-height:1.27;font-style:italic;color:#9b6529;margin:26px 0 18px;max-width:650px}
+.reading-time{font-size:12px;color:var(--muted)}
+.hero-art{display:flex;align-items:center;justify-content:center}
+.hero-art img{width:min(118%,700px);max-height:500px;object-fit:contain;transform:translateX(2%)}
+
+.article-content{padding:0 0 70px}
+.prose{font-size:15px;line-height:1.7;color:#555e66}
+.prose p{margin:0 0 17px}.prose p:last-child{margin-bottom:0}
+.dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:78px;line-height:.68;font-weight:600;color:var(--ink);padding:12px 10px 0 0}
+.section-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;line-height:.94;font-weight:600;letter-spacing:-.025em;color:var(--ink);margin:0 0 22px}
+.section-kicker{font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#a8702d;margin-bottom:14px}
+
+/* Вступление — текст слева */
+.intro{max-width:1050px;margin:0 auto;padding:66px 0 24px}
+.intro .prose{max-width:760px}
+
+/* Основной блок: текст слева + заметка с рисунком справа */
+.main-sound{max-width:1050px;margin:54px auto 0;padding-top:58px;border-top:1px solid var(--line)}
+.main-sound-grid{display:grid;grid-template-columns:1.18fr .82fr;gap:58px;align-items:start}
+.main-sound .section-title{font-size:45px}
+.observation{
+  position:relative;min-height:270px;padding:24px 230px 24px 28px;
+  border:1px solid #dec7a8;border-radius:14px 0 0 0;background:rgba(255,253,249,.45);
+}
+.observation h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:27px;line-height:1.05;margin:0 0 10px;color:var(--ink)}
+.observation p{font-size:13px;line-height:1.65;margin:0;color:#5f666d}
+.observation img{position:absolute;right:-8px;bottom:-26px;width:260px;height:auto;max-width:none}
+
+/* Женщина + текст справа */
+.context-section{max-width:1050px;margin:74px auto 0;padding-top:58px;border-top:1px solid var(--line)}
+.context-grid{display:grid;grid-template-columns:1fr 1fr;gap:58px;align-items:center}
+.context-art img{width:100%;max-width:560px;margin:auto}
+.context-copy .section-title{font-size:46px}
+.question-line{font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:1.35;font-style:italic;color:#a46a27;margin:18px 0 23px}
+
+/* Блок про приятность шума + цитата */
+.pleasant-section{max-width:1050px;margin:72px auto 0;padding-top:58px;border-top:1px solid var(--line)}
+.pleasant-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:start}
+.pleasant-copy .section-title{font-size:45px}
+.article-quote{
+  position:relative;margin-top:12px;padding:27px 30px 25px 48px;
+  border:1px solid #dec7a8;border-radius:0 14px 0 0;
+  font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.35;
+  color:#4d5359;background:rgba(255,253,249,.45)
+}
+.article-quote:before{
+  content:'“';position:absolute;left:-8px;top:-22px;
+  font-family:Georgia,serif;font-size:88px;line-height:1;color:#d8b176
+}
+
+/* Финальный текст + море */
+.closing-section{max-width:1050px;margin:70px auto 0;padding-top:58px;border-top:1px solid var(--line)}
+.closing-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:end}
+.closing-copy .section-title{font-size:44px}
+.closing-art img{width:100%;height:auto}
+
+/* Источники */
+.sources{max-width:1050px;margin:48px auto 0;padding-top:25px;border-top:1px solid var(--line);font-size:11px;line-height:1.7;color:#69727b}
+.sources h2{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;color:var(--ink);margin:0 0 10px}
+.sources p{margin:0}
+
+/* Подвал */
+.contact-footer{background:var(--navy);color:#f8f4ed;margin-top:20px}
+.footer-grid{width:min(1200px,92%);margin:auto;min-height:150px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.footer-grid>div:first-child{font-size:14px}
+.footer-grid small{display:inline-block;margin-top:7px;color:#bfc8d2}
+.contact-footer .contact-links{display:flex;flex-wrap:wrap;gap:18px;align-items:center;font-size:13px;justify-content:flex-end}
+.contact-footer a{color:#e3ba72}
+.contact-footer .footer-phone{font-size:18px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:46px;height:46px;border:1px solid rgba(227,186,114,.45);border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04)}
+.footer-social img{width:28px;height:28px;object-fit:contain}
+
+/* Адаптивность */
+@media(max-width:1060px){
+  .site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}.site-menu{gap:18px}.site-nav{min-height:96px}
+  .article-hero-grid{grid-template-columns:1fr .9fr;gap:15px}
+  .main-sound-grid,.pleasant-grid{gap:40px}
+}
+@media(max-width:900px){
+  .site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}.site-brand-name{font-size:35px}.site-brand-sub{display:none}
+  .site-menu{display:none}.site-mobile-menu{display:block}
+  .site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:var(--cream);padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);box-shadow:0 16px 38px rgba(27,40,55,.09)}
+  .site-menu.show .site-touch{font-size:24px}
+  .article-hero{padding-top:44px}.article-hero-grid{grid-template-columns:1fr;gap:10px}.hero-art{order:-1}.hero-art img{width:min(100%,680px);max-height:none;transform:none}
+  .main-sound-grid,.context-grid,.pleasant-grid,.closing-grid{grid-template-columns:1fr}
+  .observation{min-height:300px}
+  .context-art{order:-1}
+  .closing-art{order:-1}
+  .footer-grid{padding:32px 0;min-height:0;flex-direction:column;align-items:flex-start}
+  .contact-footer .contact-links{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .wrap,.site-wrap{width:90%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}
+  .article-hero{padding:34px 0 38px}.breadcrumbs{margin-bottom:20px}.article-title{font-size:49px;line-height:.94}.article-lead{font-size:22px;line-height:1.3;margin-top:21px}
+  .hero-art img{width:100%}.intro{padding:43px 0 20px}.prose{font-size:14px;line-height:1.78}.dropcap:first-letter{font-size:69px;padding-right:8px}
+  .main-sound,.context-section,.pleasant-section,.closing-section{margin-top:58px;padding-top:44px}
+  .main-sound .section-title,.pleasant-copy .section-title,.context-copy .section-title{font-size:40px}
+  .observation{padding:24px 24px 235px;min-height:0}.observation img{right:0;bottom:-10px;width:250px}
+  .question-line{font-size:23px}.article-quote{font-size:21px;padding-left:38px}
+  .closing-copy .section-title{font-size:42px}
+  .sources{margin-top:42px;font-size:10px}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy"><span class="site-brand-name">Ваш<br>массаж</span><span class="site-brand-sub">Массажная мастерская</span></span>
+    </a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a><a href="index.html#address">Адрес</a><a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main class="article-page">
+<section class="article-hero">
+  <div class="wrap">
+    <div class="breadcrumbs">На ощупь <span>•</span> Вокруг нас</div>
+    <div class="article-hero-grid">
+      <div>
+        <h1 class="article-title">Звук из ракушки: почему мы слышим в ней море?</h1>
+        <p class="article-lead">О звуках, которых на самом деле нет внутри ракушки, и о том, почему мы всё равно узнаём их.</p>
+        <div class="reading-time">Время чтения: ~5 минут</div>
+      </div>
+      <div class="hero-art"><img src="assets/shell-hero.png" alt="Ракушка, из которой расходятся звуковые линии"></div>
+    </div>
+  </div>
+</section>
+
+<article class="article-content">
+<div class="wrap">
+
+<section class="intro">
+  <div class="prose">
+    <p class="dropcap">Приложите ракушку к уху.</p>
+    <p>Даже если до ближайшего моря — сотни или тысячи километров, в ней почти наверняка зашумит что-то похожее на волны.</p>
+    <p>Мы знаем этот звук с детства. И, возможно, хотя бы раз задумывались: почему в ракушке слышно море?</p>
+    <p>Ответ немного разрушает красивую легенду. Но, как ни странно, делает её интереснее.</p>
+  </div>
+</section>
+
+<section class="main-sound">
+  <div class="main-sound-grid">
+    <div>
+      <h2 class="section-title">Что мы на самом деле слышим в ракушке?</h2>
+      <div class="prose">
+        <p>Моря внутри ракушки нет.</p>
+        <p>Ракушка не хранит звук волн, который когда-то в неё попал. Чтобы появился знакомый шум, ей нужен звук, который существует здесь и сейчас.</p>
+        <p>Вокруг нас редко бывает абсолютная тишина. Воздух движется, что-то гудит за стеной, шелестит одежда, работает техника. Большую часть этого фона мы можем почти не замечать.</p>
+        <p>Когда мы прикладываем ракушку к уху, её полость меняет окружающий звук: одни частоты становятся заметнее, другие — слабее. В результате привычный фон превращается в характерный гул и шуршание. Похожий эффект можно услышать и в других полых предметах подходящей формы.</p>
+        <p>Поэтому ракушка не столько хранит море, сколько по-своему отвечает на звуки окружающего мира.</p>
+        <p>И в этом есть что-то неожиданно красивое.</p>
+        <p>Если вокруг станет совершенно тихо, ракушке почти нечего будет менять.</p>
+      </div>
+    </div>
+
+    <aside class="observation">
+      <h3>На ощупь — любопытно</h3>
+      <p>Попробуйте сложить ладонь чашечкой вокруг уха. Вы заметите, как меняется звучание окружающего шума.</p>
+      <img src="assets/shell-hand.png" alt="Ладонь и ухо — наблюдение о звуке">
+    </aside>
+  </div>
+</section>
+
+<section class="context-section">
+  <div class="context-grid">
+    <div class="context-art"><img src="assets/shell-woman.png" alt="Женщина слушает звуки, которые превращаются в образы моря и дождя"></div>
+    <div class="context-copy">
+      <h2 class="section-title">Почему этот звук кажется нам морем?</h2>
+      <div class="prose">
+        <p>Физика объясняет, почему ракушка шумит.</p>
+        <p>Но остаётся другой вопрос: почему среди всех возможных ассоциаций мы слышим именно море?</p>
+        <p>Возможно, дело не только в самом звуке.</p>
+        <p>Мы уже знаем, что держим в руках ракушку. Мы видели море. Слышали волны. И этот опыт может участвовать в том, как мы понимаем то, что слышим.</p>
+        <p>Современные исследования восприятия показывают, что распознавание звуков зависит не только от самого акустического сигнала. На него могут влиять контекст, внимание, предыдущий опыт и ожидания. Иными словами, восприятие звука — это не простая запись того, что произошло у нашего уха.</p>
+        <p>Это не значит, что мы обманываем себя.</p>
+        <p>Скорее, звук сам по себе ещё не всегда имеет готовое значение.</p>
+        <p>Мы слышим шорох — а потом узнаём в нём дождь.<br>Слышим гул — и думаем о поезде.<br>Слышим изменённый ракушкой фон — и вспоминаем море.</p>
+        <p>Контекст вообще играет важную роль в том, как человек воспринимает звуковую среду: один и тот же звук может восприниматься по-разному в зависимости от места, ситуации, прошлого опыта и ожиданий.</p>
+        <p>И тогда хочется задать себе простой вопрос:</p>
+        <div class="question-line">Если закрыть глаза и не знать, что у вас в руках ракушка, вы всё равно услышите море?</div>
+        <p>Возможно. А возможно, услышите что-то совершенно другое.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pleasant-section">
+  <div class="pleasant-grid">
+    <div class="pleasant-copy">
+      <h2 class="section-title">Почему шум моря многим кажется приятным?</h2>
+      <div class="prose">
+        <p>Наверное, поэтому шум моря так часто используют в музыке для отдыха, приложениях для сна и пространствах, где хочется создать спокойную атмосферу.</p>
+        <p>Но здесь важно не превращать приятное ощущение в универсальное правило.</p>
+        <p>Исследования действительно показывают, что природные звуковые среды могут быть связаны с ощущением восстановления и более благоприятным субъективным состоянием. Однако влияние звука зависит от множества условий — самого человека, ситуации, контекста и того, какой именно звук он слышит.</p>
+        <p>Наука пока не знает одного звука, который одинаково успокаивал бы всех.</p>
+        <p>Для одного человека шум волн — это отпуск и простор.<br>Для другого — холодный ветер, бессонная ночь или просто слишком громкий фон.</p>
+        <p>И, возможно, в этом нет ничего странного.</p>
+        <p>Мы не слышим звуки в пустоте. Каждый из них встречается с нашей памятью.</p>
+      </div>
+    </div>
+
+    <blockquote class="article-quote">
+      Один и тот же звук может быть просто шумом.<br>
+      А может стать морем, воспоминанием, отдыхом или чем-то совершенно другим.
+      <br><br>
+      Потому что между звуком и нашим ощущением всегда есть ещё мы сами.
+    </blockquote>
+  </div>
+</section>
+
+<section class="closing-section">
+  <div class="closing-grid">
+    <div class="closing-copy">
+      <h2 class="section-title">Мы слышим не только звук</h2>
+      <div class="prose">
+        <p>Когда-то ракушка стала для людей маленьким символом моря.</p>
+        <p>Но моря внутри неё нет.</p>
+        <p>Есть форма. Есть воздух. Есть звуки, которые существуют вокруг нас прямо сейчас.</p>
+        <p>И есть человек, который прикладывает ракушку к уху и узнаёт в этом шуме что-то знакомое.</p>
+        <p>Возможно, поэтому звук моря в ракушке так трудно окончательно объяснить одной только физикой.</p>
+        <p>Физика может рассказать, откуда берётся звук.</p>
+        <p>Но она не может заранее сказать, что именно мы в нём услышим.</p>
+        <p>Ведь иногда между звуком и нашим ощущением оказывается целая жизнь.</p>
+      </div>
+    </div>
+    <div class="closing-art"><img src="assets/shell-sea.png" alt="Море, волны, берег и солнце в линейной иллюстрации"></div>
+  </div>
+</section>
+
+<section class="sources">
+  <h2>Научная основа</h2>
+  <p>Рабочий список источников для редакционной проверки: материалы по акустике ракушек; исследования восприятия звука и роли контекста; систематические обзоры о влиянии природных звуков на субъективное состояние и восстановление. Перед публикацией источники будут оформлены единообразно и привязаны к соответствующим утверждениям.</p>
+</section>
+
+</div>
+</article>
+</main>
+
+<footer class="contact-footer">
+  <div class="footer-grid">
+    <div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+    <div class="contact-links">
+      <strong>Остались вопросы?</strong>
+      <a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
+      <div class="footer-social">
+        <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+        <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){
+  siteMobileButton.addEventListener('click',()=>{
+    siteMenu.classList.toggle('show');
+    siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'));
+  });
+  siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    siteMenu.classList.remove('show');
+    siteMobileButton.setAttribute('aria-expanded','false');
+  }));
+}
+</script>
+</body>
+</html>
