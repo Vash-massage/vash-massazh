@@ -109,24 +109,13 @@ img{display:block;max-width:100%}
 
 .body-row{
   display:grid;
-  grid-template-columns:46% 54%;
-  column-gap:18px;
+  grid-template-columns:1fr;
+  column-gap:0;
   align-items:start;
-  margin-top:-38px;
+  margin-top:20px;
 }
-.body-copy{padding:0 20px 0 3px}
-.body-art{
-  position:relative;
-  min-height:390px;
-  margin-top:0;
-}
-.body-art img{
-  position:absolute;
-  width:91%;
-  right:-1%;
-  top:-3px;
-  mix-blend-mode:multiply;
-}
+.body-copy{padding:0 3% 0 3px;max-width:760px}
+
 
 .brain-row{
   display:grid;
@@ -168,7 +157,7 @@ img{display:block;max-width:100%}
   .intro-side{top:86px}
 
   .intro-row{margin-bottom:0}
-  .body-row{margin-top:-105px}
+  .body-row{margin-top:20px}
   .brain-row{margin-top:-82px}
   .final-row{margin-top:-28px}
 }
@@ -197,7 +186,7 @@ img{display:block;max-width:100%}
   .intro-copy,.body-copy,.brain-copy,.final-copy{padding:0}
   .intro-side{min-height:0;padding:0}
   .side-copy{width:100%}
-  .daydream-art,.body-art,.brain-art,.final-art{
+  .daydream-art,.brain-art,.final-art{
     position:relative;
     width:100%;
     right:auto;left:auto;top:auto;bottom:auto;
@@ -226,7 +215,6 @@ img{display:block;max-width:100%}
   .dropcap:first-letter{font-size:53px}
   .section-title{font-size:24px}
   .daydream-art{width:92%}
-  .body-art{width:100%}
   .brain-art{width:92%}
   .final-art{width:105%;margin-left:-2.5%}
 }
@@ -377,9 +365,6 @@ img{display:block;max-width:100%}
             <p>Исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
             <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
           </div>
-        </div>
-        <div class="body-art">
-          <img src="assets/meditation-body.png" alt="">
         </div>
       </section>
 
