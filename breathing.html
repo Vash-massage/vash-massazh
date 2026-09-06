@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Внимание на дыхание: что меняется, когда мы начинаем его замечать? — На ощупь</title>
+<meta name="description" content="Мы дышим весь день — но иногда достаточно на секунду вспомнить об этом, чтобы дыхание вдруг стало совсем другим. О внимании к дыханию и телесных ощущениях.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&family=Montserrat:wght@400;500;600;700&display=swap');
+:root{--cream:#fffdf9;--navy:#112b4a;--ink:#241b16;--orange:#bd5b2a;--gold:#b77a29;--muted:#756c64;--line:#dec7a8}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.site-wrap{width:min(920px,89%);margin:auto}
+.article-wrap{width:min(1180px,92%);margin:auto}
+
+/* Общая шапка сайта — та же оболочка, что и на остальных страницах журнала */
+.site-header{background:rgba(255,253,249,.97);position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(228,214,196,.8);backdrop-filter:blur(14px)}
+.site-nav{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.site-brand{display:flex;align-items:center;gap:10px;min-width:235px;color:var(--navy)}
+.site-brand-mark{width:68px;height:68px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:38px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}
+.site-brand-sub{margin-top:10px;font-size:8px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:21px;font-size:11px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a{transition:.2s}.site-menu a:hover{color:#c9953e}.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-style:italic;font-weight:600}
+.site-book{background:var(--navy);color:#fff;padding:12px 19px;border-radius:999px;font-size:11px;font-weight:700;white-space:nowrap}.site-book span{color:#e3ba72;margin-right:6px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:30px;line-height:1;color:var(--navy);cursor:pointer;padding:4px}
+
+.article-page{overflow:hidden;background:var(--cream)}
+.article-hero{padding:28px 0 0}
+.breadcrumbs{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--orange);text-transform:uppercase;margin:0 0 28px 0}
+.breadcrumbs span{display:inline;margin:0 11px;opacity:.75}
+.hero-grid{position:relative;min-height:410px}
+.hero-copy{position:relative;z-index:3;width:55%;padding-left:4px}
+.article-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:58px;line-height:.91;font-weight:600;letter-spacing:-.035em;margin:0;max-width:660px;color:#17120f}
+.article-lead{font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.22;font-style:italic;color:var(--orange);margin:27px 0 18px;max-width:570px}
+.reading-time{font-size:12px;color:var(--muted)}
+.hero-art{position:absolute;z-index:1;right:-2.5%;top:-54px;width:61%;pointer-events:none}
+.hero-art img{width:100%;height:auto}
+
+.content-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;row-gap:38px;align-items:start}
+.intro{padding:0 8px 0 5px;margin-top:0}
+.prose{font-size:14.2px;line-height:1.42;color:#302721}
+.prose p{margin:0 0 14px}
+.prose p:last-child{margin-bottom:0}
+.dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:61px;line-height:.66;font-weight:600;padding:8px 5px 0 0;color:#17120f}
+.section-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:27px;line-height:1.02;font-weight:600;letter-spacing:-.015em;color:#18120f;margin:0 0 16px}
+.section-title::before{content:'✦';font-family:Georgia,serif;font-size:15px;color:var(--gold);margin-right:10px;vertical-align:5px}
+
+.first-section{padding:0 6px 0 0}
+.first-section .section-title::before{display:none}
+.first-section .prose{max-width:535px}
+
+.breathing-row{margin-top:0;display:grid;grid-template-columns:1fr 1fr;column-gap:72px;align-items:start}
+.awareness{position:relative;min-height:260px;padding:0 0 0 5px}
+.awareness-copy{width:62%;position:relative;z-index:2}
+.awareness-art{position:absolute;right:-2px;bottom:-5px;width:48%;z-index:1}
+.awareness-art img{width:100%;height:auto}
+
+.square-card{position:relative;border:1.5px solid var(--orange);border-radius:17px;padding:23px 285px 22px 25px;min-height:270px;overflow:hidden;background:rgba(255,253,249,.35)}
+.square-card h3{font-family:'Cormorant Garamond',Georgia,serif;font-size:29px;line-height:1;margin:0 0 14px;color:#1d1713}
+.square-card p{font-size:13px;line-height:1.38;margin:0;max-width:310px}
+.square-diagram{position:absolute;right:22px;top:47px;width:245px;height:180px;font-size:12px;color:#342921}
+.square-diagram .box{position:absolute;border:1.5px solid var(--orange);border-radius:0 0 28px 28px;width:112px;height:62px;left:62px;top:28px;border-top:0}
+.square-diagram .box:after{content:'';position:absolute;left:-1.5px;bottom:-1.5px;width:112px;height:62px;border:1.5px solid var(--orange);border-radius:28px 28px 0 0;border-bottom:0;transform:translateY(62px)}
+.square-diagram .label{position:absolute;text-align:center;line-height:1.05;white-space:nowrap}
+.square-diagram .in{left:94px;top:0}.square-diagram .pause1{right:-2px;top:63px}.square-diagram .out{left:92px;bottom:0}.square-diagram .pause2{left:-6px;top:63px}
+.square-diagram .arrow{position:absolute;font-size:21px;color:var(--orange);font-family:Georgia,serif}
+.square-diagram .a1{left:176px;top:30px}.square-diagram .a2{right:25px;top:126px;transform:rotate(90deg)}.square-diagram .a3{left:86px;bottom:22px;transform:rotate(180deg)}.square-diagram .a4{left:23px;top:71px;transform:rotate(-90deg)}
+
+.middle-row{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;align-items:start}
+.moment{padding:0 5px}
+.slow-breath{position:relative;min-height:285px;padding:0 235px 0 0}
+.slow-breath .section-title{max-width:500px}
+.slow-breath .prose{max-width:430px}
+.lungs-art{position:absolute;right:-4px;top:0;width:39%;z-index:1}
+.lungs-art img{width:100%;height:auto}
+
+.final-row{display:grid;grid-template-columns:.82fr 1.18fr;column-gap:72px;align-items:start;margin-top:-2px;padding-bottom:16px}
+.different{padding:0 5px}
+.leaf-art{margin-top:20px;width:185px}.leaf-art img{width:100%}
+.last-section{position:relative;padding:0 5px;min-height:210px}
+.last-section .prose{max-width:570px}
+.last-highlight{color:var(--orange);margin-top:13px}
+.sea-art{position:absolute;right:-7%;bottom:-2px;width:75%;z-index:0;opacity:.98}
+.last-section .prose{position:relative;z-index:2}
+
+.sources{font-size:9px;line-height:1.35;color:#756c64;margin:2px 5px 16px}
+
+.contact-footer{background:var(--navy);color:#f8f4ed;margin-top:0}
+.footer-grid{width:min(920px,89%);margin:auto;min-height:120px;display:flex;justify-content:space-between;align-items:center;gap:30px}
+.footer-grid>div:first-child{font-size:12px}.footer-grid small{display:inline-block;margin-top:6px;color:#bfc8d2}
+.contact-footer .contact-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:11px;justify-content:flex-end}.contact-footer a{color:#e3ba72}.contact-footer .footer-phone{font-size:15px;font-weight:700;color:#f8f4ed;white-space:nowrap}
+.footer-social{display:flex;gap:8px}.footer-social a{width:38px;height:38px;border:1px solid rgba(227,186,114,.45);border-radius:11px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04)}.footer-social img{width:23px;height:23px;object-fit:contain}
+
+@media(max-width:900px){
+  .site-nav{min-height:74px}.site-brand{min-width:auto}.site-brand-mark{width:56px;height:56px}.site-brand-name{font-size:32px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}.site-menu.show{display:flex;position:absolute;top:74px;left:0;right:0;background:var(--cream);padding:20px 5%;flex-direction:column;gap:18px;border-bottom:1px solid #e4d6c4;box-shadow:0 16px 38px rgba(27,40,55,.09)}.site-menu.show .site-touch{font-size:24px}
+  .article-wrap{width:90%}.article-hero{padding-top:23px}.breadcrumbs{font-size:10px;margin-bottom:16px}.hero-grid{min-height:0}.hero-copy{width:100%;padding:0}.article-title{font-size:44px;max-width:100%}.article-lead{font-size:19px;max-width:100%;margin-top:19px}.hero-art{position:relative;right:auto;top:auto;width:100%;margin:8px 0 -5px}.content-grid,.breathing-row,.middle-row,.final-row{grid-template-columns:1fr;row-gap:34px}.intro{padding:0;margin-top:0}.square-card{padding-right:250px}.awareness{min-height:270px}.awareness-copy{width:62%}.slow-breath{min-height:0;padding-right:230px}.lungs-art{width:34%}.last-section{min-height:280px}.sea-art{position:relative;right:auto;bottom:auto;width:100%;margin-top:20px}.contact-footer{margin-top:10px}.footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}.contact-footer .contact-links{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .site-wrap{width:90%}.site-nav{min-height:68px}.site-brand-mark{width:50px;height:50px}.site-brand-name{font-size:29px}.site-book{padding:10px 13px;font-size:10px}.site-menu.show{top:68px}
+  .article-wrap{width:90%}.article-hero{padding-top:20px}.breadcrumbs{font-size:9px;letter-spacing:.12em}.article-title{font-size:39px}.article-lead{font-size:17px}.prose{font-size:14.5px;line-height:1.45}.dropcap:first-letter{font-size:54px}.section-title{font-size:24px}.square-card{padding:21px;min-height:260px}.square-diagram{position:relative;right:auto;top:auto;margin:20px auto 0;width:245px}.awareness{min-height:0}.awareness-copy{width:100%}.awareness-art{position:relative;right:auto;bottom:auto;width:72%;margin:5px 0 0 auto}.slow-breath{padding:0;min-height:0}.lungs-art{position:relative;right:auto;top:auto;width:67%;margin:4px auto 0}.leaf-art{width:165px;margin-top:14px}.last-section{min-height:0}.sea-art{width:115%;margin-left:-8%;margin-top:15px}.sources{font-size:8px;margin-top:8px}.footer-grid{padding:25px 0}.contact-footer .contact-links{gap:10px}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy"><span class="site-brand-name">Ваш<br>массаж</span><span class="site-brand-sub">Массажная мастерская</span></span>
+    </a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a><a href="index.html#services">Услуги</a><a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a><a href="index.html#address">Адрес</a><a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main class="article-page">
+<section class="article-hero">
+  <div class="article-wrap">
+    <div class="breadcrumbs">На ощупь <span>•</span> Дышать</div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="article-title">Внимание на дыхание: что меняется, когда мы начинаем его замечать?</h1>
+        <p class="article-lead">Мы дышим весь день — но иногда достаточно на секунду вспомнить об этом, чтобы дыхание вдруг стало совсем другим.</p>
+        <div class="reading-time">Время чтения: ~4 минуты</div>
+      </div>
+      <div class="hero-art"><img src="assets/breathing-hero.png" alt="Женщина у окна, наблюдающая за своим дыханием"></div>
+    </div>
+  </div>
+</section>
+
+<article>
+<div class="article-wrap">
+  <div class="content-grid">
+    <section class="intro">
+      <div class="prose">
+        <p class="dropcap">Попробуйте прямо сейчас заметить своё дыхание.</p>
+        <p>Не менять его. Не делать глубже. Не считать вдохи.<br>Просто обратить внимание.</p>
+        <p>Возможно, вы почувствуете, как воздух проходит через нос. Как слегка поднимается грудь или живот. А может быть, первым появится желание тут же вдохнуть глубже.</p>
+        <p>Ещё секунду назад дыхание происходило само собой. Но стоило направить на него внимание — и оно словно вышло из фона.</p>
+        <p>Мы редко думаем о дыхании, пока оно идёт своим привычным ритмом. А ведь оно постоянно меняется вместе с нами: когда мы спешим, волнуемся, смеёмся или засыпаем.</p>
+      </div>
+    </section>
+
+    <section class="first-section">
+      <h2 class="section-title">Почему дыхание меняется,<br>когда мы думаем о нём?</h2>
+      <div class="prose">
+        <p>Наверняка вы замечали: стоит вспомнить о дыхании — и оно становится чуть глубже или неровнее.</p>
+        <p>Когда мы начинаем наблюдать за привычным процессом, нам иногда хочется вмешаться. Мозг словно спрашивает: «Раз уж мы обратили на это внимание, может, что-нибудь сделать?»</p>
+        <p>Но дыхание не всегда нужно исправлять.</p>
+        <p>После быстрой ходьбы оно будет одним, перед сном — другим, во время разговора — третьим.</p>
+        <p style="color:var(--orange)">Дыханию не всегда нужно помогать. Иногда достаточно просто дать ему быть.</p>
+      </div>
+    </section>
+  </div>
+
+  <section class="breathing-row" style="margin-top:34px">
+    <section class="awareness">
+      <div class="awareness-copy">
+        <h2 class="section-title">Мы дышим — и можем это замечать</h2>
+        <div class="prose">
+          <p>Большую часть времени дыхание не требует нашего участия. Но мы можем в любой момент обратить на него внимание — задержать вдох, выдохнуть медленнее или просто прислушаться к своему ритму.</p>
+          <p>Когда мы замечаем дыхание, внимание ненадолго переключается с внешнего мира на тело. Это связано с тем, как мы воспринимаем внутренние сигналы организма.</p>
+          <p>Но заметить — не всегда значит сразу понять.</p>
+          <p>Иногда мы вдруг думаем: «Как-то я часто дышу». А иногда только в этот момент понимаем, насколько устали или напряжены.</p>
+        </div>
+      </div>
+      <div class="awareness-art"><img src="assets/breathing-profile.png" alt="Профиль женщины с закрытыми глазами"></div>
+    </section>
+
+    <aside class="square-card">
+      <h3>Дыхание квадратом</h3>
+      <p>Если тревога мешает собраться с мыслями, можно попробовать простой способ немного переключить внимание — дыхание квадратом: вдох на 4 счёта — пауза на 4 — выдох на 4 — пауза на 4.</p>
+      <p style="margin-top:12px">Ровный счёт помогает сосредоточиться на понятной последовательности и на время отвлечься от тревожных мыслей. Если задерживать дыхание неприятно, этот способ лучше не использовать.</p>
+      <div class="square-diagram" aria-hidden="true">
+        <div class="box"></div>
+        <div class="label in">вдох<br>4 счёта</div>
+        <div class="label pause1">пауза<br>4 счёта</div>
+        <div class="label out">выдох<br>4 счёта</div>
+        <div class="label pause2">пауза<br>4 счёта</div>
+        <div class="arrow a1">⌄</div><div class="arrow a2">⌄</div><div class="arrow a3">⌄</div><div class="arrow a4">⌄</div>
+      </div>
+    </aside>
+  </section>
+
+  <section class="middle-row" style="margin-top:42px">
+    <section class="moment">
+      <h2 class="section-title">Один вдох может вернуть нас в настоящий момент</h2>
+      <div class="prose">
+        <p>Когда голова занята десятком мыслей, дыхание оказывается чем-то очень конкретным.<br>Вот вдох. Вот выдох.</p>
+        <p>Замечая телесный сигнал, мы на мгновение переключаем внимание с бесконечного внутреннего диалога на то, что происходит прямо сейчас.</p>
+        <p>Иногда этого достаточно, чтобы почувствовать себя чуть собраннее. А иногда — заметить, насколько много всего накопилось за день.</p>
+        <p>И оба варианта нормальны.</p>
+      </div>
+    </section>
+
+    <section class="slow-breath">
+      <h2 class="section-title">Если начать дышать медленнее?</h2>
+      <div class="prose">
+        <p>Спокойное, медленное дыхание у некоторых людей может помочь почувствовать расслабление. Но несколько глубоких вдохов — не универсальное решение для любой тревоги или усталости.</p>
+        <p>Иногда после них становится спокойнее.<br>А иногда — почти ничего не меняется.</p>
+        <p style="color:var(--orange)">Не каждое ощущение нужно исправлять.</p>
+      </div>
+      <div class="lungs-art"><img src="assets/breathing-lungs.png" alt="Иллюстрация дыхательной системы"></div>
+    </section>
+  </section>
+
+  <section class="final-row" style="margin-top:35px">
+    <section class="different">
+      <h2 class="section-title">Мы замечаем дыхание по-разному</h2>
+      <div class="prose">
+        <p>Кто-то чувствует дыхание в груди. Кто-то — в животе. А кто-то, когда его просят сосредоточиться на дыхании, начинает думать только о том, достаточно ли хорошо он это делает.</p>
+        <p>Но здесь нет правильного результата.<br>У нас нет одинакового способа чувствовать своё тело.</p>
+        <p>Внимание к дыханию — не экзамен. Не нужно замечать каждый вдох и делать его идеальным.</p>
+      </div>
+      <div class="leaf-art"><img src="assets/breathing-branch.png" alt="Ветка с листьями"></div>
+    </section>
+
+    <section class="last-section">
+      <h2 class="section-title">Иногда достаточно просто вспомнить, что мы дышим</h2>
+      <div class="prose">
+        <p>Не обязательно ждать от этого большого эффекта.</p>
+        <p>Иногда вы заметите дыхание и через минуту снова забудете о нём. Иногда спокойный выдох поможет немного замедлиться.</p>
+        <p>А иногда именно в этот момент вы поймёте, что устали, торопитесь или давно не делали паузу.</p>
+        <p class="last-highlight">Внимание к дыханию не обязательно что-то меняет.<br>Но иногда оно помогает заметить то, что уже происходит.<br>И, возможно, этого вполне достаточно.</p>
+      </div>
+      <div class="sea-art"><img src="assets/breathing-sea.png" alt="Пейзаж у моря на закате"></div>
+    </section>
+  </section>
+
+  <div class="sources">Что мы читали, пока писали: PubMed, исследования и обзоры по интероцепции и дыханию, а также материалы по физиологии медленного дыхания.</div>
+</div>
+</article>
+</main>
+
+<footer class="contact-footer">
+  <div class="footer-grid">
+    <div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+    <div class="contact-links">
+      <strong>Остались вопросы?</strong>
+      <a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
+      <div class="footer-social">
+        <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+        <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const siteMobileButton=document.querySelector('.site-mobile-menu');
+const siteMenu=document.querySelector('.site-menu');
+if(siteMobileButton&&siteMenu){
+  siteMobileButton.addEventListener('click',()=>{
+    siteMenu.classList.toggle('show');
+    siteMobileButton.setAttribute('aria-expanded',siteMenu.classList.contains('show'));
+  });
+  siteMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    siteMenu.classList.remove('show');
+    siteMobileButton.setAttribute('aria-expanded','false');
+  }));
+}
+</script>
+</body>
+</html>
