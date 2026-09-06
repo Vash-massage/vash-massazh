@@ -104,6 +104,40 @@ img{display:block;max-width:100%}
   .site-wrap{width:90%}.site-nav{min-height:68px}.site-brand-mark{width:50px;height:50px}.site-brand-name{font-size:29px}.site-book{padding:10px 13px;font-size:10px}.site-menu.show{top:68px}
   .article-wrap{width:90%}.article-hero{padding-top:20px}.breadcrumbs{font-size:9px;letter-spacing:.12em}.article-title{font-size:39px}.article-lead{font-size:17px}.prose{font-size:14.5px;line-height:1.45}.dropcap:first-letter{font-size:54px}.section-title{font-size:24px}.square-card{padding:21px;min-height:260px}.square-diagram{position:relative;right:auto;top:auto;margin:20px auto 0;width:245px}.awareness{min-height:0}.awareness-copy{width:100%}.awareness-art{position:relative;right:auto;bottom:auto;width:72%;margin:5px 0 0 auto}.slow-breath{padding:0;min-height:0}.lungs-art{position:relative;right:auto;top:auto;width:67%;margin:4px auto 0}.leaf-art{width:165px;margin-top:14px}.last-section{min-height:0}.sea-art{width:115%;margin-left:-8%;margin-top:15px}.sources{font-size:8px;margin-top:8px}.footer-grid{padding:25px 0}.contact-footer .contact-links{gap:10px}
 }
+
+/* Final reference corrections */
+.square-card{
+  min-height:332px;
+  padding:26px 250px 24px 27px;
+  border:1.5px solid var(--orange);
+  border-radius:18px;
+  background:rgba(255,253,249,.48);
+  overflow:hidden;
+}
+.square-card h3{font-size:30px;line-height:1;margin:0 0 17px}
+.square-card p{font-size:14px;line-height:1.42;max-width:305px}
+.square-leaf{position:absolute;right:17px;top:10px;width:78px;height:auto;z-index:2}
+.square-diagram-img{position:absolute;right:17px;top:83px;width:232px;height:auto;z-index:1}
+.last-section{min-height:270px}
+.last-section .section-title{position:relative;z-index:3;max-width:100%}
+.last-section .prose{width:49%;max-width:none;position:relative;z-index:3}
+.sea-art{right:-3%;bottom:0;width:53%;z-index:1}
+
+@media(max-width:900px){
+  .square-card{min-height:332px;padding:24px 245px 22px 24px}
+  .square-leaf{right:14px;top:9px}
+  .square-diagram-img{right:12px;top:82px;width:225px}
+  .last-section .prose{width:52%}
+  .sea-art{right:-3%;width:52%;bottom:0}
+}
+@media(max-width:560px){
+  .square-card{min-height:0;padding:21px;overflow:hidden}
+  .square-leaf{right:10px;top:10px;width:70px}
+  .square-diagram-img{position:relative;right:auto;top:auto;display:block;width:245px;max-width:100%;margin:16px auto 0}
+  .last-section .prose{width:100%}
+  .sea-art{position:relative;right:auto;bottom:auto;width:100%;margin-top:18px}
+}
+
 </style>
 </head>
 <body>
@@ -180,14 +214,8 @@ img{display:block;max-width:100%}
       <h3>Дыхание квадратом</h3>
       <p>Если тревога мешает собраться с мыслями, можно попробовать простой способ немного переключить внимание — дыхание квадратом: вдох на 4 счёта — пауза на 4 — выдох на 4 — пауза на 4.</p>
       <p style="margin-top:12px">Ровный счёт помогает сосредоточиться на понятной последовательности и на время отвлечься от тревожных мыслей. Если задерживать дыхание неприятно, этот способ лучше не использовать.</p>
-      <div class="square-diagram" aria-hidden="true">
-        <div class="box"></div>
-        <div class="label in">вдох<br>4 счёта</div>
-        <div class="label pause1">пауза<br>4 счёта</div>
-        <div class="label out">выдох<br>4 счёта</div>
-        <div class="label pause2">пауза<br>4 счёта</div>
-        <div class="arrow a1">⌄</div><div class="arrow a2">⌄</div><div class="arrow a3">⌄</div><div class="arrow a4">⌄</div>
-      </div>
+      <img class="square-leaf" src="assets/breathing-square-leaf.png" alt="">
+      <img class="square-diagram-img" src="assets/breathing-square-diagram.png" alt="" aria-hidden="true">
     </aside>
   </section>
 
