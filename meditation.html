@@ -74,36 +74,101 @@ img{display:block;max-width:100%}
 .hero-notes div{margin-bottom:10px}
 
 /* Сетка точно повторяет референс: текст слева/справа, иллюстрации занимают свои зоны */
-.article-body{padding:0 0 45px}
+.article-body{padding:0 0 28px}
 .prose{font-size:12.4px;line-height:1.46;color:#3d3833}
 .prose p{margin:0 0 12px}.prose p:last-child{margin-bottom:0}
 .dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:58px;line-height:.7;margin:7px 5px 0 0;color:#15120f}
 .section-title{margin:0 0 11px;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:.98;font-weight:600;color:#181512}
 .section-title::before{content:'✦';color:var(--gold);font-family:Georgia,serif;font-size:15px;margin-right:10px;vertical-align:3px}
 
-.intro-row{display:grid;grid-template-columns:43% 57%;column-gap:22px;align-items:start;margin-top:-27px}
-.intro-copy{padding-right:20px}
-.intro-side{position:relative;min-height:365px;padding:8px 0 0 3px}
-.side-copy{width:54%;position:relative;z-index:4}
-.daydream-art{position:absolute;width:60%;right:-1%;top:0;z-index:2;mix-blend-mode:multiply}
+/* Desktop composition follows the reference: compact, overlapping only
+   within image artwork itself — never across text. */
+.intro-row{
+  display:grid;
+  grid-template-columns:43% 57%;
+  column-gap:18px;
+  align-items:start;
+  margin-top:-32px;
+}
+.intro-copy{padding-right:18px}
+.intro-side{
+  position:relative;
+  min-height:285px;
+  padding:0 0 0 3px;
+}
+.side-copy{width:52%;position:relative;z-index:3}
+.daydream-art{
+  position:absolute;
+  width:52%;
+  right:-1%;
+  top:8px;
+  z-index:1;
+  mix-blend-mode:multiply;
+}
+.daydream-art img{width:100%}
 
-.body-row{display:grid;grid-template-columns:44% 56%;column-gap:15px;align-items:start;margin-top:-4px}
+.body-row{
+  display:grid;
+  grid-template-columns:46% 54%;
+  column-gap:18px;
+  align-items:start;
+  margin-top:-38px;
+}
 .body-copy{padding:0 20px 0 3px}
-.body-art{position:relative;min-height:410px;margin-top:-3px}
-.body-art img{position:absolute;width:91%;right:0;top:-2px;mix-blend-mode:multiply}
+.body-art{
+  position:relative;
+  min-height:390px;
+  margin-top:0;
+}
+.body-art img{
+  position:absolute;
+  width:91%;
+  right:-1%;
+  top:-3px;
+  mix-blend-mode:multiply;
+}
 
-.brain-row{display:grid;grid-template-columns:40% 60%;column-gap:20px;align-items:start;margin-top:-10px}
-.brain-art{width:96%;margin-left:-10px}
+.brain-row{
+  display:grid;
+  grid-template-columns:40% 60%;
+  column-gap:20px;
+  align-items:start;
+  margin-top:-70px;
+}
+.brain-art{width:92%;margin-left:-5px}
 .brain-art img{width:100%;mix-blend-mode:multiply}
-.brain-copy{padding:30px 4% 0 0}
+.brain-copy{padding:34px 4% 0 0}
 
-.emotion-row{display:grid;grid-template-columns:44% 56%;column-gap:20px;margin-top:-35px}
-.emotion-copy{padding:0 4% 0 0}
-
-.final-row{display:grid;grid-template-columns:44% 56%;column-gap:18px;align-items:start;margin-top:-5px}
+.final-row{
+  display:grid;
+  grid-template-columns:44% 56%;
+  column-gap:18px;
+  align-items:start;
+  margin-top:-6px;
+}
 .final-copy{padding:0 18px 0 3px}
-.final-art{position:relative;min-height:350px;margin-top:-10px}
-.final-art img{position:absolute;width:100%;right:-2%;top:0;mix-blend-mode:multiply}
+.final-art{
+  position:relative;
+  min-height:330px;
+  margin-top:-5px;
+}
+.final-art img{
+  position:relative;
+  width:100%;
+  right:auto;
+  top:auto;
+  mix-blend-mode:multiply;
+}
+.footer-source{margin-top:4px;font-size:9px;line-height:1.45;color:#8a8178}
+
+@media(min-width:901px){
+  /* Pull the middle composition upward to eliminate the large blank band
+     visible in the previous screenshot. */
+  .intro-row{margin-bottom:0}
+  .body-row{margin-top:-105px}
+  .brain-row{margin-top:-82px}
+  .final-row{margin-top:-28px}
+}
 
 @media(max-width:900px){
   .article-wrap{width:90%}
@@ -116,22 +181,37 @@ img{display:block;max-width:100%}
   .hero-art>img{position:relative;width:100%;left:auto;top:auto}
   .hero-notes{display:none}
 
-  .intro-row,.body-row,.brain-row,.emotion-row,.final-row{
-    grid-template-columns:1fr;column-gap:0;row-gap:24px;margin-top:32px
+  /* Mobile is a strict normal-flow layout. No absolute artwork here. */
+  .intro-row,.body-row,.brain-row,.final-row{
+    display:grid;
+    grid-template-columns:1fr;
+    column-gap:0;
+    row-gap:22px;
+    margin-top:28px;
+    margin-bottom:0;
   }
   .intro-row{margin-top:18px}
-  .intro-copy,.body-copy,.brain-copy,.emotion-copy,.final-copy{padding:0}
+  .intro-copy,.body-copy,.brain-copy,.final-copy{padding:0}
   .intro-side{min-height:0;padding:0}
   .side-copy{width:100%}
   .daydream-art,.body-art,.brain-art,.final-art{
-    position:relative;width:100%;right:auto;left:auto;top:auto;bottom:auto;min-height:0;margin:0 auto
+    position:relative;
+    width:100%;
+    right:auto;left:auto;top:auto;bottom:auto;
+    min-height:0;
+    margin:0 auto;
   }
-  .daydream-art{width:82%;margin:0 0 0 auto}
+  .daydream-art{width:84%;margin-left:auto}
   .body-art img,.brain-art img,.final-art img{
-    position:relative;width:100%;right:auto;top:auto;left:auto
+    position:relative;
+    width:100%;
+    right:auto;top:auto;left:auto
   }
   .brain-art{width:82%;margin:0 auto}
   .final-art{width:100%}
+  .article-body{padding-bottom:30px}
+  .footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}
+  .contact-links{justify-content:flex-start}
 }
 @media(max-width:560px){
   .article-wrap{width:90%}
@@ -142,9 +222,9 @@ img{display:block;max-width:100%}
   .prose{font-size:13.5px;line-height:1.48}
   .dropcap:first-letter{font-size:53px}
   .section-title{font-size:24px}
-  .daydream-art{width:88%}
-  .body-art{width:96%}
-  .brain-art{width:90%}
+  .daydream-art{width:92%}
+  .body-art{width:100%}
+  .brain-art{width:92%}
   .final-art{width:105%;margin-left:-2.5%}
 }
 
@@ -313,22 +393,6 @@ img{display:block;max-width:100%}
           </div>
         </div>
       </section>
-
-      <!-- Эмоции: сохраняем исходный текст, но делаем самостоятельным аккуратным блоком без новой иллюстрации -->
-      <section class="emotion-row">
-        <div></div>
-        <div class="emotion-copy prose-block">
-          <h2 class="section-title">А эмоции становятся другими?</h2>
-          <div class="prose">
-            <p>Это тоже активно изучают. В исследованиях обращают внимание на то, как человек mindfulness реагирует на эмоциональные стимулы — например, неприятные изображения или стрессовые ситуации.</p>
-            <p>В систематическом обзоре исследований, посвящённых связи черт осознанности с работой мозга, более высокая осознанность была связана, в частности, с меньшей реактивностью миндалины на эмоциональные стимулы и особенностями работы некоторых областей, связанных с вниманием и самовосприятием.</p>
-            <p>Но авторы отдельно предупреждают: такие связи нельзя автоматически трактовать как доказательство того, что медитация сама их вызывает.</p>
-            <p>Это принципиальная разница. «У людей, которые больше практикуют осознанность, наблюдается такая особенность» — не то же самое, что «медитация гарантированно создаёт эту особенность».</p>
-            <p>Именно поэтому современные исследования стараются использовать рандомизированные исследования и контрольные группы.</p>
-          </div>
-        </div>
-      </section>
-
       <!-- Финал -->
       <section class="final-row">
         <div class="final-copy prose-block">
