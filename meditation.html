@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Медитация под микроскопом: что изучает современная наука — Ваш массаж</title>
+<meta name="description" content="Что происходит с вниманием, эмоциями, мозгом и ощущением собственного тела во время медитации — и что об этом говорит современная наука.">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+:root{
+  --cream:#fffaf4;
+  --navy:#112b4a;
+  --ink:#24201c;
+  --orange:#a9622d;
+  --gold:#c9953e;
+  --line:#e6d9c9;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Montserrat,Arial,sans-serif}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* Общая шапка сайта */
+.site-header{
+  background:rgba(255,250,244,.96);
+  position:sticky;top:0;z-index:50;
+  border-bottom:1px solid rgba(228,214,196,.8);
+  backdrop-filter:blur(14px)
+}
+.site-wrap{width:min(1200px,92%);margin:auto}
+.site-nav{min-height:112px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.site-brand{display:flex;align-items:center;gap:12px;min-width:285px;color:var(--navy)}
+.site-brand-mark{width:88px;height:88px;object-fit:contain}
+.site-brand-copy{display:flex;flex-direction:column;line-height:.84}
+.site-brand-name{font-family:'Cormorant Garamond',Georgia,serif;font-size:45px;font-weight:600;letter-spacing:-.025em;color:var(--navy)}
+.site-brand-sub{margin-top:13px;font-size:10px;letter-spacing:.22em;color:#6d6258;text-transform:uppercase;font-weight:600}
+.site-menu{display:flex;align-items:center;gap:29px;font-size:13px;font-weight:600;white-space:nowrap;color:#18314e}
+.site-menu a:hover{color:var(--gold)}
+.site-menu .site-touch{font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-style:italic;font-weight:600;color:var(--navy)}
+.site-book{background:var(--navy);color:#fff;padding:15px 25px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;box-shadow:0 8px 20px rgba(17,43,74,.14)}
+.site-book span{color:#e3ba72;margin-right:7px}
+.site-mobile-menu{display:none;border:0;background:transparent;font-size:32px;line-height:1;color:var(--navy);cursor:pointer;padding:4px}
+@media(max-width:1060px){
+  .site-brand{min-width:240px}.site-brand-mark{width:74px;height:74px}.site-brand-name{font-size:39px}
+  .site-menu{gap:18px}.site-nav{min-height:96px}
+}
+@media(max-width:900px){
+  .site-nav{min-height:82px}.site-brand{min-width:auto}.site-brand-mark{width:64px;height:64px}
+  .site-brand-name{font-size:35px}.site-brand-sub{display:none}.site-menu{display:none}.site-mobile-menu{display:block}
+  .site-menu.show{display:flex;position:absolute;top:82px;left:0;right:0;background:var(--cream);padding:20px 4%;flex-direction:column;gap:18px;border-bottom:1px solid var(--line);box-shadow:0 16px 38px rgba(27,40,55,.09)}
+  .site-menu.show .site-touch{font-size:24px}
+}
+@media(max-width:560px){
+  .site-wrap{width:92%}.site-nav{min-height:74px}.site-brand-mark{width:56px;height:56px}
+  .site-brand-name{font-size:32px}.site-book{padding:12px 15px;font-size:11px}.site-menu.show{top:74px}
+}
+
+/* Статья */
+.article-wrap{width:min(1120px,90%);margin:auto}
+.article-page{overflow:hidden;background:var(--cream)}
+.article-hero{padding:38px 0 0}
+.breadcrumbs{
+  color:var(--orange);font-size:11px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px
+}
+.breadcrumbs span{padding:0 10px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:47% 53%;
+  min-height:425px;
+  align-items:start;
+}
+.hero-copy{padding-top:4px;position:relative;z-index:3}
+.article-title{
+  margin:0;
+  max-width:560px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:61px;line-height:.89;font-weight:600;
+  letter-spacing:-.035em;color:#171513
+}
+.article-lead{
+  margin:22px 0 12px;
+  max-width:505px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:24px;line-height:1.18;font-style:italic;
+  color:var(--orange)
+}
+.reading-time{font-size:12px;color:#342f2b}
+.hero-art{height:425px;position:relative;margin-top:-14px;z-index:1}
+.hero-art img{
+  position:absolute;width:105%;max-width:none;
+  left:-2%;top:0;
+  mix-blend-mode:multiply
+}
+.hero-notes{
+  position:absolute;right:1%;top:64px;
+  color:var(--orange);font-size:10px;line-height:1.5;
+  letter-spacing:.08em;text-transform:uppercase;width:105px
+}
+.hero-notes div{margin-bottom:11px}
+
+/* Основная редакционная сетка */
+.article-body{padding:0 0 52px}
+.prose{font-size:13px;line-height:1.52;color:#3d3833}
+.prose p{margin:0 0 13px}
+.prose p:last-child{margin-bottom:0}
+.dropcap:first-letter{
+  float:left;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:59px;line-height:.72;margin:7px 5px 0 0;color:#15120f
+}
+.section-title{
+  margin:0 0 13px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:25px;line-height:.98;font-weight:600;color:#181512
+}
+.section-title::before{
+  content:'✦';color:var(--gold);font-family:Georgia,serif;
+  font-size:15px;margin-right:11px;vertical-align:3px
+}
+
+.intro-row{
+  display:grid;grid-template-columns:43% 57%;
+  column-gap:22px;align-items:start;
+  margin-top:-34px
+}
+.intro-copy{padding-right:24px}
+.intro-side{
+  position:relative;
+  min-height:300px;
+  padding:10px 0 0 7px
+}
+.intro-side .side-copy{width:51%;position:relative;z-index:3}
+.intro-side-art{
+  position:absolute;right:-2%;top:-4px;width:58%;z-index:1
+}
+.intro-side-art img{width:100%;mix-blend-mode:multiply}
+
+.two-col{
+  display:grid;grid-template-columns:47% 53%;
+  column-gap:18px;align-items:start
+}
+.body-row{margin-top:20px}
+.body-left{padding-right:15px}
+.body-right{position:relative;min-height:365px}
+.body-right .section-title{max-width:340px}
+.body-right .prose{max-width:390px}
+.body-art{
+  position:absolute;right:-5%;bottom:-5px;width:64%;z-index:1
+}
+.body-art img{width:100%;mix-blend-mode:multiply}
+
+.brain-row{
+  display:grid;grid-template-columns:40% 60%;
+  column-gap:22px;align-items:center;
+  margin-top:-5px
+}
+.brain-art{width:96%;margin-left:-10px}
+.brain-art img{width:100%;mix-blend-mode:multiply}
+.brain-copy{padding:15px 4% 0 0}
+
+.body-row-2{
+  display:grid;grid-template-columns:50% 50%;
+  column-gap:16px;align-items:start;
+  margin-top:-15px
+}
+.body2-copy{padding-top:20px}
+.body2-art{position:relative;margin-top:0;min-height:360px}
+.body2-art img{position:absolute;width:92%;right:-1%;top:0;mix-blend-mode:multiply}
+.body2-copy .prose{max-width:440px}
+
+.final-row{
+  display:grid;grid-template-columns:43% 57%;
+  column-gap:20px;align-items:start;
+  margin-top:-5px
+}
+.final-copy{padding-top:20px}
+.final-copy .prose{max-width:445px}
+.final-art{position:relative;min-height:340px}
+.final-art img{position:absolute;width:100%;right:-3%;top:-10px;mix-blend-mode:multiply}
+
+.footer-source{
+  margin-top:3px;
+  font-size:9px;line-height:1.45;color:#8a8178
+}
+
+/* Общий футер */
+.contact-footer{background:var(--navy);color:#f8f4ed}
+.contact-footer a{color:#e3ba72}
+.footer-grid{
+  width:min(920px,89%);margin:auto;min-height:120px;
+  display:flex;justify-content:space-between;align-items:center;gap:30px
+}
+.footer-grid>div:first-child{font-size:12px}
+.footer-grid small{display:inline-block;margin-top:6px;color:#bfc8d2}
+.contact-links{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-size:11px;justify-content:flex-end}
+.footer-phone{font-size:15px;font-weight:700;color:#f8f4ed!important;white-space:nowrap}
+.footer-social{display:flex;gap:8px}
+.footer-social a{
+  width:38px;height:38px;border:1px solid rgba(227,186,114,.45);border-radius:11px;
+  display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.04)
+}
+.footer-social img{width:23px;height:23px;object-fit:contain}
+
+/* Мобильная версия: изображения идут отдельными блоками, без наложения на текст */
+@media(max-width:900px){
+  .article-wrap{width:90%}
+  .article-hero{padding-top:23px}
+  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-copy{padding-top:0}
+  .article-title{font-size:50px;max-width:760px}
+  .article-lead{font-size:20px;max-width:680px}
+  .hero-art{height:auto;margin:5px auto 0;width:88%}
+  .hero-art img{position:relative;width:100%;left:auto;top:auto}
+  .hero-notes{display:none}
+
+  .intro-row,.two-col,.brain-row,.body-row-2,.final-row{
+    grid-template-columns:1fr;column-gap:0;row-gap:26px;margin-top:34px
+  }
+  .intro-row{margin-top:28px}
+  .intro-copy,.body-left,.brain-copy,.body2-copy,.final-copy{padding:0}
+  .intro-side{min-height:0;padding:0}
+  .intro-side .side-copy,.body-right .prose,.body-right .section-title,.final-copy .prose{width:100%;max-width:none}
+  .intro-side-art,.body-art,.body2-art,.final-art{
+    position:relative;right:auto;bottom:auto;top:auto;left:auto;width:100%;min-height:0;margin:5px auto 0
+  }
+  .intro-side-art img,.body-art img,.body2-art img,.final-art img{
+    position:relative;width:100%;max-width:100%;right:auto;top:auto
+  }
+  .brain-art{width:82%;margin:0 auto}
+  .body-right{min-height:0}
+  .body2-art{min-height:0}
+  .final-art{min-height:0}
+  .article-body{padding-bottom:38px}
+  .footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}
+  .contact-links{justify-content:flex-start}
+}
+@media(max-width:560px){
+  .article-wrap{width:90%}
+  .breadcrumbs{font-size:9px;letter-spacing:.13em;margin-bottom:15px}
+  .article-title{font-size:40px;line-height:.92}
+  .article-lead{font-size:18px;line-height:1.2;margin-top:17px}
+  .reading-time{font-size:10px}
+  .prose{font-size:14px;line-height:1.48}
+  .dropcap:first-letter{font-size:55px}
+  .section-title{font-size:25px;line-height:.98}
+  .intro-row,.two-col,.brain-row,.body-row-2,.final-row{row-gap:28px}
+  .hero-art{width:100%;margin-top:8px}
+  .intro-row{margin-top:18px}
+  .brain-art{width:92%}
+  .body-art img,.body2-art img,.final-art img{width:100%}
+}
+</style>
+</head>
+
+<body>
+<header class="site-header">
+  <div class="site-wrap site-nav">
+    <a class="site-brand" href="index.html" aria-label="Ваш массаж — на главную">
+      <img class="site-brand-mark" src="assets/logo-mark-transparent.png" alt="">
+      <span class="site-brand-copy">
+        <span class="site-brand-name">Ваш<br>массаж</span>
+        <span class="site-brand-sub">Массажная мастерская</span>
+      </span>
+    </a>
+    <nav class="site-menu" id="site-menu">
+      <a href="index.html#about">О нас</a>
+      <a href="index.html#services">Услуги</a>
+      <a href="index.html#reviews">Отзывы</a>
+      <a class="site-touch" href="na-oshchup.html">На ощупь</a>
+      <a href="index.html#address">Адрес</a>
+      <a href="index.html#contacts">Контакты</a>
+    </nav>
+    <a class="site-book" href="https://dikidi.ru/2021892?p=1.pi-po" target="_blank" rel="noopener"><span>✦</span>Записаться</a>
+    <button class="site-mobile-menu" aria-label="Открыть меню" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main class="article-page">
+<section class="article-hero">
+  <div class="article-wrap">
+    <div class="breadcrumbs">На ощупь <span>•</span> Тело и сознание</div>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="article-title">Медитация под микроскопом: что изучает современная наука</h1>
+        <p class="article-lead">Мы привыкли думать о медитации как о способе успокоить мысли. А что происходит в это время с вниманием, эмоциями и мозгом?</p>
+        <div class="reading-time">Время чтения: ~5 минут</div>
+      </div>
+
+      <div class="hero-art">
+        <img src="assets/meditation-hero.png" alt="Женщина в медитации">
+        <div class="hero-notes">
+          <div>Больше понимания</div>
+          <div>Больше осознанности</div>
+          <div>Ближе к себе</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+<div class="article-wrap">
+
+  <section class="intro-row">
+    <div class="intro-copy">
+      <div class="prose">
+        <p class="dropcap">Медитация существует тысячи лет, но наука начала изучать её относительно недавно.</p>
+        <p>Теперь для этого используют МРТ, ЭЭГ, психологические тесты и эксперименты, в которых можно проверить, что происходит с вниманием, восприятием эмоций и ощущением собственного тела.</p>
+        <p>И чем больше исследований появляется, тем интереснее становится картина. Потому что медитация — это не просто «сидеть с закрытыми глазами».</p>
+      </div>
+
+      <section style="margin-top:42px">
+        <h2 class="section-title">А тело здесь при чём?</h2>
+        <div class="prose">
+          <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
+          <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать.</p>
+          <p>Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
+          <p>При этом исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
+          <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
+        </div>
+      </section>
+    </div>
+
+    <div class="intro-side">
+      <div class="side-copy">
+        <h2 class="section-title">Что вообще происходит во время медитации?</h2>
+        <div class="prose">
+          <p>Представьте: вы садитесь и обращаете внимание на дыхание. Через несколько секунд в голову приходит мысль. Потом ещё одна.</p>
+          <p>Вы вспоминаете разговор, планируете завтрашний день, замечаете звук за окном — и только потом понимаете: «Я опять думаю о чём-то другом».</p>
+          <p>В практике осознанности именно этот момент очень важен. Не нужно сделать так, чтобы мыслей не было. Задача скорее в том, чтобы заметить, куда ушло внимание, и снова вернуть его к выбранному объекту — например, к дыханию.</p>
+          <p>Поэтому исследователи рассматривают медитацию в том числе как тренировку внимания и способности замечать происходящее.</p>
+        </div>
+      </div>
+      <div class="intro-side-art">
+        <img src="assets/meditation-daydream.png" alt="Женщина отдыхает с закрытыми глазами">
+      </div>
+    </div>
+  </section>
+
+  <section class="brain-row">
+    <div class="brain-art"><img src="assets/meditation-brain.png" alt="Иллюстрация мозга и внимания"></div>
+    <div class="brain-copy">
+      <h2 class="section-title">А что в этот момент происходит с мозгом?</h2>
+      <div class="prose">
+        <p>Учёные используют функциональную МРТ, чтобы посмотреть, какие участки и сети мозга меняют свою активность во время медитации. Одна из систем, которая особенно часто появляется в исследованиях, — сеть пассивного режима работы мозга (default mode network, DMN).</p>
+        <p>Она связана, среди прочего, с самореференцией, воспоминаниями и мыслями о прошлом и будущем.</p>
+        <p>Некоторые исследования показывают, что во время практик осознанности активность и связность внутри этой сети могут меняться. Но это не означает, что медитация просто «выключает мысли». Современные обзоры подчёркивают: мозг во время медитации не переходит в один универсальный режим — разные практики задействуют разные процессы и сети.</p>
+        <p><strong>И это важное уточнение.</strong> Медитировать не значит перестать думать. Иногда медитация скорее помогает заметить сам момент, когда мысль унесла нас за собой.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-row">
+    <div class="final-copy">
+      <h2 class="section-title">Что же тогда действительно интересно?</h2>
+      <div class="prose">
+        <p>Пожалуй, сам факт, что обычный акт внимания можно изучать экспериментально.</p>
+        <p>Мы можем сесть на несколько минут, обратить внимание на дыхание — и заметить, как внимание ушло. Можем заметить напряжение в плечах, хотя минуту назад его не ощущали. Можем обнаружить, что неприятная мысль появилась — и вместе с ней изменилось ощущение в теле.</p>
+        <p>Именно такие маленькие процессы сейчас становятся объектом исследований.</p>
+        <p>Современная наука постепенно пытается разобраться не в том, «полезна ли медитация вообще», а в гораздо более интересном вопросе: что именно происходит с человеком, когда он учится замечать то, что обычно проходит мимо внимания?</p>
+        <p>И возможно, именно здесь медитация становится особенно интересной — не как волшебная кнопка для спокойствия, а как способ исследовать собственное внимание, тело и то, как мы воспринимаем происходящее с нами.</p>
+      </div>
+    </div>
+    <div class="final-art"><img src="assets/meditation-window.png" alt="Женщина у окна, в спокойном состоянии"></div>
+  </section>
+
+</div>
+</article>
+</main>
+
+<footer class="contact-footer">
+  <div class="footer-grid">
+    <div><strong>Ваш массаж</strong><br><small>Массажная мастерская · Москва, м. Курская</small></div>
+    <div class="contact-links">
+      <strong>Остались вопросы?</strong>
+      <a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
+      <div class="footer-social">
+        <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
+        <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const mobileButton=document.querySelector('.site-mobile-menu');
+const menu=document.querySelector('.site-menu');
+if(mobileButton&&menu){
+  mobileButton.addEventListener('click',()=>{
+    menu.classList.toggle('show');
+    mobileButton.setAttribute('aria-expanded',menu.classList.contains('show'));
+  });
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    menu.classList.remove('show');
+    mobileButton.setAttribute('aria-expanded','false');
+  }));
+}
+</script>
+</body>
+</html>
