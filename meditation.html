@@ -60,174 +60,211 @@ img{display:block;max-width:100%}
 /* Статья */
 .article-wrap{width:min(1120px,90%);margin:auto}
 .article-page{overflow:hidden;background:var(--cream)}
-.article-hero{padding:30px 0 0}
-.breadcrumbs{color:var(--orange);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
-.breadcrumbs span{padding:0 9px}
-.hero-grid{display:grid;grid-template-columns:46% 54%;min-height:410px;align-items:start}
-.hero-copy{padding-top:5px;position:relative;z-index:3}
-.article-title{margin:0;max-width:560px;font-family:'Cormorant Garamond',Georgia,serif;font-size:59px;line-height:.89;font-weight:600;letter-spacing:-.035em;color:#171513}
-.article-lead{margin:20px 0 12px;max-width:510px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.18;font-style:italic;color:var(--orange)}
-.reading-time{font-size:11px;color:#342f2b}
-.hero-art{height:410px;position:relative;margin-top:-15px;z-index:1}
-.hero-art>img{position:absolute;width:106%;max-width:none;left:-1%;top:-2px;mix-blend-mode:multiply}
-.hero-notes{position:absolute;right:0;top:58px;color:var(--orange);font-size:10px;line-height:1.45;letter-spacing:.07em;text-transform:uppercase;width:90px}
-.hero-notes div{margin-bottom:10px}
+.article-hero{padding:38px 0 0}
+.breadcrumbs{
+  color:var(--orange);font-size:11px;font-weight:500;
+  letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px
+}
+.breadcrumbs span{padding:0 10px}
+.hero-grid{
+  display:grid;
+  grid-template-columns:47% 53%;
+  min-height:425px;
+  align-items:start;
+}
+.hero-copy{padding-top:4px;position:relative;z-index:3}
+.article-title{
+  margin:0;
+  max-width:560px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:61px;line-height:.89;font-weight:600;
+  letter-spacing:-.035em;color:#171513
+}
+.article-lead{
+  margin:22px 0 12px;
+  max-width:505px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:24px;line-height:1.18;font-style:italic;
+  color:var(--orange)
+}
+.reading-time{font-size:12px;color:#342f2b}
+.hero-art{height:425px;position:relative;margin-top:-14px;z-index:1}
+.hero-art img{
+  position:absolute;width:105%;max-width:none;
+  left:-2%;top:0;
+  mix-blend-mode:multiply
+}
+.hero-notes{
+  position:absolute;right:1%;top:64px;
+  color:var(--orange);font-size:10px;line-height:1.5;
+  letter-spacing:.08em;text-transform:uppercase;width:105px
+}
+.hero-notes div{margin-bottom:11px}
 
-/* Сетка точно повторяет референс: текст слева/справа, иллюстрации занимают свои зоны */
-.article-body{padding:0 0 28px}
-.prose{font-size:12.4px;line-height:1.46;color:#3d3833}
-.prose p{margin:0 0 12px}.prose p:last-child{margin-bottom:0}
-.dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:58px;line-height:.7;margin:7px 5px 0 0;color:#15120f}
-.section-title{margin:0 0 11px;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:.98;font-weight:600;color:#181512}
-.section-title::before{content:'✦';color:var(--gold);font-family:Georgia,serif;font-size:15px;margin-right:10px;vertical-align:3px}
+/* Основная редакционная сетка — без наложения текста и иллюстраций */
+.article-body{padding:0 0 52px}
+.prose{font-size:13px;line-height:1.52;color:#3d3833}
+.prose p{margin:0 0 13px}
+.prose p:last-child{margin-bottom:0}
+.dropcap:first-letter{
+  float:left;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:59px;line-height:.72;margin:7px 5px 0 0;color:#15120f
+}
+.section-title{
+  margin:0 0 13px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:25px;line-height:.98;font-weight:600;color:#181512
+}
+.section-title::before{
+  content:'✦';color:var(--gold);font-family:Georgia,serif;
+  font-size:15px;margin-right:11px;vertical-align:3px
+}
 
-/* Desktop composition follows the reference: compact, overlapping only
-   within image artwork itself — never across text. */
 .intro-row{
   display:grid;
   grid-template-columns:43% 57%;
-  column-gap:18px;
+  column-gap:22px;
   align-items:start;
-  margin-top:-32px;
+  margin-top:-10px
 }
-.intro-copy{padding-right:18px}
+.intro-copy{padding-right:24px}
 .intro-side{
   position:relative;
-  min-height:285px;
-  padding:0 0 0 3px;
+  padding:10px 0 0 7px;
 }
-.side-copy{width:52%;position:relative;z-index:3}
-.daydream-art{
+.intro-side .side-copy{width:53%;position:relative;z-index:2}
+.intro-side-art{
   position:absolute;
-  width:52%;
-  right:-1%;
-  top:8px;
+  right:-3%;
+  top:0;
+  width:55%;
   z-index:1;
-  mix-blend-mode:multiply;
 }
-.daydream-art img{width:100%}
+.intro-side-art img{width:100%;mix-blend-mode:multiply}
 
-.body-row{
+.intro-copy > section{margin-top:42px!important}
+
+.two-col{
   display:grid;
-  grid-template-columns:46% 54%;
-  column-gap:18px;
-  align-items:start;
-  margin-top:-38px;
+  grid-template-columns:42% 58%;
+  column-gap:24px;
+  align-items:start
 }
-.body-copy{padding:0 20px 0 3px}
+.body-row{margin-top:42px}
+.body-left{min-height:1px}
+.body-right{padding:0 0 0 4px;min-height:0}
+.body-right .section-title{max-width:430px}
+.body-right .prose{max-width:500px}
 .body-art{
   position:relative;
-  min-height:390px;
-  margin-top:0;
+  width:72%;
+  margin:28px 0 0 auto;
+  z-index:1
 }
-.body-art img{
-  position:absolute;
-  width:91%;
-  right:-1%;
-  top:-3px;
-  mix-blend-mode:multiply;
-}
+.body-art img{width:100%;mix-blend-mode:multiply}
 
 .brain-row{
   display:grid;
-  grid-template-columns:40% 60%;
+  grid-template-columns:38% 62%;
+  column-gap:24px;
+  align-items:start;
+  margin-top:18px
+}
+.brain-art{width:100%;margin:0}
+.brain-art img{width:100%;mix-blend-mode:multiply}
+.brain-copy{padding:28px 4% 0 0}
+
+.body-row-2{
+  display:grid;
+  grid-template-columns:48% 52%;
   column-gap:20px;
   align-items:start;
-  margin-top:-70px;
+  margin-top:20px
 }
-.brain-art{width:92%;margin-left:-5px}
-.brain-art img{width:100%;mix-blend-mode:multiply}
-.brain-copy{padding:34px 4% 0 0}
+.body2-copy{padding-top:15px}
+.body2-copy .prose{max-width:470px}
+.body2-art{
+  position:relative;
+  min-height:0;
+  padding-top:0
+}
+.body2-art img{
+  width:100%;
+  height:auto;
+  position:relative;
+  right:auto;
+  top:auto;
+  mix-blend-mode:multiply
+}
 
 .final-row{
   display:grid;
-  grid-template-columns:44% 56%;
-  column-gap:18px;
+  grid-template-columns:43% 57%;
+  column-gap:20px;
   align-items:start;
-  margin-top:-6px;
+  margin-top:22px
 }
-.final-copy{padding:0 18px 0 3px}
-.final-art{
-  position:relative;
-  min-height:330px;
-  margin-top:-5px;
-}
+.final-copy{padding-top:12px}
+.final-copy .prose{max-width:455px}
+.final-art{position:relative;min-height:0;padding-top:0}
 .final-art img{
   position:relative;
   width:100%;
   right:auto;
   top:auto;
-  mix-blend-mode:multiply;
+  mix-blend-mode:multiply
 }
-.footer-source{margin-top:4px;font-size:9px;line-height:1.45;color:#8a8178}
-
-@media(min-width:901px){
-  /* Pull the middle composition upward to eliminate the large blank band
-     visible in the previous screenshot. */
-  .intro-row{margin-bottom:0}
-  .body-row{margin-top:-105px}
-  .brain-row{margin-top:-82px}
-  .final-row{margin-top:-28px}
-}
+.footer-source{margin-top:3px;font-size:9px;line-height:1.45;color:#8a8178}
 
 @media(max-width:900px){
   .article-wrap{width:90%}
-  .article-hero{padding-top:22px}
+  .article-hero{padding-top:23px}
   .hero-grid{grid-template-columns:1fr;min-height:0}
-  .hero-copy{padding:0}
-  .article-title{font-size:49px;line-height:.92;max-width:100%}
-  .article-lead{font-size:20px;max-width:100%}
-  .hero-art{height:auto;width:100%;margin:7px auto 0}
-  .hero-art>img{position:relative;width:100%;left:auto;top:auto}
-  .hero-notes{display:none}
+  .hero-copy{padding-top:0}
+  .article-title{font-size:50px;max-width:760px}
+  .article-lead{font-size:20px;max-width:680px}
+  .hero-art{height:auto;margin:5px auto 0;width:88%}
+  .hero-art img{position:relative;width:100%;left:auto;top:auto}
 
-  /* Mobile is a strict normal-flow layout. No absolute artwork here. */
-  .intro-row,.body-row,.brain-row,.final-row{
-    display:grid;
+  .intro-row,.two-col,.brain-row,.body-row-2,.final-row{
     grid-template-columns:1fr;
     column-gap:0;
-    row-gap:22px;
-    margin-top:28px;
-    margin-bottom:0;
+    row-gap:28px;
+    margin-top:34px
   }
-  .intro-row{margin-top:18px}
-  .intro-copy,.body-copy,.brain-copy,.final-copy{padding:0}
-  .intro-side{min-height:0;padding:0}
-  .side-copy{width:100%}
-  .daydream-art,.body-art,.brain-art,.final-art{
+  .intro-row{margin-top:28px}
+  .intro-copy,.body-left,.brain-copy,.body2-copy,.final-copy{padding:0}
+  .intro-side{padding:0}
+  .intro-side .side-copy,.body-right .prose,.body-right .section-title,
+  .body2-copy .prose,.final-copy .prose{width:100%;max-width:none}
+  .intro-side-art,.body-art,.body2-art,.final-art{
     position:relative;
-    width:100%;
-    right:auto;left:auto;top:auto;bottom:auto;
-    min-height:0;
-    margin:0 auto;
+    right:auto;bottom:auto;top:auto;left:auto;
+    width:100%;min-height:0;margin:5px auto 0
   }
-  .daydream-art{width:84%;margin-left:auto}
-  .body-art img,.brain-art img,.final-art img{
-    position:relative;
-    width:100%;
-    right:auto;top:auto;left:auto
+  .intro-side-art img,.body-art img,.body2-art img,.final-art img{
+    position:relative;width:100%;max-width:100%;right:auto;top:auto
   }
-  .brain-art{width:82%;margin:0 auto}
-  .final-art{width:100%}
-  .article-body{padding-bottom:30px}
+  .brain-art{width:92%;margin:0 auto}
+  .body-right{min-height:0}
+  .article-body{padding-bottom:38px}
   .footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}
   .contact-links{justify-content:flex-start}
 }
 @media(max-width:560px){
   .article-wrap{width:90%}
-  .breadcrumbs{font-size:9px;letter-spacing:.13em;margin-bottom:14px}
-  .article-title{font-size:39px}
-  .article-lead{font-size:18px;line-height:1.2}
+  .breadcrumbs{font-size:9px;letter-spacing:.13em;margin-bottom:15px}
+  .article-title{font-size:40px;line-height:.92}
+  .article-lead{font-size:18px;line-height:1.2;margin-top:17px}
   .reading-time{font-size:10px}
-  .prose{font-size:13.5px;line-height:1.48}
-  .dropcap:first-letter{font-size:53px}
-  .section-title{font-size:24px}
-  .daydream-art{width:92%}
-  .body-art{width:100%}
-  .brain-art{width:92%}
-  .final-art{width:105%;margin-left:-2.5%}
+  .prose{font-size:14px;line-height:1.48}
+  .dropcap:first-letter{font-size:55px}
+  .section-title{font-size:25px;line-height:.98}
+  .intro-row,.two-col,.brain-row,.body-row-2,.final-row{row-gap:28px}
+  .hero-art{width:100%;margin-top:8px}
+  .intro-row{margin-top:18px}
+  .brain-art{width:100%}
 }
-
 
 /* Общий футер */
 .contact-footer{background:var(--navy);color:#f8f4ed}
@@ -322,94 +359,97 @@ img{display:block;max-width:100%}
 </header>
 
 <main class="article-page">
-  <section class="article-hero">
-    <div class="article-wrap">
-      <div class="breadcrumbs">На ощупь <span>•</span> Тело и сознание</div>
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <h1 class="article-title">Медитация<br>под микроскопом:<br>что изучает современная<br>наука</h1>
-          <p class="article-lead">Мы привыкли думать о медитации как о способе<br>успокоить мысли. А что происходит в это время<br>с вниманием, эмоциями и мозгом?</p>
-          <div class="reading-time">Время чтения: ~ 5 минут</div>
+<section class="article-hero">
+  <div class="article-wrap">
+    <div class="breadcrumbs">На ощупь <span>•</span> Тело и сознание</div>
+
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="article-title">Медитация под микроскопом: что изучает современная наука</h1>
+        <p class="article-lead">Мы привыкли думать о медитации как о способе успокоить мысли. А что происходит в это время с вниманием, эмоциями и мозгом?</p>
+        <div class="reading-time">Время чтения: ~5 минут</div>
+      </div>
+
+      <div class="hero-art">
+        <img src="assets/meditation-hero.png" alt="Женщина в медитации">
+        <div class="hero-notes">
+          <div>Больше понимания</div>
+          <div>Больше осознанности</div>
+          <div>Ближе к себе</div>
         </div>
-        <div class="hero-art">
-          <img src="assets/meditation-hero.png" alt="">
-          <div class="hero-notes"><div>Больше<br>понимания</div><div>Больше<br>осознанности</div><div>Ближе к себе</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<article class="article-body">
+<div class="article-wrap">
+
+  <section class="intro-row">
+    <div class="intro-copy">
+      <div class="prose">
+        <p class="dropcap">Медитация существует тысячи лет, но наука начала изучать её относительно недавно.</p>
+        <p>Теперь для этого используют МРТ, ЭЭГ, психологические тесты и эксперименты, в которых можно проверить, что происходит с вниманием, восприятием эмоций и ощущением собственного тела.</p>
+        <p>И чем больше исследований появляется, тем интереснее становится картина. Потому что медитация — это не просто «сидеть с закрытыми глазами».</p>
+      </div>
+
+      <section style="margin-top:42px">
+        <h2 class="section-title">А тело здесь при чём?</h2>
+        <div class="prose">
+          <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
+          <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать.</p>
+          <p>Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
+          <p>При этом исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
+          <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
         </div>
+      </section>
+    </div>
+
+    <div class="intro-side">
+      <div class="side-copy">
+        <h2 class="section-title">Что вообще происходит во время медитации?</h2>
+        <div class="prose">
+          <p>Представьте: вы садитесь и обращаете внимание на дыхание. Через несколько секунд в голову приходит мысль. Потом ещё одна.</p>
+          <p>Вы вспоминаете разговор, планируете завтрашний день, замечаете звук за окном — и только потом понимаете: «Я опять думаю о чём-то другом».</p>
+          <p>В практике осознанности именно этот момент очень важен. Не нужно сделать так, чтобы мыслей не было. Задача скорее в том, чтобы заметить, куда ушло внимание, и снова вернуть его к выбранному объекту — например, к дыханию.</p>
+          <p>Поэтому исследователи рассматривают медитацию в том числе как тренировку внимания и способности замечать происходящее.</p>
+        </div>
+      </div>
+      <div class="intro-side-art">
+        <img src="assets/meditation-daydream.png" alt="Женщина отдыхает с закрытыми глазами">
       </div>
     </div>
   </section>
 
-  <article class="article-body">
-    <div class="article-wrap">
-
-      <!-- Вводный блок + «Что происходит» -->
-      <section class="intro-row">
-        <div class="intro-copy prose dropcap">
-          <p>Медитация существует тысячи лет, но наука начала изучать её относительно недавно.</p>
-          <p>Теперь для этого используют МРТ, ЭЭГ, психологические тесты и эксперименты, в которых можно проверить, что происходит с вниманием, восприятием эмоций и ощущением собственного тела.</p>
-          <p>И чем больше исследований появляется, тем интереснее становится картина. Потому что медитация — это не просто «сидеть с закрытыми глазами».</p>
-        </div>
-
-        <div class="intro-side">
-          <div class="side-copy">
-            <h2 class="section-title">Что вообще происходит<br>во время медитации?</h2>
-            <div class="prose">
-              <p>Представьте: вы садитесь и обращаете внимание на дыхание. Через несколько секунд в голову приходит мысль. Потом ещё одна.</p>
-              <p>Вы вспоминаете разговор, планируете завтрашний день, замечаете звук за окном — и только потом понимаете: «Я опять думаю о чём-то другом».</p>
-              <p>В практике осознанности именно этот момент очень важен. Не нужно сделать так, чтобы мыслей не было. Задача скорее в том, чтобы заметить, куда ушло внимание, и снова вернуть его к выбранному объекту — например, к дыханию.</p>
-              <p>Поэтому исследователи рассматривают медитацию в том числе как тренировку внимания и способности замечать происходящее.</p>
-            </div>
-          </div>
-          <img class="daydream-art" src="assets/meditation-daydream.png" alt="">
-        </div>
-      </section>
-
-      <!-- Тело -->
-      <section class="body-row">
-        <div class="body-copy prose-block">
-          <h2 class="section-title">А тело здесь при чём?</h2>
-          <div class="prose">
-            <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
-            <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать. Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
-            <p>Исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
-            <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
-          </div>
-        </div>
-        <div class="body-art">
-          <img src="assets/meditation-body.png" alt="">
-        </div>
-      </section>
-
-      <!-- Мозг -->
-      <section class="brain-row">
-        <div class="brain-art"><img src="assets/meditation-brain.png" alt=""></div>
-        <div class="brain-copy prose-block">
-          <h2 class="section-title">А что в этот момент<br>происходит с мозгом?</h2>
-          <div class="prose">
-            <p>Учёные используют функциональную МРТ, чтобы посмотреть, какие участки и сети мозга меняют свою активность во время медитации. Одна из систем, которая особенно часто появляется в исследованиях, — сеть пассивного режима работы мозга (default mode network, DMN).</p>
-            <p>Она связана, среди прочего, с самореференцией, воспоминаниями и мыслями о прошлом и будущем.</p>
-            <p>Некоторые исследования показывают, что во время практик осознанности активность и связность внутри этой сети могут меняться. Но это не означает, что медитация просто «выключает мысли». Современные обзоры подчёркивают: мозг во время медитации не переходит в один универсальный режим — разные практики задействуют разные процессы и сети.</p>
-            <p>И это важное уточнение. Медитировать не значит перестать думать. Иногда медитация скорее помогает заметить сам момент, когда мысль унесла нас за собой.</p>
-          </div>
-        </div>
-      </section>
-      <!-- Финал -->
-      <section class="final-row">
-        <div class="final-copy prose-block">
-          <h2 class="section-title">Что же тогда действительно интересно?</h2>
-          <div class="prose">
-            <p>Пожалуй, сам факт, что обычный акт внимания можно изучать экспериментально.</p>
-            <p>Мы можем сесть на несколько минут, обратить внимание на дыхание — и заметить, как внимание ушло. Можем заметить напряжение в плечах, хотя минуту назад его не ощущали. Можем обнаружить, что неприятная мысль появилась — и вместе с ней изменилось ощущение в теле.</p>
-            <p>Именно такие маленькие процессы сейчас становятся объектом исследований.</p>
-            <p>Современная наука постепенно пытается разобраться не в том, «полезна ли медитация вообще», а в гораздо более интересном вопросе: что именно происходит с человеком, когда он учится замечать то, что обычно проходит мимо внимания?</p>
-            <p>И возможно, именно здесь медитация становится особенно интересной — не как волшебная кнопка для спокойствия, а как способ исследовать собственное внимание, тело и то, как мы воспринимаем происходящее с нами.</p>
-          </div>
-        </div>
-        <div class="final-art"><img src="assets/meditation-window.png" alt=""></div>
-      </section>
-
+  <section class="brain-row">
+    <div class="brain-art"><img src="assets/meditation-brain.png" alt="Иллюстрация мозга и внимания"></div>
+    <div class="brain-copy">
+      <h2 class="section-title">А что в этот момент происходит с мозгом?</h2>
+      <div class="prose">
+        <p>Учёные используют функциональную МРТ, чтобы посмотреть, какие участки и сети мозга меняют свою активность во время медитации. Одна из систем, которая особенно часто появляется в исследованиях, — сеть пассивного режима работы мозга (default mode network, DMN).</p>
+        <p>Она связана, среди прочего, с самореференцией, воспоминаниями и мыслями о прошлом и будущем.</p>
+        <p>Некоторые исследования показывают, что во время практик осознанности активность и связность внутри этой сети могут меняться. Но это не означает, что медитация просто «выключает мысли». Современные обзоры подчёркивают: мозг во время медитации не переходит в один универсальный режим — разные практики задействуют разные процессы и сети.</p>
+        <p><strong>И это важное уточнение.</strong> Медитировать не значит перестать думать. Иногда медитация скорее помогает заметить сам момент, когда мысль унесла нас за собой.</p>
+      </div>
     </div>
-  </article>
+  </section>
+
+  <section class="final-row">
+    <div class="final-copy">
+      <h2 class="section-title">Что же тогда действительно интересно?</h2>
+      <div class="prose">
+        <p>Пожалуй, сам факт, что обычный акт внимания можно изучать экспериментально.</p>
+        <p>Мы можем сесть на несколько минут, обратить внимание на дыхание — и заметить, как внимание ушло. Можем заметить напряжение в плечах, хотя минуту назад его не ощущали. Можем обнаружить, что неприятная мысль появилась — и вместе с ней изменилось ощущение в теле.</p>
+        <p>Именно такие маленькие процессы сейчас становятся объектом исследований.</p>
+        <p>Современная наука постепенно пытается разобраться не в том, «полезна ли медитация вообще», а в гораздо более интересном вопросе: что именно происходит с человеком, когда он учится замечать то, что обычно проходит мимо внимания?</p>
+        <p>И возможно, именно здесь медитация становится особенно интересной — не как волшебная кнопка для спокойствия, а как способ исследовать собственное внимание, тело и то, как мы воспринимаем происходящее с нами.</p>
+      </div>
+    </div>
+    <div class="final-art"><img src="assets/meditation-window.png" alt="Женщина у окна, в спокойном состоянии"></div>
+  </section>
+
+</div>
+</article>
 </main>
 
 <footer class="contact-footer">
