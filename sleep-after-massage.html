@@ -40,23 +40,79 @@ img{display:block;max-width:100%}
 .hero-art{position:absolute;z-index:1;right:-3%;top:-22px;width:60%;pointer-events:none}
 .hero-art img{width:100%;height:auto}
 
-.content-grid{display:grid;grid-template-columns:1fr 1fr;column-gap:72px;row-gap:58px;align-items:start}
-.intro{padding:0 8px 0 5px}
+.reference-layout{padding-top:0;padding-bottom:44px}
+.reference-grid{
+  display:grid;
+  grid-template-columns:42% 58%;
+  grid-template-areas:
+    "intro intro"
+    "muscles muscles-art"
+    "blood-art blood"
+    "calm rest-art"
+    "sleep-art sleep"
+    "final cat-art";
+  column-gap:0;
+  row-gap:0;
+  align-items:start;
+}
+.ref-intro{grid-area:intro;width:78%;margin:-2px 0 42px;padding-left:4px}
+.muscles{grid-area:muscles;padding:0 28px 0 4px}
+.muscles-art{grid-area:muscles-art;padding:0 2% 0 4%;margin-top:-20px}
+.blood-art{grid-area:blood-art;padding:0 9% 0 0;margin-top:-18px}
+.blood{grid-area:blood;padding:8px 2% 0 4px}
+.calm{grid-area:calm;padding:14px 28px 0 4px}
+.rest-art{grid-area:rest-art;padding:0 0 0 4%;margin-top:-8px}
+.sleep-art{grid-area:sleep-art;padding:0 8% 0 0;margin-top:-4px}
+.sleep{grid-area:sleep;padding:8px 2% 0 4px}
+.final{grid-area:final;padding:8px 24px 0 4px}
+.cat-art{grid-area:cat-art;padding:0 0 0 4%;margin-top:-4px}
+
 .prose{font-size:14.2px;line-height:1.48;color:#302721}
 .prose p{margin:0 0 14px}
 .prose p:last-child{margin-bottom:0}
-.dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:61px;line-height:.66;font-weight:600;padding:8px 5px 0 0;color:#17120f}
-.section-title{font-family:'Cormorant Garamond',Georgia,serif;font-size:29px;line-height:1.02;font-weight:600;letter-spacing:-.015em;color:#18120f;margin:0 0 16px}
-.section-title::before{content:'✦';font-family:Georgia,serif;font-size:15px;color:var(--gold);margin-right:10px;vertical-align:5px}
-.section-block{position:relative}
-.section-art{margin-top:20px;width:100%}
-.section-art img{width:100%;height:auto}
-.section-art.small{width:78%;margin-left:auto}
-.wide-art{grid-column:1/-1;margin:-10px auto 0;max-width:920px}
-.wide-art img{width:100%;height:auto}
-.text-highlight{color:var(--orange);margin-top:16px}
-.final-note{grid-column:1/-1;max-width:790px;margin:0 auto;text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.22;font-style:italic;color:#9d652e;padding:10px 20px 18px}
-.sources{font-size:9px;line-height:1.35;color:#756c64;margin:2px 5px 16px;grid-column:1/-1}
+.dropcap:first-letter{
+  float:left;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:61px;line-height:.66;font-weight:600;
+  padding:8px 5px 0 0;color:#17120f
+}
+.section-title{
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:29px;line-height:1.02;font-weight:600;
+  letter-spacing:-.015em;color:#18120f;margin:0 0 14px
+}
+.section-title::before{
+  content:'✦';font-family:Georgia,serif;font-size:15px;
+  color:var(--gold);margin-right:10px;vertical-align:5px
+}
+.ref-art img{width:100%;height:auto}
+
+@media(max-width:900px){
+  .hero-grid{min-height:auto}
+  .hero-copy{width:100%;padding:35px 0 15px}
+  .article-title{font-size:54px}
+  .article-lead{font-size:21px}
+  .hero-art{position:relative;right:auto;top:auto;width:100%;margin:-4px auto 0}
+  .reference-grid{
+    grid-template-columns:1fr;
+    grid-template-areas:
+      "intro" "muscles" "muscles-art" "blood" "blood-art"
+      "calm" "rest-art" "sleep" "sleep-art" "final" "cat-art";
+    row-gap:34px;
+  }
+  .ref-intro,.muscles,.muscles-art,.blood-art,.blood,.calm,.rest-art,.sleep-art,.sleep,.final,.cat-art{
+    width:100%;padding:0;margin:0;
+  }
+}
+@media(max-width:560px){
+  .site-wrap,.article-wrap{width:90%}
+  .article-hero{padding-top:22px}
+  .breadcrumbs{font-size:10px;margin-bottom:20px}
+  .article-title{font-size:47px}
+  .article-lead{font-size:20px;margin-top:20px}
+  .reading-time{font-size:11px}
+  .prose{font-size:13.4px;line-height:1.5}
+  .section-title{font-size:27px}
+}
 
 .contact-footer{background:var(--navy);color:#f8f4ed;margin-top:0}
 .footer-grid{width:min(920px,89%);margin:auto;min-height:120px;display:flex;justify-content:space-between;align-items:center;gap:30px}
@@ -100,92 +156,74 @@ img{display:block;max-width:100%}
 
 <main class="article-page">
 <section class="article-hero">
-<div class="article-wrap">
-  <div class="breadcrumbs">На ощупь <span>•</span> В напряжении</div>
-  <div class="hero-grid">
-    <div class="hero-copy">
-      <h1 class="article-title">Почему после массажа хочется спать?</h1>
-      <p class="article-lead">После массажа одолевает сонливость. Почему так происходит и что в этот момент происходит с организмом?</p>
-      <div class="reading-time">Время чтения: ~4 минуты</div>
+  <div class="article-wrap">
+    <div class="breadcrumbs">На ощупь <span>•</span> Тело и забота</div>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1 class="article-title">Почему после<br>массажа хочется<br>спать?</h1>
+        <p class="article-lead">После массажа одолевает сонливость.<br>Почему так происходит и что в этот момент<br>происходит с организмом?</p>
+        <div class="reading-time">Время чтения: ~ 4 минуты</div>
+      </div>
+      <div class="hero-art" aria-hidden="true"><img src="assets/sleep-massage.png" alt=""></div>
     </div>
-    <div class="hero-art" aria-hidden="true"><img src="assets/sleep-hero.png" alt=""></div>
   </div>
-</div>
 </section>
 
-<section class="article-wrap">
-<div class="content-grid">
-  <div class="intro prose dropcap">
-    <p>Вы были бодры и активны. А после массажа вдруг хочется говорить тише, двигаться медленнее и просто закрыть глаза.</p>
-    <p>Почему так происходит? Неужели массаж может настолько быстро изменить состояние организма?</p>
+<section class="article-wrap reference-layout">
+<div class="reference-grid">
+
+  <div class="ref-intro prose dropcap">
+    <p>Вы были бодры и активны.<br>А после массажа вдруг хочется говорить тише,<br>двигаться медленнее и просто закрыть глаза.</p>
+    <p>Почему так происходит? Неужели массаж может настолько<br>быстро изменить состояние организма?</p>
   </div>
 
-  <div class="section-block">
+  <div class="ref-text muscles prose-block">
     <h2 class="section-title">Мышцы наконец расслабляются</h2>
     <div class="prose">
-      <p>Одна из самых заметных вещей после массажа — ощущение, что тело стало мягче.</p>
-      <p>Мы часто даже не замечаем, сколько напряжения удерживаем в течение дня: плечи немного подняты, челюсть сжата, спина сутулится, ноги находятся в тонусе.</p>
-      <p>Во время массажа на мышцы воздействуют механически, и после процедуры их напряжение может снижаться. Исследования действительно показывают кратковременные изменения мышечной жёсткости после массажа, хотя эффект зависит от техники и конкретного человека.</p>
+      <p>Мы часто даже не замечаем, сколько<br>напряжения удерживаем в течение дня:<br>плечи немного подняты, челюсть сжата,<br>спина сутулится, ноги находятся<br>в тонусе.</p>
+      <p>Во время массажа мышцы получают<br>возможность расслабиться, и привычное<br>напряжение постепенно уходит.<br>Тело становится более мягким и тяжёлым,<br>появляется ощущение тепла и спокойствия.</p>
     </div>
-    <div class="section-art small"><img src="assets/sleep-relax.png" alt=""></div>
   </div>
 
-  <div class="section-block">
+  <div class="ref-art muscles-art"><img src="assets/sleep-relax.png" alt=""></div>
+
+  <div class="ref-art blood-art"><img src="assets/sleep-body.png" alt=""></div>
+
+  <div class="ref-text blood prose-block">
     <h2 class="section-title">Кровь и жидкость начинают циркулировать активнее</h2>
     <div class="prose">
-      <p>Когда мышцы расслабляются, меняется и само ощущение тела. Оно может казаться более тяжёлым, тёплым и спокойным.</p>
-      <p>Кровь и жидкость начинают циркулировать активнее.</p>
-      <p>Массаж воздействует на мягкие ткани и может усиливать местное кровообращение. Специальные массажные техники также используются для воздействия на лимфатическую систему и движения жидкости в тканях.</p>
-      <p>Лимфа постоянно движется по организму и возвращает лишнюю жидкость из тканей обратно в кровоток. Механическое воздействие массажа может способствовать этому движению.</p>
+      <p>Массаж воздействует на мягкие ткани и может усиливать местное<br>кровообращение. Специальные техники помогают и лимфатической<br>системе — поддерживают движение лимфы и отток жидкости.</p>
+      <p>Когда кровь и лимфа начинают циркулировать активнее, ткани получают<br>больше кислорода и питания, а лишняя жидкость легче уходит.<br>Из-за этого после массажа может появиться ощущение лёгкости, тепла,<br>а иногда — небольшая отёчность, например, на лице. Это естественная<br>реакция организма и часть процесса перераспределения жидкости.</p>
     </div>
   </div>
 
-  <div class="section-block">
-    <div class="section-art"><img src="assets/sleep-body.png" alt=""></div>
+  <div class="ref-text calm prose-block">
+    <h2 class="section-title">После массажа тело переходит<br>в спокойный режим</h2>
     <div class="prose">
-      <p>Поэтому после процедуры иногда появляется ощущение лёгкости и тепла, а у некоторых людей могут немного меняться объём и плотность мягких тканей из-за перераспределения жидкости.</p>
+      <p>Во время массажа нам не нужно никуда спешить,<br>держать себя в напряжении, думать о задачах<br>или отвечать на сообщения.<br>Внешних стимулов становится меньше, мышцы<br>расслаблены, дыхание замедляется.<br>Организм получает возможность снизить активность<br>и перейти в более спокойное состояние.</p>
     </div>
   </div>
 
-  <div class="wide-art"><img src="assets/sleep-rest.png" alt=""></div>
+  <div class="ref-art rest-art"><img src="assets/sleep-rest.png" alt=""></div>
 
-  <div class="section-block">
-    <h2 class="section-title">Когда тело переходит в спокойный режим</h2>
-    <div class="prose">
-      <p>После массажа мы обычно оказываемся в довольно необычном состоянии: мышцы расслаблены, двигаться не нужно, внешних задач на несколько минут практически нет.</p>
-      <p>Организм получает возможность снизить активность.</p>
-      <p>Именно здесь сонливость становится вполне понятной.</p>
-      <p>Пока мы заняты делами, бодрость поддерживается постоянной активностью: нужно двигаться, думать, принимать решения, реагировать на людей и окружающую обстановку.</p>
-      <p>А после массажа всего этого становится значительно меньше.</p>
-    </div>
-  </div>
+  <div class="ref-art sleep-art"><img src="assets/sleep-posture.png" alt=""></div>
 
-  <div class="section-block">
+  <div class="ref-text sleep prose-block">
     <h2 class="section-title">Почему именно хочется спать?</h2>
     <div class="prose">
-      <p>Возможно, дело не в том, что массаж каким-то образом вызывает «сон».</p>
-      <p>Скорее, расслабившись, мы наконец замечаем то, что раньше не замечали.</p>
-      <p>Вы могли быть бодры и активны, заниматься своими делами и вообще не думать об усталости. Но стоило остановиться, лечь и несколько десятков минут ничего не делать — и вдруг стало понятно: «Кажется, я устала».</p>
+      <p>Когда тело расслабляется, мы наконец замечаем усталость, которая раньше оставалась<br>на фоне. Пока мы активны, мозг поддерживает бодрость: мы двигаемся, принимаем решения,<br>реагируем на людей и окружающую обстановку.</p>
+      <p>После массажа это напряжение снижается, и организм может почувствовать, что пришло<br>время отдыха. Сонливость — это естественная реакция на расслабление, улучшение<br>циркуляции и снижение общей активности. Тело словно говорит: «Теперь можно восстановиться».</p>
     </div>
-    <div class="section-art"><img src="assets/sleep-posture.png" alt=""></div>
   </div>
 
-  <div class="section-block">
+  <div class="ref-text final prose-block">
+    <h2 class="section-title">Организм просто хочет продолжить отдых</h2>
     <div class="prose">
-      <p>Поэтому после массажа иногда хочется не продолжать день, а просто закрыть глаза.</p>
-      <p>Тело уже не требует от нас активности — и отдых становится гораздо заметнее.</p>
-      <p>Организм просто хочет продолжить отдых.</p>
-      <p>Массаж не переводит организм в какой-то отдельный режим «восстановления» одной кнопкой. Но расслабление мышц, изменения кровообращения и снижение общей активности могут складываться в одно ощущение: нам стало спокойно.</p>
-      <p>И если после этого хочется спать, возможно, организму просто подходит продолжение этого состояния.</p>
+      <p>Массаж помогает телу перейти из режима «надо» в режим «можно отдыхать».<br>Если после процедуры хочется немного полежать, закрыть глаза или даже поспать —<br>в этом нет ничего удивительного. Это не признак слабости, а естественное продолжение<br>заботы о себе.</p>
     </div>
-    <div class="section-art"><img src="assets/sleep-massage.png" alt=""></div>
   </div>
 
-  <div class="final-note">
-    Не обязательно потому, что с вами что-то не так. И не обязательно потому, что вы были очень уставшими.<br><br>
-    Иногда мы просто наконец остановились.<br><br>
-    А когда уже не нужно никуда спешить, отвечать, решать и держать себя в тонусе — оказывается, что поспать совсем неплохая идея.
-  </div>
+  <div class="ref-art cat-art"><img src="assets/sleep-hero.png" alt=""></div>
 
 </div>
 </section>
