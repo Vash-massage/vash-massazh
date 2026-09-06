@@ -81,87 +81,86 @@ img{display:block;max-width:100%}
 .section-title{margin:0 0 11px;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:.98;font-weight:600;color:#181512}
 .section-title::before{content:'✦';color:var(--gold);font-family:Georgia,serif;font-size:15px;margin-right:10px;vertical-align:3px}
 
-/* Desktop composition follows the reference: compact, overlapping only
-   within image artwork itself — never across text. */
+/* Вводная часть: две независимые колонки. Иллюстрация находится
+   в своей колонке и физически не может перекрыть текст. */
 .intro-row{
   display:grid;
   grid-template-columns:43% 57%;
-  column-gap:18px;
+  column-gap:20px;
   align-items:start;
-  margin-top:-32px;
+  margin-top:8px;
 }
-.intro-copy{padding-right:18px}
+.intro-copy{padding-right:20px}
 .intro-side{
-  position:relative;
-  min-height:285px;
-  padding:0 0 0 3px;
+  display:grid;
+  grid-template-columns:54% 46%;
+  column-gap:10px;
+  align-items:start;
+  min-width:0;
 }
-.side-copy{width:52%;position:relative;z-index:3}
+.side-copy{min-width:0}
 .daydream-art{
-  position:absolute;
-  width:52%;
-  right:-1%;
-  top:8px;
-  z-index:1;
+  width:100%;
+  max-width:100%;
+  margin:4px 0 0;
   mix-blend-mode:multiply;
 }
-.daydream-art img{width:100%}
+.daydream-art img{display:block;width:100%;height:auto}
 
+/* Тело — отдельный текстовый блок слева, как в референсе. */
 .body-row{
-  display:grid;
-  grid-template-columns:1fr;
-  column-gap:0;
-  align-items:start;
-  margin-top:20px;
+  display:block;
+  margin-top:48px;
 }
-.body-copy{padding:0 3% 0 3px;max-width:760px}
+.body-copy{
+  width:45%;
+  padding-left:3px;
+}
+.body-copy .prose{max-width:500px}
 
-
+/* Мозг: иллюстрация слева, объяснение справа. */
 .brain-row{
   display:grid;
   grid-template-columns:40% 60%;
   column-gap:20px;
   align-items:start;
-  margin-top:-70px;
+  margin-top:36px;
 }
-.brain-art{width:92%;margin-left:-5px}
-.brain-art img{width:100%;mix-blend-mode:multiply}
-.brain-copy{padding:34px 4% 0 0}
+.brain-art{
+  width:100%;
+  margin:0;
+}
+.brain-art img{
+  display:block;
+  width:100%;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+.brain-copy{
+  padding:24px 4% 0 0;
+}
+.brain-copy .prose{max-width:500px}
 
+/* Финал: текст слева, окно справа. */
 .final-row{
   display:grid;
   grid-template-columns:44% 56%;
-  column-gap:18px;
+  column-gap:20px;
   align-items:start;
-  margin-top:-6px;
+  margin-top:34px;
 }
 .final-copy{padding:0 18px 0 3px}
-.final-art{
-  position:relative;
-  min-height:330px;
-  margin-top:-5px;
-}
+.final-copy .prose{max-width:500px}
+.final-art{width:100%;margin:0}
 .final-art img{
-  position:relative;
+  display:block;
   width:100%;
-  right:auto;
-  top:auto;
+  height:auto;
   mix-blend-mode:multiply;
 }
 .footer-source{margin-top:4px;font-size:9px;line-height:1.45;color:#8a8178}
 
-@media(min-width:901px){
-  /* The right-hand intro composition is lowered as one unit.
-     The offset is visual only, so the text and illustration move together
-     and the following brain section does not acquire a new empty band. */
-  .intro-side{top:86px}
-
-  .intro-row{margin-bottom:0}
-  .body-row{margin-top:20px}
-  .brain-row{margin-top:-82px}
-  .final-row{margin-top:-28px}
-}
-
+/* Мобильная версия — только нормальный поток документа. */
 @media(max-width:900px){
   .article-wrap{width:90%}
   .article-hero{padding-top:22px}
@@ -173,34 +172,30 @@ img{display:block;max-width:100%}
   .hero-art>img{position:relative;width:100%;left:auto;top:auto}
   .hero-notes{display:none}
 
-  /* Mobile is a strict normal-flow layout. No absolute artwork here. */
   .intro-row,.body-row,.brain-row,.final-row{
     display:grid;
     grid-template-columns:1fr;
     column-gap:0;
-    row-gap:22px;
-    margin-top:28px;
-    margin-bottom:0;
+    row-gap:24px;
+    margin-top:30px;
   }
-  .intro-row{margin-top:18px}
-  .intro-copy,.body-copy,.brain-copy,.final-copy{padding:0}
-  .intro-side{min-height:0;padding:0}
-  .side-copy{width:100%}
-  .daydream-art,.brain-art,.final-art{
-    position:relative;
-    width:100%;
-    right:auto;left:auto;top:auto;bottom:auto;
-    min-height:0;
+  .intro-row{margin-top:22px}
+  .intro-copy,.body-copy,.brain-copy,.final-copy{width:100%;padding:0}
+  .intro-side{
+    display:grid;
+    grid-template-columns:1fr;
+    row-gap:18px;
+  }
+  .daydream-art{
+    width:82%;
     margin:0 auto;
   }
-  .daydream-art{width:84%;margin-left:auto}
-  .body-art img,.brain-art img,.final-art img{
-    position:relative;
-    width:100%;
-    right:auto;top:auto;left:auto
-  }
-  .brain-art{width:82%;margin:0 auto}
-  .final-art{width:100%}
+  .body-row{margin-top:36px}
+  .brain-row{margin-top:34px}
+  .brain-art{width:84%;margin:0 auto}
+  .brain-copy{padding:0}
+  .final-row{margin-top:34px}
+  .final-art{width:100%;margin:0}
   .article-body{padding-bottom:30px}
   .footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}
   .contact-links{justify-content:flex-start}
@@ -214,11 +209,9 @@ img{display:block;max-width:100%}
   .prose{font-size:13.5px;line-height:1.48}
   .dropcap:first-letter{font-size:53px}
   .section-title{font-size:24px}
-  .daydream-art{width:92%}
+  .daydream-art{width:94%}
   .brain-art{width:92%}
-  .final-art{width:105%;margin-left:-2.5%}
 }
-
 
 /* Общий футер */
 .contact-footer{background:var(--navy);color:#f8f4ed}
