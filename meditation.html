@@ -126,26 +126,30 @@ img{display:block;max-width:100%}
    справа. Зарисовка находится только в правой половине. */
 .intro-row{
   display:grid;
-  grid-template-columns:43% 57%;
-  column-gap:20px;
+  grid-template-columns:48% 52%;
+  column-gap:18px;
   align-items:start;
-  margin-top:-2px
+  margin-top:-18px
 }
-.intro-copy{padding-right:22px}
+.intro-copy{
+  padding-right:28px;
+  order:1
+}
 .intro-side{
   display:grid;
-  grid-template-columns:55% 45%;
-  column-gap:12px;
+  grid-template-columns:52% 48%;
+  column-gap:14px;
   align-items:start;
-  min-width:0
+  min-width:0;
+  order:2
 }
 .intro-side .side-copy{
   min-width:0;
-  padding-top:3px
+  padding-top:0
 }
 .daydream-art{
   width:100%;
-  margin:2px 0 0;
+  margin:-20px 0 0;
   align-self:start;
   mix-blend-mode:multiply
 }
@@ -156,20 +160,20 @@ img{display:block;max-width:100%}
 /* Следующая композиция: крупный мозг слева, текст справа. */
 .brain-row{
   display:grid;
-  grid-template-columns:37% 63%;
-  column-gap:24px;
+  grid-template-columns:34% 66%;
+  column-gap:22px;
   align-items:start;
-  margin-top:18px
+  margin-top:4px
 }
 .brain-art{
   width:100%;
-  margin:0
+  margin:-34px 0 0
 }
 .brain-art img{
   display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
 .brain-copy{
-  padding:24px 4% 0 0;
+  padding:8px 4% 0 0;
   max-width:610px
 }
 
