@@ -663,6 +663,129 @@ img{display:block;max-width:100%}
     width:92% !important;
   }
 }
+
+/* ===== ФИНАЛЬНАЯ ПРАВКА КОМПОЗИЦИИ: без наложений и пустот ===== */
+
+/* На десктопе блоки должны идти физически один за другим.
+   Ранее .med-daydream имел margin-top:-92px, из-за чего изображение
+   заходило вверх в предыдущий текст. */
+@media(min-width:901px){
+  .meditation-layout{
+    padding-top:0 !important;
+  }
+
+  .med-intro{
+    margin-top:0 !important;
+    padding-bottom:4px !important;
+  }
+
+  .med-daydream{
+    margin-top:6px !important;
+    position:static !important;
+    display:grid !important;
+    grid-template-columns:48% 52% !important;
+    column-gap:42px !important;
+    align-items:start !important;
+  }
+
+  .med-daydream-art{
+    position:static !important;
+    transform:none !important;
+    top:auto !important;
+    width:88% !important;
+    max-width:470px !important;
+    margin:0 auto !important;
+    justify-self:center !important;
+  }
+
+  .med-daydream .med-text{
+    padding-top:2px !important;
+  }
+
+  .med-brain{
+    margin-top:8px !important;
+    grid-template-columns:48% 52% !important;
+    column-gap:42px !important;
+    align-items:start !important;
+  }
+
+  .med-brain .med-text{
+    padding-left:0 !important;
+    padding-top:2px !important;
+  }
+
+  .med-brain-art{
+    width:86% !important;
+    max-width:455px !important;
+    margin:0 auto !important;
+    justify-self:center !important;
+  }
+
+  .med-text-pair{
+    margin-top:12px !important;
+    grid-template-columns:48% 52% !important;
+    column-gap:42px !important;
+  }
+
+  .med-text-pair .med-text{
+    padding:0 !important;
+  }
+
+  .med-final-texts{
+    margin-top:14px !important;
+  }
+
+  .med-ending{
+    margin-top:10px !important;
+  }
+}
+
+/* На мобильном — строго последовательный поток, без absolute/top. */
+@media(max-width:900px){
+  .meditation-layout{
+    padding-top:0 !important;
+  }
+
+  .med-intro{
+    margin-top:8px !important;
+    padding-bottom:0 !important;
+  }
+
+  .med-daydream,
+  .med-brain,
+  .med-text-pair,
+  .med-final-texts{
+    position:static !important;
+    top:auto !important;
+    transform:none !important;
+  }
+
+  .med-daydream{
+    margin-top:14px !important;
+  }
+
+  .med-daydream-art,
+  .med-brain-art{
+    position:static !important;
+    top:auto !important;
+    transform:none !important;
+    margin:0 auto !important;
+  }
+
+  .med-brain{
+    margin-top:16px !important;
+  }
+
+  .med-text-pair,
+  .med-final-texts{
+    margin-top:18px !important;
+  }
+
+  .med-ending{
+    position:static !important;
+    margin-top:16px !important;
+  }
+}
 </style>
 </head>
 
