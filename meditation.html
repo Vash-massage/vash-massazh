@@ -787,6 +787,107 @@ img{display:block;max-width:100%}
   }
 }
 </style>
+
+<style>
+/* Финальная коррекция композиции */
+@media (min-width:901px){
+  .article-hero{padding-bottom:0}
+
+  .hero-grid{
+    min-height:410px !important;
+  }
+
+  .meditation-layout{
+    padding-top:0 !important;
+  }
+
+  /* Вводный текст */
+  .med-intro{
+    margin-top:0 !important;
+    padding-bottom:0 !important;
+  }
+
+  /* Иллюстрация девушки слева + текст справа.
+     Блок начинается сразу после вводного текста. */
+  .med-daydream{
+    margin-top:4px !important;
+    display:grid !important;
+    grid-template-columns:48% 52% !important;
+    column-gap:34px !important;
+    align-items:start !important;
+    position:static !important;
+  }
+
+  .med-daydream-art{
+    position:static !important;
+    top:auto !important;
+    transform:none !important;
+    width:82% !important;
+    max-width:410px !important;
+    margin:0 auto !important;
+    justify-self:center !important;
+  }
+
+  .med-daydream .med-text{
+    padding-top:0 !important;
+  }
+
+  /* Мозг справа, текст слева.
+     Начинается сразу после предыдущей композиции. */
+  .med-brain{
+    margin-top:4px !important;
+    display:grid !important;
+    grid-template-columns:48% 52% !important;
+    column-gap:34px !important;
+    align-items:start !important;
+  }
+
+  .med-brain .med-text{
+    padding:0 !important;
+  }
+
+  .med-brain-art{
+    width:82% !important;
+    max-width:410px !important;
+    margin:0 auto !important;
+    justify-self:center !important;
+  }
+
+  /* Две нижние пары текста — без вертикальных провалов. */
+  .med-text-pair{
+    margin-top:8px !important;
+    column-gap:34px !important;
+  }
+
+  .med-text-pair .med-text{
+    padding:0 !important;
+  }
+
+  .med-final-texts{
+    margin-top:12px !important;
+  }
+
+  /* Финальная иллюстрация сразу под последним текстом. */
+  .med-ending{
+    margin-top:8px !important;
+  }
+
+  .ending-left{
+    padding-bottom:55px !important;
+  }
+}
+
+/* На мобильном сохраняем последовательный поток. */
+@media (max-width:900px){
+  .med-daydream-art,
+  .med-brain-art{
+    position:static !important;
+    top:auto !important;
+    transform:none !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
