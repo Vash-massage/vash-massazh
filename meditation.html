@@ -74,93 +74,95 @@ img{display:block;max-width:100%}
 .hero-notes div{margin-bottom:10px}
 
 /* Сетка точно повторяет референс: текст слева/справа, иллюстрации занимают свои зоны */
-.article-body{padding:0 0 28px}
-.prose{font-size:12.4px;line-height:1.46;color:#3d3833}
+.article-body{padding:0 0 34px}
+.prose{font-size:13px;line-height:1.48;color:#3d3833}
 .prose p{margin:0 0 12px}.prose p:last-child{margin-bottom:0}
-.dropcap:first-letter{float:left;font-family:'Cormorant Garamond',Georgia,serif;font-size:58px;line-height:.7;margin:7px 5px 0 0;color:#15120f}
-.section-title{margin:0 0 11px;font-family:'Cormorant Garamond',Georgia,serif;font-size:25px;line-height:.98;font-weight:600;color:#181512}
-.section-title::before{content:'✦';color:var(--gold);font-family:Georgia,serif;font-size:15px;margin-right:10px;vertical-align:3px}
+.dropcap:first-letter{
+  float:left;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:59px;line-height:.72;margin:7px 5px 0 0;color:#15120f
+}
+.section-title{
+  margin:0 0 11px;font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:25px;line-height:.98;font-weight:600;color:#181512
+}
+.section-title::before{
+  content:'✦';color:var(--gold);font-family:Georgia,serif;
+  font-size:15px;margin-right:11px;vertical-align:3px
+}
 
-/* Вводная часть: две независимые колонки. Иллюстрация находится
-   в своей колонке и физически не может перекрыть текст. */
+/* Вводный блок: две плотные колонки, без наложений. */
 .intro-row{
   display:grid;
   grid-template-columns:43% 57%;
   column-gap:20px;
   align-items:start;
-  margin-top:8px;
+  margin-top:-18px;
 }
 .intro-copy{padding-right:20px}
 .intro-side{
   display:grid;
-  grid-template-columns:54% 46%;
+  grid-template-columns:50% 50%;
   column-gap:10px;
   align-items:start;
   min-width:0;
 }
-.side-copy{min-width:0}
-.daydream-art{
-  width:100%;
-  max-width:100%;
-  margin:4px 0 0;
-  mix-blend-mode:multiply;
+.intro-side .side-copy{min-width:0;padding-top:8px}
+.intro-side-art{width:100%;margin:0;min-width:0}
+.intro-side-art img{
+  display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
-.daydream-art img{display:block;width:100%;height:auto}
 
-/* Тело — отдельный текстовый блок слева, как в референсе. */
-.body-row{
-  display:block;
-  margin-top:48px;
-}
-.body-copy{
-  width:45%;
-  padding-left:3px;
-}
-.body-copy .prose{max-width:500px}
-
-/* Мозг: иллюстрация слева, объяснение справа. */
+/* Мозг: крупная иллюстрация слева, текст справа. */
 .brain-row{
   display:grid;
-  grid-template-columns:40% 60%;
-  column-gap:20px;
+  grid-template-columns:37% 63%;
+  column-gap:24px;
   align-items:start;
-  margin-top:36px;
+  margin-top:12px;
 }
-.brain-art{
-  width:100%;
-  margin:0;
-}
+.brain-art{width:100%;margin:-8px 0 0 -4px}
 .brain-art img{
-  display:block;
-  width:100%;
-  height:auto;
-  mix-blend-mode:multiply;
+  display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
-.brain-copy{
-  padding:24px 4% 0 0;
-}
-.brain-copy .prose{max-width:500px}
+.brain-copy{padding:30px 5% 0 0;max-width:610px}
 
-/* Финал: текст слева, окно справа. */
+/* Тело: текст занимает левую часть и не оставляет искусственного пустого
+   пространства после удалённой крупной зарисовки. */
+.body-row{
+  display:block;
+  margin-top:-2px;
+}
+.body-copy{
+  width:48%;
+  padding:0 14px 0 3px
+}
+.body-copy .prose{max-width:505px}
+
+/* Финальный блок: текст слева, большая иллюстрация справа. */
 .final-row{
   display:grid;
-  grid-template-columns:44% 56%;
+  grid-template-columns:43% 57%;
   column-gap:20px;
   align-items:start;
-  margin-top:34px;
+  margin-top:14px
 }
 .final-copy{padding:0 18px 0 3px}
-.final-copy .prose{max-width:500px}
-.final-art{width:100%;margin:0}
+.final-copy .prose{max-width:480px}
+.final-art{width:100%;margin:-4px 0 0}
 .final-art img{
-  display:block;
-  width:100%;
-  height:auto;
-  mix-blend-mode:multiply;
+  display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
 .footer-source{margin-top:4px;font-size:9px;line-height:1.45;color:#8a8178}
 
-/* Мобильная версия — только нормальный поток документа. */
+/* Уплотнение десктопной версии под референс. */
+@media(min-width:901px){
+  .intro-row{margin-bottom:0}
+  .brain-row{margin-top:6px}
+  .body-row{margin-top:-6px}
+  .final-row{margin-top:4px}
+}
+
+/* Мобильная версия: изображения только в обычном потоке. */
 @media(max-width:900px){
   .article-wrap{width:90%}
   .article-hero{padding-top:22px}
@@ -169,35 +171,38 @@ img{display:block;max-width:100%}
   .article-title{font-size:49px;line-height:.92;max-width:100%}
   .article-lead{font-size:20px;max-width:100%}
   .hero-art{height:auto;width:100%;margin:7px auto 0}
-  .hero-art>img{position:relative;width:100%;left:auto;top:auto}
+  .hero-art img{position:relative;width:100%;left:auto;top:auto}
   .hero-notes{display:none}
 
-  .intro-row,.body-row,.brain-row,.final-row{
+  .intro-row,.brain-row,.body-row,.final-row{
     display:grid;
     grid-template-columns:1fr;
     column-gap:0;
-    row-gap:24px;
-    margin-top:30px;
+    row-gap:22px;
+    margin-top:28px;
   }
-  .intro-row{margin-top:22px}
-  .intro-copy,.body-copy,.brain-copy,.final-copy{width:100%;padding:0}
+  .intro-row{margin-top:20px}
+  .intro-copy,.body-copy,.brain-copy,.final-copy{
+    width:100%;padding:0;max-width:none
+  }
   .intro-side{
     display:grid;
     grid-template-columns:1fr;
-    row-gap:18px;
+    row-gap:18px
   }
-  .daydream-art{
-    width:82%;
-    margin:0 auto;
-  }
-  .body-row{margin-top:36px}
-  .brain-row{margin-top:34px}
+  .intro-side .side-copy{padding:0}
+  .intro-side-art{width:86%;margin:0 auto}
+  .brain-row{margin-top:30px}
   .brain-art{width:84%;margin:0 auto}
   .brain-copy{padding:0}
-  .final-row{margin-top:34px}
+  .body-row{margin-top:30px}
+  .final-row{margin-top:30px}
   .final-art{width:100%;margin:0}
   .article-body{padding-bottom:30px}
-  .footer-grid{padding:28px 0;min-height:0;flex-direction:column;align-items:flex-start}
+  .footer-grid{
+    padding:28px 0;min-height:0;
+    flex-direction:column;align-items:flex-start
+  }
   .contact-links{justify-content:flex-start}
 }
 @media(max-width:560px){
@@ -209,8 +214,9 @@ img{display:block;max-width:100%}
   .prose{font-size:13.5px;line-height:1.48}
   .dropcap:first-letter{font-size:53px}
   .section-title{font-size:24px}
-  .daydream-art{width:94%}
+  .intro-side-art{width:94%}
   .brain-art{width:92%}
+  .final-art{width:104%;margin-left:-2%}
 }
 
 /* Общий футер */
@@ -347,19 +353,7 @@ img{display:block;max-width:100%}
           <img class="daydream-art" src="assets/meditation-daydream.png" alt="">
         </div>
       </section>
-
-      <!-- Тело -->
-      <section class="body-row">
-        <div class="body-copy prose-block">
-          <h2 class="section-title">А тело здесь при чём?</h2>
-          <div class="prose">
-            <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
-            <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать. Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
-            <p>Исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
-            <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
-          </div>
-        </div>
-      </section>
+      <!-- Мозг -->
 
       <!-- Мозг -->
       <section class="brain-row">
@@ -374,6 +368,22 @@ img{display:block;max-width:100%}
           </div>
         </div>
       </section>
+
+      <!-- Тело -->
+
+      <!-- Тело -->
+      <section class="body-row">
+        <div class="body-copy prose-block">
+          <h2 class="section-title">А тело здесь при чём?</h2>
+          <div class="prose">
+            <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
+            <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать. Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
+            <p>Исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
+            <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Финал -->
       <section class="final-row">
         <div class="final-copy prose-block">
