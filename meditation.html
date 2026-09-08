@@ -888,6 +888,33 @@ img{display:block;max-width:100%}
 }
 </style>
 
+
+<style>
+/* Точная правка по референсу: поднимаем только указанные элементы на 157px.
+   Остальная композиция и размеры остаются без изменений. */
+@media (max-width:900px){
+  /* «Что вообще происходит во время медитации?» */
+  .med-daydream .med-text{
+    transform:translateY(-157px);
+  }
+
+  /* Изображение meditation-brain.png */
+  .med-brain-art{
+    transform:translateY(-157px) !important;
+  }
+
+  /* «А тело здесь при чём?» */
+  .med-text-pair > .med-text:nth-child(2){
+    transform:translateY(-157px);
+  }
+
+  /* «Что же тогда действительно интересно?» */
+  .med-final-texts > .med-text:nth-child(2){
+    transform:translateY(-157px);
+  }
+}
+</style>
+
 </head>
 
 <body>
