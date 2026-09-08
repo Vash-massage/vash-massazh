@@ -63,17 +63,49 @@ img{display:block;max-width:100%}
 .article-hero{padding:30px 0 0}
 .breadcrumbs{color:var(--orange);font-size:10px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px}
 .breadcrumbs span{padding:0 9px}
-.hero-grid{display:grid;grid-template-columns:46% 54%;min-height:410px;align-items:start}
-.hero-copy{padding-top:5px;position:relative;z-index:3}
-.article-title{margin:0;max-width:560px;font-family:'Cormorant Garamond',Georgia,serif;font-size:59px;line-height:.89;font-weight:600;letter-spacing:-.035em;color:#171513}
-.article-lead{margin:20px 0 12px;max-width:510px;font-family:'Cormorant Garamond',Georgia,serif;font-size:23px;line-height:1.18;font-style:italic;color:var(--orange)}
+.hero-grid{
+  display:grid;
+  grid-template-columns:44% 56%;
+  column-gap:18px;
+  min-height:455px;
+  align-items:start
+}
+.hero-copy{padding-top:5px;position:relative;z-index:2}
+.article-title{
+  margin:0;max-width:550px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:59px;line-height:.89;font-weight:600;
+  letter-spacing:-.035em;color:#171513
+}
+.article-lead{
+  margin:20px 0 12px;max-width:510px;
+  font-family:'Cormorant Garamond',Georgia,serif;
+  font-size:23px;line-height:1.18;font-style:italic;color:var(--orange)
+}
 .reading-time{font-size:11px;color:#342f2b}
-.hero-art{height:410px;position:relative;margin-top:-15px;z-index:1}
-.hero-art>img{position:absolute;width:106%;max-width:none;left:-1%;top:-2px;mix-blend-mode:multiply}
-.hero-notes{position:absolute;right:0;top:58px;color:var(--orange);font-size:10px;line-height:1.45;letter-spacing:.07em;text-transform:uppercase;width:90px}
+.hero-art{
+  height:440px;
+  position:relative;
+  margin-top:-18px;
+  z-index:1;
+  overflow:visible
+}
+.hero-art>img{
+  position:absolute;
+  width:96%;
+  max-width:610px;
+  left:1%;
+  top:0;
+  height:auto;
+  mix-blend-mode:multiply
+}
+.hero-notes{
+  position:absolute;right:0;top:58px;color:var(--orange);
+  font-size:10px;line-height:1.45;letter-spacing:.07em;
+  text-transform:uppercase;width:90px
+}
 .hero-notes div{margin-bottom:10px}
 
-/* Сетка точно повторяет референс: текст слева/справа, иллюстрации занимают свои зоны */
 .article-body{padding:0 0 34px}
 .prose{font-size:13px;line-height:1.48;color:#3d3833}
 .prose p{margin:0 0 12px}.prose p:last-child{margin-bottom:0}
@@ -90,47 +122,62 @@ img{display:block;max-width:100%}
   font-size:15px;margin-right:11px;vertical-align:3px
 }
 
-/* Вводный блок: две плотные колонки, без наложений. */
+/* Первый разворот после hero: текст слева, блок «Что происходит»
+   справа. Зарисовка находится только в правой половине. */
 .intro-row{
   display:grid;
   grid-template-columns:43% 57%;
   column-gap:20px;
   align-items:start;
-  margin-top:-18px;
+  margin-top:-2px
 }
-.intro-copy{padding-right:20px}
+.intro-copy{padding-right:22px}
 .intro-side{
   display:grid;
-  grid-template-columns:50% 50%;
-  column-gap:10px;
+  grid-template-columns:55% 45%;
+  column-gap:12px;
   align-items:start;
-  min-width:0;
+  min-width:0
 }
-.intro-side .side-copy{min-width:0;padding-top:8px}
-.intro-side-art{width:100%;margin:0;min-width:0}
-.intro-side-art img{
-  display:block;width:100%;height:auto;mix-blend-mode:multiply
+.intro-side .side-copy{
+  min-width:0;
+  padding-top:3px
+}
+.daydream-art{
+  width:100%;
+  margin:2px 0 0;
+  align-self:start;
+  mix-blend-mode:multiply
+}
+.daydream-art img{
+  display:block;width:100%;height:auto
 }
 
-/* Мозг: крупная иллюстрация слева, текст справа. */
+/* Следующая композиция: крупный мозг слева, текст справа. */
 .brain-row{
   display:grid;
   grid-template-columns:37% 63%;
   column-gap:24px;
   align-items:start;
-  margin-top:12px;
+  margin-top:18px
 }
-.brain-art{width:100%;margin:-8px 0 0 -4px}
+.brain-art{
+  width:100%;
+  margin:0
+}
 .brain-art img{
   display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
-.brain-copy{padding:30px 5% 0 0;max-width:610px}
+.brain-copy{
+  padding:24px 4% 0 0;
+  max-width:610px
+}
 
-/* Тело: текст занимает левую часть и не оставляет искусственного пустого
-   пространства после удалённой крупной зарисовки. */
+/* Текст про тело сразу под предыдущей композицией, без пустого
+   искусственного правого столбца. */
 .body-row{
   display:block;
-  margin-top:-2px;
+  margin-top:-2px
 }
 .body-copy{
   width:48%;
@@ -138,48 +185,56 @@ img{display:block;max-width:100%}
 }
 .body-copy .prose{max-width:505px}
 
-/* Финальный блок: текст слева, большая иллюстрация справа. */
+/* Финальный блок — текст и широкая иллюстрация на одной линии. */
 .final-row{
   display:grid;
   grid-template-columns:43% 57%;
   column-gap:20px;
   align-items:start;
-  margin-top:14px
+  margin-top:18px
 }
 .final-copy{padding:0 18px 0 3px}
-.final-copy .prose{max-width:480px}
-.final-art{width:100%;margin:-4px 0 0}
+.final-copy .prose{max-width:490px}
+.final-art{
+  width:100%;
+  margin:-5px 0 0
+}
 .final-art img{
   display:block;width:100%;height:auto;mix-blend-mode:multiply
 }
 .footer-source{margin-top:4px;font-size:9px;line-height:1.45;color:#8a8178}
 
-/* Уплотнение десктопной версии под референс. */
-@media(min-width:901px){
-  .intro-row{margin-bottom:0}
-  .brain-row{margin-top:6px}
-  .body-row{margin-top:-6px}
-  .final-row{margin-top:4px}
-}
-
-/* Мобильная версия: изображения только в обычном потоке. */
 @media(max-width:900px){
   .article-wrap{width:90%}
   .article-hero{padding-top:22px}
-  .hero-grid{grid-template-columns:1fr;min-height:0}
+  .hero-grid{
+    grid-template-columns:1fr;
+    min-height:0;
+    row-gap:8px
+  }
   .hero-copy{padding:0}
   .article-title{font-size:49px;line-height:.92;max-width:100%}
   .article-lead{font-size:20px;max-width:100%}
-  .hero-art{height:auto;width:100%;margin:7px auto 0}
-  .hero-art img{position:relative;width:100%;left:auto;top:auto}
+  .hero-art{
+    height:auto;width:100%;
+    margin:4px auto 0
+  }
+  .hero-art>img{
+    position:relative;
+    width:100%;
+    max-width:none;
+    left:auto;top:auto
+  }
   .hero-notes{display:none}
 
+  /* На мобильном каждый блок идёт последовательно:
+     текст → изображение → следующий текст. */
   .intro-row,.brain-row,.body-row,.final-row{
     display:grid;
     grid-template-columns:1fr;
     column-gap:0;
-    row-gap:22px;
-    margin-top:28px;
+    row-gap:20px;
+    margin-top:28px
   }
   .intro-row{margin-top:20px}
   .intro-copy,.body-copy,.brain-copy,.final-copy{
@@ -191,12 +246,15 @@ img{display:block;max-width:100%}
     row-gap:18px
   }
   .intro-side .side-copy{padding:0}
-  .intro-side-art{width:86%;margin:0 auto}
-  .brain-row{margin-top:30px}
+  .daydream-art{
+    width:88%;
+    margin:0 auto
+  }
+  .brain-row{margin-top:28px}
   .brain-art{width:84%;margin:0 auto}
   .brain-copy{padding:0}
-  .body-row{margin-top:30px}
-  .final-row{margin-top:30px}
+  .body-row{margin-top:28px}
+  .final-row{margin-top:28px}
   .final-art{width:100%;margin:0}
   .article-body{padding-bottom:30px}
   .footer-grid{
@@ -214,7 +272,7 @@ img{display:block;max-width:100%}
   .prose{font-size:13.5px;line-height:1.48}
   .dropcap:first-letter{font-size:53px}
   .section-title{font-size:24px}
-  .intro-side-art{width:94%}
+  .daydream-art{width:94%}
   .brain-art{width:92%}
   .final-art{width:104%;margin-left:-2%}
 }
