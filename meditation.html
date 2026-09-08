@@ -347,6 +347,137 @@ img{display:block;max-width:100%}
   .brain-art{width:92%}
   .body-art img,.body2-art img,.final-art img{width:100%}
 }
+
+/* ===== НОВАЯ РЕДАКЦИОННАЯ СТРУКТУРА МЕДИТАЦИИ ===== */
+.meditation-layout{padding-top:0}
+.med-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  column-gap:58px;
+  align-items:start;
+}
+.med-text{min-width:0}
+.med-text .section-title{margin-bottom:10px}
+.med-text .prose{max-width:100%}
+
+/* Вводный текст сразу после hero */
+.med-intro{
+  margin-top:-2px;
+  padding-bottom:16px;
+}
+.med-intro .med-text{max-width:520px}
+.med-spacer{min-height:1px}
+
+/* Иллюстрация слева, текст справа */
+.med-daydream{
+  margin-top:0;
+  column-gap:58px;
+  align-items:center;
+}
+.med-daydream-art{
+  width:100%;
+  max-width:500px;
+  justify-self:start;
+  margin:0;
+}
+.med-daydream-art img{
+  width:100%;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+
+/* Текст слева, мозг справа */
+.med-brain{
+  margin-top:10px;
+  column-gap:58px;
+  align-items:center;
+}
+.med-brain .med-text{padding-left:8px}
+.med-brain-art{
+  width:100%;
+  max-width:480px;
+  justify-self:end;
+}
+.med-brain-art img{
+  width:100%;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+
+/* Две пары текстовых блоков — плотный журнальный разворот */
+.med-text-pair{
+  margin-top:8px;
+  column-gap:58px;
+}
+.med-text-pair .med-text{
+  padding:0 8px;
+}
+.med-final-texts{
+  margin-top:20px;
+}
+
+/* Финальная иллюстрация на всю ширину */
+.med-ending{
+  position:relative;
+  margin-top:10px;
+  display:grid;
+  grid-template-columns:105px 1fr 105px;
+  align-items:end;
+  column-gap:12px;
+}
+.med-ending-art{
+  width:100%;
+  min-width:0;
+}
+.med-ending-art img{
+  display:block;
+  width:100%;
+  height:auto;
+  mix-blend-mode:multiply;
+}
+.ending-note{
+  color:var(--orange);
+  font-size:9px;
+  line-height:1.45;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  padding-bottom:78px;
+  border-left:1px solid rgba(169,98,45,.55);
+  padding-left:12px;
+}
+.ending-right{
+  border-left:1px solid rgba(169,98,45,.55);
+}
+
+/* Адаптив */
+@media(max-width:900px){
+  .med-row{
+    grid-template-columns:1fr;
+    row-gap:22px;
+    column-gap:0;
+  }
+  .med-intro{margin-top:10px;padding-bottom:4px}
+  .med-daydream{margin-top:22px}
+  .med-daydream-art{width:90%;max-width:none;justify-self:center;order:1}
+  .med-daydream .med-text{order:2}
+  .med-brain{margin-top:28px}
+  .med-brain .med-text{order:1;padding-left:0}
+  .med-brain-art{width:88%;max-width:none;justify-self:center;order:2}
+  .med-text-pair,.med-final-texts{margin-top:28px}
+  .med-text-pair .med-text{padding:0}
+  .med-ending{
+    margin-top:28px;
+    grid-template-columns:1fr;
+    row-gap:10px;
+  }
+  .med-ending-art{order:1}
+  .ending-note{display:none}
+}
+@media(max-width:560px){
+  .med-daydream-art{width:100%}
+  .med-brain-art{width:100%}
+  .med-ending-art{width:100%}
+}
 </style>
 </head>
 
@@ -391,36 +522,42 @@ img{display:block;max-width:100%}
     </div>
   </section>
 
+
   <article class="article-body">
-    <div class="article-wrap">
+    <div class="article-wrap meditation-layout">
 
-      <!-- Вводный блок + «Что происходит» -->
-      <section class="intro-row">
-        <div class="intro-copy prose dropcap">
-          <p>Медитация существует тысячи лет, но наука начала изучать её относительно недавно.</p>
-          <p>Теперь для этого используют МРТ, ЭЭГ, психологические тесты и эксперименты, в которых можно проверить, что происходит с вниманием, восприятием эмоций и ощущением собственного тела.</p>
-          <p>И чем больше исследований появляется, тем интереснее становится картина. Потому что медитация — это не просто «сидеть с закрытыми глазами».</p>
-        </div>
-
-        <div class="intro-side">
-          <div class="side-copy">
-            <h2 class="section-title">Что вообще происходит<br>во время медитации?</h2>
-            <div class="prose">
-              <p>Представьте: вы садитесь и обращаете внимание на дыхание. Через несколько секунд в голову приходит мысль. Потом ещё одна.</p>
-              <p>Вы вспоминаете разговор, планируете завтрашний день, замечаете звук за окном — и только потом понимаете: «Я опять думаю о чём-то другом».</p>
-              <p>В практике осознанности именно этот момент очень важен. Не нужно сделать так, чтобы мыслей не было. Задача скорее в том, чтобы заметить, куда ушло внимание, и снова вернуть его к выбранному объекту — например, к дыханию.</p>
-              <p>Поэтому исследователи рассматривают медитацию в том числе как тренировку внимания и способности замечать происходящее.</p>
-            </div>
+      <!-- 1. Вводный текст -->
+      <section class="med-row med-intro">
+        <div class="med-text">
+          <h2 class="section-title">Медитация: древняя практика<br>и современный взгляд</h2>
+          <div class="prose dropcap">
+            <p>Медитация существует тысячи лет, но наука начала изучать её относительно недавно.</p>
+            <p>Теперь для этого используют МРТ, ЭЭГ, психологические тесты и эксперименты, в которых можно проверить, что происходит с вниманием, восприятием эмоций и ощущением собственного тела.</p>
+            <p>И чем больше исследований появляется, тем интереснее становится картина. Потому что медитация — это не просто «сидеть с закрытыми глазами».</p>
           </div>
-          <img class="daydream-art" src="assets/meditation-daydream.png" alt="">
+        </div>
+        <div class="med-spacer"></div>
+      </section>
+
+      <!-- 2. Иллюстрация + что происходит во время медитации -->
+      <section class="med-row med-daydream">
+        <div class="med-art med-daydream-art">
+          <img src="assets/meditation-daydream.png" alt="">
+        </div>
+        <div class="med-text">
+          <h2 class="section-title">Что вообще происходит<br>во время медитации?</h2>
+          <div class="prose">
+            <p>Представьте: вы садитесь и обращаете внимание на дыхание. Через несколько секунд в голову приходит мысль. Потом ещё одна.</p>
+            <p>Вы вспоминаете разговор, планируете завтрашний день, замечаете звук за окном — и только потом понимаете: «Я опять думаю о чём-то другом».</p>
+            <p>В практике осознанности именно этот момент очень важен. Не нужно сделать так, чтобы мыслей не было. Задача скорее в том, чтобы заметить, куда ушло внимание, и снова вернуть его к выбранному объекту — например, к дыханию.</p>
+            <p>Поэтому исследователи рассматривают медитацию в том числе как тренировку внимания и способности замечать происходящее.</p>
+          </div>
         </div>
       </section>
-      <!-- Мозг -->
 
-      <!-- Мозг -->
-      <section class="brain-row">
-        <div class="brain-art"><img src="assets/meditation-brain.png" alt=""></div>
-        <div class="brain-copy prose-block">
+      <!-- 3. Текст о мозге + крупная иллюстрация мозга -->
+      <section class="med-row med-brain">
+        <div class="med-text">
           <h2 class="section-title">А что в этот момент<br>происходит с мозгом?</h2>
           <div class="prose">
             <p>Учёные используют функциональную МРТ, чтобы посмотреть, какие участки и сети мозга меняют свою активность во время медитации. Одна из систем, которая особенно часто появляется в исследованиях, — сеть пассивного режима работы мозга (default mode network, DMN).</p>
@@ -429,40 +566,68 @@ img{display:block;max-width:100%}
             <p>И это важное уточнение. Медитировать не значит перестать думать. Иногда медитация скорее помогает заметить сам момент, когда мысль унесла нас за собой.</p>
           </div>
         </div>
+        <div class="med-art med-brain-art">
+          <img src="assets/meditation-brain.png" alt="">
+        </div>
       </section>
 
-      <!-- Тело -->
+      <!-- 4. Две текстовые колонки -->
+      <section class="med-row med-text-pair">
+        <div class="med-text">
+          <h2 class="section-title">А эмоции становятся другими?</h2>
+          <div class="prose">
+            <p>Это тоже активно изучают.</p>
+            <p>В исследованиях mindfulness обращают внимание на то, как человек реагирует на эмоциональные стимулы — например, неприятные изображения или стрессовые ситуации.</p>
+            <p>В систематическом обзоре 68 исследований более высокая осознанность была связана с меньшей реактивностью миндалинной на эмоциональные стимулы и с особенностями работы некоторых областей мозга, связанных с вниманием и саморегуляцией. Но такие связи нельзя автоматически трактовать как доказательство того, что медитация сама их вызывает.</p>
+            <p>Именно поэтому современные исследования используют рандомизированные исследования и контрольные группы.</p>
+          </div>
+        </div>
 
-      <!-- Тело -->
-      <section class="body-row">
-        <div class="body-copy prose-block">
+        <div class="med-text">
           <h2 class="section-title">А тело здесь при чём?</h2>
           <div class="prose">
+            <p>Очень даже при чём.</p>
             <p>Во многих практиках внимание направляют не только на мысли, но и на ощущения тела: дыхание, положение тела, напряжение мышц, тепло, холод, сердцебиение.</p>
-            <p>Получается интересная вещь: человек не обязательно меняет ощущение специально. Он начинает его замечать. Это хорошо перекликается с тем, что мы уже знаем об интероцепции — восприятии сигналов, которые приходят от собственного организма.</p>
+            <p>Человек не обязательно меняет эти ощущения специально. Он начинает их замечать. Это хорошо перекликается с интероцепцией — восприятием сигналов, которые приходят от собственного организма.</p>
             <p>Исследователи пока только начинают разбираться, как именно практики осознанности связаны с телесным восприятием. В крупных обзорах отмечается, что исследований этой стороны медитации пока меньше, чем исследований внимания и эмоциональных процессов.</p>
-            <p>То есть фраза «медитация помогает лучше чувствовать своё тело» звучит правдоподобно, но наука пока не может поставить здесь такую же уверенную точку, как в учебнике.</p>
           </div>
         </div>
       </section>
 
-      <!-- Финал -->
-      <section class="final-row">
-        <div class="final-copy prose-block">
-          <h2 class="section-title">Что же тогда действительно интересно?</h2>
+      <!-- 5. Ещё две текстовые колонки -->
+      <section class="med-row med-text-pair med-final-texts">
+        <div class="med-text">
+          <h2 class="section-title">Так медитация всё-таки<br>помогает или нет?</h2>
           <div class="prose">
-            <p>Пожалуй, сам факт, что обычный акт внимания можно изучать экспериментально.</p>
-            <p>Мы можем сесть на несколько минут, обратить внимание на дыхание — и заметить, как внимание ушло. Можем заметить напряжение в плечах, хотя минуту назад его не ощущали. Можем обнаружить, что неприятная мысль появилась — и вместе с ней изменилось ощущение в теле.</p>
-            <p>Именно такие маленькие процессы сейчас становятся объектом исследований.</p>
-            <p>Современная наука постепенно пытается разобраться не в том, «полезна ли медитация вообще», а в гораздо более интересном вопросе: что именно происходит с человеком, когда он учится замечать то, что обычно проходит мимо внимания?</p>
-            <p>И возможно, именно здесь медитация становится особенно интересной — не как волшебная кнопка для спокойствия, а как способ исследовать собственное внимание, тело и то, как мы воспринимаем происходящее с нами.</p>
+            <p>Ответ зависит от того, что именно мы называем помощью.</p>
+            <p>Исследования находят изменения в показателях стресса, эмоционального состояния, внимания и некоторых когнитивных функций. Есть работы о сне, боли и других состояниях. Но величина эффекта различается, а качество исследований неодинаково.</p>
+            <p>Поэтому сегодня уже трудно сказать, что медитация — универсальный инструмент, который должен улучшать всю жизнь сразу. Наука пока гораздо осторожнее.</p>
           </div>
         </div>
-        <div class="final-art"><img src="assets/meditation-window.png" alt=""></div>
+
+        <div class="med-text">
+          <h2 class="section-title">Что же тогда действительно<br>интересно?</h2>
+          <div class="prose">
+            <p>Пожалуй, сам факт, что обычный акт внимания можно изучать экспериментально.</p>
+            <p>Мы можем сесть на несколько минут, обратить внимание на дыхание — и заметить, как внимание ушло. Можем заметить напряжение в плечах, хотя минуту назад его не ощущали. Можем обнаружить, что неприятная мысль появилась — и вместе с ней изменилось наше внутреннее состояние.</p>
+            <p>Современная наука всё глубже пытается понять не только «полезна ли медитация вообще», а гораздо более интересный вопрос: что именно происходит с человеком, когда он учится замечать то, что обычно проходит мимо внимания?</p>
+            <p>И возможно, именно здесь медитация становится особенно интересной — не как волшебная кнопка для спокойствия, а как способ понимать себя.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Финальная широкая иллюстрация -->
+      <section class="med-ending">
+        <div class="ending-note ending-left">МАЛЕНЬКИЕ<br>НАБЛЮДЕНИЯ<br>БОЛЬШИЕ<br>ИЗМЕНЕНИЯ</div>
+        <div class="med-ending-art">
+          <img src="assets/meditation-window.png" alt="">
+        </div>
+        <div class="ending-note ending-right">НАУКА<br>ЗАНИМАЕТСЯ<br>О ТОМ,<br>КАК ТЫ<br>ЖИВЁШЬ</div>
       </section>
 
     </div>
   </article>
+
 </main>
 
 <footer class="contact-footer">
@@ -473,7 +638,7 @@ img{display:block;max-width:100%}
       <a class="footer-phone" href="tel:+79853939108">+7 (985) 393-91-08</a>
       <div class="footer-social">
         <a href="https://t.me/vash_massage1" target="_blank" rel="noopener" aria-label="Telegram"><img src="assets/telegram.png" alt="Telegram"></a>
-        <a href="#" aria-label="MAX"><img src="assets/meditation-window.png" alt="MAX"></a>
+        <a href="#" aria-label="MAX"><img src="assets/max.png" alt="MAX"></a>
       </div>
     </div>
   </div>
