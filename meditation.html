@@ -505,31 +505,162 @@ img{display:block;max-width:100%}
   }
 }
 
-/* Правка №3: каждый последующий блок поднимаем примерно на 4 см */
+/* ===== ФИНАЛЬНАЯ МОБИЛЬНАЯ КОМПОЗИЦИЯ =====
+   Убираем визуальные сдвиги через top: они оставляли пустое место
+   в потоке страницы. Все блоки теперь двигаются обычными margin. */
 @media(max-width:900px){
+
+  /* Hero не резервирует лишнюю высоту */
+  .hero-grid{
+    min-height:0 !important;
+    display:flex !important;
+    flex-direction:column !important;
+  }
+  .hero-copy{
+    order:1;
+  }
+  .hero-art{
+    order:2;
+    height:auto !important;
+    margin:4px 0 0 !important;
+    width:100%;
+  }
+  .hero-art>img{
+    position:static !important;
+    display:block;
+    width:94% !important;
+    max-width:none !important;
+    margin:0 auto;
+  }
+  .hero-notes{
+    display:none;
+  }
+
+  /* Вводный текст */
+  .med-intro{
+    display:block !important;
+    margin:8px 0 0 !important;
+    padding:0 !important;
+  }
+  .med-intro .med-text{
+    max-width:none !important;
+  }
+  .med-spacer{
+    display:none;
+  }
+
+  /* Девушка с чашкой/ноутбуком — непосредственно перед своим текстом */
+  .med-daydream{
+    display:flex !important;
+    flex-direction:column !important;
+    margin:14px 0 0 !important;
+    gap:8px !important;
+  }
+  .med-daydream-art{
+    order:1 !important;
+    position:static !important;
+    top:auto !important;
+    width:88% !important;
+    max-width:none !important;
+    margin:0 auto !important;
+  }
   .med-daydream .med-text{
-    position:relative;
-    top:-152px;
+    order:2 !important;
+    position:static !important;
+    top:auto !important;
+    width:100%;
   }
 
+  /* Мозг: текст сразу после предыдущего блока, затем изображение */
+  .med-brain{
+    display:flex !important;
+    flex-direction:column !important;
+    margin:20px 0 0 !important;
+    gap:8px !important;
+  }
+  .med-brain .med-text{
+    order:1 !important;
+    padding-left:0 !important;
+  }
   .med-brain-art{
-    position:relative;
-    top:-152px;
+    order:2 !important;
+    position:static !important;
+    top:auto !important;
+    width:86% !important;
+    max-width:none !important;
+    margin:0 auto !important;
   }
 
-  .med-text-pair{
-    position:relative;
-    top:-152px;
-  }
-
+  /* Текстовые блоки — без искусственного вертикального смещения */
+  .med-text-pair,
   .med-final-texts{
-    position:relative;
-    top:-152px;
+    display:flex !important;
+    flex-direction:column !important;
+    gap:22px !important;
+    margin:22px 0 0 !important;
+    position:static !important;
+    top:auto !important;
+  }
+  .med-text-pair .med-text{
+    padding:0 !important;
   }
 
+  /* Финальная иллюстрация сразу после последнего текста */
   .med-ending{
-    position:relative;
-    top:-152px;
+    position:static !important;
+    display:block !important;
+    margin:20px 0 0 !important;
+  }
+  .med-ending-art{
+    width:100% !important;
+    margin:0 !important;
+  }
+  .med-ending-art img{
+    display:block;
+    width:100% !important;
+    height:auto;
+  }
+  .ending-note{
+    display:none !important;
+  }
+
+  /* Немного плотнее типографика на узком экране */
+  .section-title{
+    font-size:24px;
+    line-height:1.02;
+  }
+  .prose{
+    font-size:13px;
+    line-height:1.46;
+  }
+}
+@media(max-width:560px){
+  .article-wrap{
+    width:88% !important;
+  }
+  .article-hero{
+    padding-top:18px !important;
+  }
+  .article-title{
+    font-size:47px !important;
+    line-height:.92 !important;
+  }
+  .article-lead{
+    font-size:19px !important;
+    line-height:1.15 !important;
+    margin-top:15px !important;
+  }
+  .reading-time{
+    margin-bottom:0;
+  }
+  .hero-art>img{
+    width:96% !important;
+  }
+  .med-daydream-art{
+    width:94% !important;
+  }
+  .med-brain-art{
+    width:92% !important;
   }
 }
 </style>
