@@ -61,6 +61,20 @@ img{max-width:100%;display:block}
 .fact b{display:block;font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:.95;font-weight:600;color:#233550}
 .fact small{display:block;margin-top:8px;font-size:10px;line-height:1.45;color:var(--muted)}
 
+
+/* НА ОЩУПЬ — баннер перед «Наши услуги» */
+.touch-banner-wrap{padding:18px 0 4px}
+.touch-banner{display:grid;grid-template-columns:1.02fr .98fr;align-items:center;min-height:270px;background:var(--cream2);border:1px solid var(--gold);border-radius:24px;overflow:hidden;position:relative;cursor:pointer;transition:transform .2s,box-shadow .2s}
+.touch-banner:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(27,40,55,.10)}
+.touch-banner-content{padding:38px 28px 38px 52px;position:relative;z-index:2}
+.touch-banner-label{margin:0 0 9px;color:var(--navy);font-family:'Cormorant Garamond',Georgia,serif;font-size:48px;line-height:.95;font-weight:600;letter-spacing:-.02em}
+.touch-banner-text{margin:0;max-width:590px;color:#9b6529;font-family:'Cormorant Garamond',Georgia,serif;font-size:24px;line-height:1.2;font-style:italic}
+.touch-banner-action{display:inline-flex;align-items:center;gap:12px;margin-top:22px;padding:11px 21px;border:1px solid var(--gold);border-radius:999px;color:var(--navy);font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:rgba(255,250,244,.72)}
+.touch-banner-action span{color:var(--gold);font-size:18px;line-height:1}
+.touch-banner-art{width:100%;height:270px;object-fit:cover;object-position:center center;mix-blend-mode:multiply}
+@media(max-width:900px){.touch-banner{grid-template-columns:1fr;min-height:0}.touch-banner-content{text-align:center;padding:30px 28px 10px}.touch-banner-text{margin:auto}.touch-banner-action{margin-top:18px}.touch-banner-art{height:220px;object-fit:contain}}
+@media(max-width:560px){.touch-banner-wrap{padding:8px 0 0}.touch-banner{border-radius:20px}.touch-banner-content{padding:25px 18px 5px}.touch-banner-label{font-size:39px}.touch-banner-text{font-size:21px;line-height:1.18}.touch-banner-action{margin-top:15px;padding:10px 19px;font-size:11px}.touch-banner-art{height:175px}}
+
 /* SECTIONS */
 .section{padding:70px 0}
 .section-title{text-align:center;font-family:'Cormorant Garamond',Georgia,serif;font-size:54px;font-weight:600;margin:0 0 35px;color:var(--navy)}
@@ -198,6 +212,19 @@ img{max-width:100%;display:block}
     <div class="fact"><img class="fact-icon" src="assets/benefit-location.png" alt=""><div><b>В центре Москвы</b><small>Рядом с метро<br>Курская</small></div></div>
   </div>
 </div></section>
+
+<section class="touch-banner-wrap">
+  <div class="wrap">
+    <a class="touch-banner" href="na-oshchup.html" aria-label="Перейти на страницу На ощупь">
+      <div class="touch-banner-content">
+        <div class="touch-banner-label">НА ОЩУПЬ</div>
+        <p class="touch-banner-text">Больше о теле, ощущениях и том, что происходит с нами каждый день</p>
+        <span class="touch-banner-action">ЧИТАТЬ <span>→</span></span>
+      </div>
+      <img class="touch-banner-art" src="assets/na-oshchup-banner.png" alt="">
+    </a>
+  </div>
+</section>
 
 <section class="section" id="services"><div class="wrap">
   <h2 class="section-title">Наши услуги</h2>
